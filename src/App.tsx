@@ -18,16 +18,17 @@ function App() {
 
   //add event listener on window scroll that affects the filter: drop-shadow(-1px -31px 20px #000000); property of root
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Logic to change filter property based on scroll position
-      const scrollPosition = window.scrollY;
-      const root = document.getElementById("root");
-      if (!root) return;
-      root.style.backgroundPositionY = scrollPosition * 1.01 + "px";
-    };
-    window.addEventListener("scroll", handleScroll);
-  }, []);
+  //TODO: implement parallax
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     // Logic to change filter property based on scroll position
+  //     const scrollPosition = window.scrollY;
+  //     const root = document.getElementById("root");
+  //     if (!root) return;
+  //     root.style.backgroundPositionY = scrollPosition * 1.01 + "px";
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <div id="app-container">

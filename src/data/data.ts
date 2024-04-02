@@ -16,7 +16,7 @@ export const infoData = {
 };
 export const experienceData = [
   {
-    title: "Marketing Technology Consultant",
+    title: "Marketing Technologist",
     company: "Datamark Digital",
     location: "Los Angeles, CA",
     startDate: "June 2023",
@@ -45,7 +45,7 @@ export const experienceData = [
     ],
   },
   {
-    title: "Ecommerce Developer, Ecommerce Coordinator",
+    title: "Ecommerce Developer",
     company: "Lauren Moshi",
     location: "Commerce, CA",
     startDate: "November 2021",
@@ -73,14 +73,12 @@ export const skillsData = [
       "CSS",
       "R",
       "Liquid",
-      "Jekyl",
-      "Ruby",
       "PHP",
     ],
   },
   {
     title: "Frameworks",
-    skills: ["React", "Next.js", "Astro", "Django", "Rails"],
+    skills: ["React", "Next.js", "Astro", "Django"],
   },
   {
     title: "Tools",

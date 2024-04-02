@@ -58,7 +58,6 @@ const ExperienceCard = ({ data, delimiter, id }: Props) => {
           {company}
           {delimiter}
           {location}
-          {delimiter}{" "}
         </CardTitle>
         <CardTitle className="text-md italic opacity-75">
           ({startDate}

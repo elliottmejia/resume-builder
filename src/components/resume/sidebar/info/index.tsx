@@ -28,7 +28,7 @@ const Info = () => {
   return (
     <div id="info" className="flex flex-col w-full text-left">
       <div id="identity" className="h-fit pb-2 text-left pl-2 ">
-        <div className="relative -top-1">
+        <div className="relative -top-2 scale-95">
           <div className="absolute w-16 h-16 rounded-full bg-red-500 top-2 left-0 z-0" />
           <div className="absolute w-16 h-16 rounded-full bg-cyan-400 top-2 left-4 z-10" />
 
@@ -38,8 +38,14 @@ const Info = () => {
             </AvatarFallback>
           </Avatar>
         </div>
-        <h1 className="whitespace-nowrap overflow-hidden text-xl font-bold">
-          &nbsp;{name}
+        <h1
+          className="whitespace-nowrap overflow-hidden text-xl font-bold"
+          style={{
+            fontSize: "1.5rem",
+            lineHeight: "1.75rem",
+          }}
+        >
+          {name}
         </h1>
       </div>
 
