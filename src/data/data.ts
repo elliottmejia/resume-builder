@@ -70,24 +70,23 @@ export const skillsData = [
       "Jekyl",
       "Ruby",
       "PHP",
-      "Java",
     ],
   },
   {
     title: "Frameworks",
-    skills: ["React", "Next.js", "Gatsby", "Node.js", "Express"],
+    skills: ["React", "Next.js", "Astro", "Django", "Rails"],
   },
   {
     title: "Tools",
-    skills: ["Git", "GitHub", "GitLab", "Jira", "Asana", "AWS"],
+    skills: ["Git", "GitHub", "Jira", "Asana", "AWS"],
   },
   {
-    title: "Databases",
-    skills: ["MongoDB", "PostgreSQL", "MySQL", "SQLite"],
+    title: "Database",
+    skills: ["MongoDB", "SQL", "GraphQL"],
   },
   {
     title: "Design",
-    skills: ["Figma", "Photoshop", "Illustrator", "InDesign"],
+    skills: ["Figma", "Photoshop", "Illustrator", "Product Photography"],
   },
   {
     title: "Platforms",
@@ -99,8 +98,11 @@ export const skillsData = [
       "SEO",
       "SEM",
       "Email Marketing",
+      "Email Deliverability",
+      "Email Automation",
+      "SMS Marketing",
       "Lead Generation",
-      "Social Media Marketing",
+      "Social Media",
     ],
   },
 ];

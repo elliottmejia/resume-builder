@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Taskbar />
-      <ResumeContainer>
+      <ResumeContainer className="print_content">
         <Sidebar>
           <Info />
           <Skills />

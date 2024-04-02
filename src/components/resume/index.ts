@@ -1,7 +1,8 @@
 import ExperienceContainer from "./experience/container";
 import ResumeContainer from "./resume-container";
 import Sidebar from "./sidebar";
-import Info from "./info";
-import Skills from "./skills";
+import Info from "./sidebar/info";
+import Skills from "./sidebar/skills";
+
 
 export { ExperienceContainer, ResumeContainer, Sidebar, Info, Skills };

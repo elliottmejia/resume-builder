@@ -22,9 +22,11 @@ type Props = {
 };
 
 const ExperienceCard = ({ data, delimiter }: Props) => {
-  const { title, company, location, startDate, endDate, entries }: Experience =
-    data;
+  //prettier-ignore
+  const { title, company, location, startDate, endDate, entries }: Experience = data;
+
   delimiter = " " + (delimiter || "-").trim() + " ";
+
   return (
     <Card>
       <CardHeader>
@@ -40,17 +42,15 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription>
-          {entries.map((entry, idx) => (
-            <p key={idx} className="py-1 text-black">
-              <Icon
-                icon="material-symbols:commit"
-                style={{ display: "inline" }}
-              />
-              {entry}
-            </p>
-          ))}
-        </CardDescription>
+        {entries.map((entry, idx) => (
+          <div key={idx} id={`description-${idx + 1}`} className="py-1 text-sm">
+            <Icon
+              icon="material-symbols:commit"
+              style={{ display: "inline" }}
+            />
+            <span className="text-black">{entry}</span>
+          </div>
+        ))}
       </CardContent>
     </Card>
   );

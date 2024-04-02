@@ -1,6 +1,7 @@
 import { infoData } from "data/data";
-import { Avatar, AvatarFallback, AvatarImage } from "components/ui/avatar";
+import { Avatar, AvatarFallback } from "components/ui/avatar";
 import IconWithText from "ui/icon-with-text";
+import { Icon } from "@iconify/react";
 
 type InfoData = {
   name: string;
@@ -12,14 +13,6 @@ type InfoData = {
   linkedinShort: string;
   linkedin: string;
 };
-
-//   info: {
-//     name: "Elliott Mejia",
-//     tel: "(206) 792-6241",
-//     email: "mejia.elliott@gmail.com",
-//     portfolio: "https://elliottmejia.com",
-//     linkedin: "https://www.linkedin.com/in/elliott-mejia-8873b397/",
-//   },
 
 const Info = () => {
   const {
@@ -34,14 +27,13 @@ const Info = () => {
   }: InfoData = infoData;
   return (
     <div id="info" className="flex flex-col w-full text-left">
-      <div id="identity" className="h-fit pb-2">
-        <Avatar className="mx-auto text-center my-2 w-16 h-16">
-          <AvatarFallback style={{ background: "orange", color: "black" }}>
-            ERM
+      <div id="identity" className="h-fit pb-2 text-left pl-2">
+        <Avatar className=" my-2 w-16 h-16">
+          <AvatarFallback style={{ background: "white", color: "black" }}>
+            <Icon icon="file-icons:devcontainer" className="w-full h-full" />
           </AvatarFallback>
-          <AvatarImage src="assets/profile-image.png" />
         </Avatar>
-        <h1 className="whitespace-nowrap overflow-hidden text-xl font-bold mx-auto text-center ">
+        <h1 className="whitespace-nowrap overflow-hidden text-xl font-bold">
           &nbsp;{name}
         </h1>
       </div>
