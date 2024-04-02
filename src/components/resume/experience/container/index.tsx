@@ -15,7 +15,7 @@ const ExperienceContainer = ({ children }: Props) => {
         <div id="experience-container-gradient" />
         {children}
         {experienceData.map((data, idx) => (
-          <ExperienceCard id={`experience-card-${idx}`} data={data} key={idx} />
+          <ExperienceCard data={data} key={idx} />
         ))}
       </div>
     </div>

@@ -26,7 +26,7 @@ export const experienceData: Experience[] = [
     entries: [
       "Collaborated directly with CEO Joe Weaver to strategize and set competitive pricing and Service Level Agreements (SLAs), aligning with the latest market trends in the online presence marketing space.",
       "Developed and deployed innovative lead-generation automations using Python, Lead Scrape, and High Level, significantly enhancing business operations for this burgeoning startup.",
-      "Enhanced email marketing strategies, warming over 5,000 cold emails via our subdomain's MX pipeline and securing 10 new clients within two months for diverse online presence services.",
+      "Enhanced email marketing strategies, warming over 5,000 cold emails and securing 10 new clients within two months for diverse online presence services.",
       "Engineered a cron job to automatically generate a comprehensive weekly report on lead automation outcomes, utilizing R Markdown for detailed insights and alerts.",
       "Led a team of outsourced web developers, efficiently reducing the average Minimum Viable Product (MVP) staging time to one month, thus accelerating pre-revision project delivery timelines.",
       "Addressed and resolved technical debt and offered UX expertise, providing personalized support to web clients and improving client satisfaction.",

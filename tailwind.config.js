@@ -73,6 +73,10 @@ module.exports = {
       },
       boxShadow: {
         pressed: "rgba(0, 0, 0, 0.20) 0px 2px 4px 0px inset",
+        macbook:
+          " rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
+
+        lsgraf: "rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;",
       },
     },
   },
