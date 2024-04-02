@@ -50,25 +50,32 @@ const Info = () => {
       </div>
 
       <div id="contact" className="flex flex-col gap-y-2 px-4">
-        <IconWithText title="Cell" icon="bx:phone" text={tel} />
-        <IconWithText
-          title="Email"
-          icon="bx:envelope"
-          text={emailShort}
-          src={email}
-        />
-        <IconWithText
-          title="Portfolio"
-          icon="bx:link"
-          text={portfolioShort}
-          src={portfolio}
-        />
-        <IconWithText
-          title="LinkedIn"
-          icon="akar-icons:linkedin-fill"
-          text={linkedinShort}
-          src={linkedin}
-        />
+        {tel && <IconWithText title="Cell" icon="bx:phone" text={tel} />}
+        {email && emailShort && (
+          <IconWithText
+            title="Email"
+            icon="bx:envelope"
+            text={emailShort}
+            type="email"
+            src={email}
+          />
+        )}
+        {portfolio && portfolioShort && (
+          <IconWithText
+            title="Portfolio"
+            icon="bx:link"
+            text={portfolioShort}
+            src={portfolio}
+          />
+        )}
+        {linkedin && linkedinShort && (
+          <IconWithText
+            title="LinkedIn"
+            icon="akar-icons:linkedin-fill"
+            text={linkedinShort}
+            src={linkedin}
+          />
+        )}
       </div>
     </div>
   );

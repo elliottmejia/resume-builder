@@ -17,6 +17,7 @@ import { Icon } from "@iconify/react";
 import { HOSTED_DOMAIN } from "src/data/data";
 import { clipboardCopy } from "src/lib/utils";
 import { useState } from "react";
+import { isProd } from "lib/utils";
 
 type Props = {
   handleColorPrint: () => void;
@@ -38,7 +39,7 @@ const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
     <>
       <Menubar
         id="taskbar"
-        className="rounded-none relative top-2 p-0 w-fit mx-auto z-50"
+        className="rounded-none relative top-2 -right-4 p-0 w-fit mx-auto z-50"
         style={{
           clear: "both",
         }}
@@ -63,20 +64,19 @@ const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
             <MenubarItem onClick={handleBNWPrint}>Print B&W</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger className={triggerClasses}>PDF</MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger className={triggerClasses}>Edit</MenubarTrigger>
-          <MenubarContent>
-            <MenubarCheckboxItem
-              checked={isCheckedEdit}
-              onClick={handleEditToggle}
-            >
-              Enable Edit Mode
-            </MenubarCheckboxItem>
-          </MenubarContent>
-        </MenubarMenu>
+        {!isProd() && (
+          <MenubarMenu>
+            <MenubarTrigger className={triggerClasses}>Edit</MenubarTrigger>
+            <MenubarContent>
+              <MenubarCheckboxItem
+                checked={isCheckedEdit}
+                onClick={handleEditToggle}
+              >
+                Enable Edit Mode
+              </MenubarCheckboxItem>
+            </MenubarContent>
+          </MenubarMenu>
+        )}
         <div className="hidden px-4 py-2 hover:bg-gray-200 hover:border-radius-pressed "></div>
       </Menubar>
     </>

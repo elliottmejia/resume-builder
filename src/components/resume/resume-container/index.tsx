@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import { cn } from "lib/utils";
 
 type Props = {
   children: React.ReactNode;
@@ -7,9 +8,12 @@ type Props = {
 
 const ResumeContainer = forwardRef<HTMLDivElement, Props>(
   ({ children, className = "" }, ref) => {
-    const ContainerClasses = `flex flex-row h-fit w-100 pt-4 ${className}`;
     return (
-      <div className={ContainerClasses} ref={ref}>
+      <div
+        className={cn(`flex flex-row h-fit w-100 pt-4 gap-0`, className)}
+        id="resume-container"
+        ref={ref}
+      >
         {children}
       </div>
     );

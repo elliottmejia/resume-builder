@@ -21,15 +21,6 @@
 );
 }
 
-.screentone-dark{
-    background-image: radial-gradient(
-        circle at center,
-        black .5px,
-        transparent 0px
-      );
-      background-size: 5px 5px;
-      background-repeat: round;
-}
 .screentone{
     background-image: radial-gradient(
         circle at center,
@@ -37,5 +28,15 @@
         transparent var(--screentone-blur)
       );
       background-size: var(--screentone-bg-size) var(--screentone-bg-size);
+      background-repeat: round;
+}
+
+.screentone-dark{
+    background-image: radial-gradient(
+        circle at center,
+        black .5px,
+        transparent 0px
+      );
+      background-size: 5px 5px;
       background-repeat: round;
 }

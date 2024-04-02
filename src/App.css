@@ -61,10 +61,23 @@ html{
   --exp-clip-len: 52px;
   clip-path: polygon(calc(100% - var(--exp-clip-len)) 0%, 100% var(--exp-clip-len), 100% 100%, 0 100%, 0 0);
 }
+@media print {
+  #experience{
+    clip-path: none;
+    border-top:1px solid black;
+    border-right:1px solid black;
+  }
+  #sidebar{
+    border-top: 1px solid black;
+    clip-path:none;
+  }
+  #resume-container{
+    padding-top:none;
+  }
+  
 
-.no-clip{
-  clip-path: none;
 }
+
 /* #experience-wrap{
   filter: drop-shadow(-1px 5px 10px #f3f3f336);
 }

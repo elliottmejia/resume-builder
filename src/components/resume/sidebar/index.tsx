@@ -4,7 +4,7 @@ type Props = {
 
 const Sidebar = ({ children }: Props): React.ReactElement => {
   return (
-    <div className="relative w-fit h-full">
+    <div className="relative w-fit h-inherit">
       <div id="sidebar-wrap" className="h-full">
         <div
           id="sidebar"

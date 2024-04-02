@@ -5,16 +5,25 @@ type IconWithTextProps = {
   title?: string;
   text: string;
   src?: string;
+  type?: string;
 };
 
-const IconWithText = ({ icon, title, text, src }: IconWithTextProps) => {
+const IconWithText = ({ icon, title, text, src, type }: IconWithTextProps) => {
   return (
     <>
       <div className="flex flex-inline font-bold items-center">
         <Icon icon={icon} />
         &nbsp;{title}
       </div>
-      <p>{src ? <a href={src}>{text}</a> : <span>{text}</span>}</p>
+      <p>
+        {src ? (
+          <a href={src} type={type}>
+            {text}
+          </a>
+        ) : (
+          <span>{text}</span>
+        )}
+      </p>
     </>
   );
 };
