@@ -12,14 +12,29 @@ import { useReactToPrint } from "react-to-print";
 import { clearButtons } from "./lib/utils";
 import { Icon } from "@iconify/react";
 import Screentone from "./components/styling/screentone";
+import { infoData } from "./data/data";
 
 function App() {
   const printRef = useRef<HTMLDivElement | null>(null);
-  const handlePrint = useReactToPrint({
+
+  const globalPrintSettings = {
+    documentTitle: "",
+    copayStyles: true,
     content: () => printRef.current,
     onAfterPrint: () => {
       clearButtons();
     },
+    removeAfterPrint: true,
+  };
+  const handleColorPrint = useReactToPrint({
+    ...globalPrintSettings,
+  });
+
+  const handleBNWPrint = useReactToPrint({
+    ...globalPrintSettings,
+    pageStyle: `html, body, #app-container {
+      grayscale: 100%;
+    }`,
   });
 
   //TODO: implement parallax
@@ -31,7 +46,11 @@ function App() {
   };
 
   const [isEditing, setIsEditing] = useState(false);
-  const [editModeEnabled, setEditModeEnabled] = useState(true);
+  const [editModeEnabled, setEditModeEnabled] = useState(false);
+
+  const handleEditToggle = () => {
+    setEditModeEnabled(!editModeEnabled);
+  };
 
   return (
     <div id="app-container" className="relative">
@@ -52,7 +71,11 @@ function App() {
           ></Icon>
         </div>
       )}
-      <Taskbar handlePrint={handlePrint} />
+      <Taskbar
+        handleColorPrint={handleColorPrint}
+        handleBNWPrint={handleBNWPrint}
+        editToggle={handleEditToggle}
+      />
       <ResumeContainer className="relative" ref={printRef}>
         <Screentone className="print-only" variant="dark" gradient />
         <Sidebar>

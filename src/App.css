@@ -61,6 +61,10 @@ html{
   --exp-clip-len: 52px;
   clip-path: polygon(calc(100% - var(--exp-clip-len)) 0%, 100% var(--exp-clip-len), 100% 100%, 0 100%, 0 0);
 }
+
+.no-clip{
+  clip-path: none;
+}
 /* #experience-wrap{
   filter: drop-shadow(-1px 5px 10px #f3f3f336);
 }
@@ -171,4 +175,10 @@ h1{
   font-size: large;
   font-style: bold;
   margin: 0.5em 0;
+}
+.print-bnw{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
 }

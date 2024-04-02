@@ -1,6 +1,6 @@
 import {
   Menubar,
-  // MenubarCheckboxItem,
+  MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
@@ -16,20 +16,29 @@ import {
 import { Icon } from "@iconify/react";
 import { HOSTED_DOMAIN } from "src/data/data";
 import { clipboardCopy } from "src/lib/utils";
+import { useState } from "react";
 
 type Props = {
-  handlePrint: () => void;
+  handleColorPrint: () => void;
+  handleBNWPrint: () => void;
+  editToggle: () => void;
 };
 
-const Taskbar = ({ handlePrint }: Props) => {
+const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
   const handlePDF = () => {};
+  const [isCheckedEdit, setCheckedEdit] = useState(false);
+
+  const handleEditToggle = () => {
+    editToggle();
+    setCheckedEdit(!isCheckedEdit);
+  };
   const triggerClasses =
-    "px-4 py-2  hover:shadow-pressed rounded-none animate ease-in-out duration-100";
+    "px-4 py-2 hover:shadow-pressed rounded-none animate ease-in-out duration-100";
   return (
     <>
       <Menubar
         id="taskbar"
-        className="rounded-none relative  top-2 clear right-2 p-0 w-fit mx-auto z-50"
+        className="rounded-none relative top-2 p-0 w-fit mx-auto z-50"
         style={{
           clear: "both",
         }}
@@ -46,18 +55,29 @@ const Taskbar = ({ handlePrint }: Props) => {
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <MenubarTrigger
-            className={triggerClasses}
-            onClick={handlePrint}
-            id="printButton"
-          >
+          <MenubarTrigger className={triggerClasses} id="printButton">
             Print
           </MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem onClick={handleColorPrint}>Print Color</MenubarItem>
+            <MenubarItem onClick={handleBNWPrint}>Print B&W</MenubarItem>
+          </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger className={triggerClasses} onClick={handlePDF}>
             PDF
           </MenubarTrigger>
+        </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger className={triggerClasses}>Edit</MenubarTrigger>
+          <MenubarContent>
+            <MenubarCheckboxItem
+              checked={isCheckedEdit}
+              onClick={handleEditToggle}
+            >
+              Enable Edit Mode
+            </MenubarCheckboxItem>
+          </MenubarContent>
         </MenubarMenu>
         <div className="hidden px-4 py-2 hover:bg-gray-200 hover:border-radius-pressed "></div>
       </Menubar>
