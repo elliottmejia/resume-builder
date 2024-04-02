@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useRef } from "react";
+
 import {
   Card,
   CardContent,
@@ -7,23 +8,14 @@ import {
   CardHeader,
   CardTitle,
 } from "components/ui/card";
-
-type Experience = {
-  title: string;
-  company: string;
-  location: string;
-  startDate: string;
-  endDate: string;
-  entries: string[];
-};
+import type { Experience } from "data/types.ts";
 
 type Props = {
   data: Experience;
-  id: string;
   delimiter?: string | "-";
 };
 
-const ExperienceCard = ({ data, delimiter, id }: Props) => {
+const ExperienceCard = ({ data, delimiter }: Props) => {
   //prettier-ignore
   const { title, company, location, startDate, endDate, entries }: Experience = data;
 
@@ -48,7 +40,7 @@ const ExperienceCard = ({ data, delimiter, id }: Props) => {
     <Card
       id="experience-card"
       ref={cardRef}
-      className=""
+      className="z-10"
       onDoubleClick={(e) => handleDoubleClick(e)}
     >
       <CardHeader>

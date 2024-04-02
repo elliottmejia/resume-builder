@@ -3,12 +3,15 @@ type Props = {
 };
 
 const Sidebar = ({ children }: Props): React.ReactElement => {
-  const ContainerClasses =
-    "p-1 h-full w-fit bg-white border-left-2 border-black z-10";
   return (
-    <div id="sidebar-wrap">
-      <div id="sidebar" className={ContainerClasses}>
-        {children}
+    <div className="relative w-fit h-full">
+      <div id="sidebar-wrap" className="h-full">
+        <div
+          id="sidebar"
+          className="p-1 h-full w-fit bg-white border-left-2 border-black z-10"
+        >
+          {children}
+        </div>
       </div>
     </div>
   );

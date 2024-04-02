@@ -1,0 +1,41 @@
+:root{
+    --screentone-color: #0000002f;
+    --screentone-size: .05rem;
+    --screentone-blur: 1.5px;
+    --screentone-bg-size: 1rem;
+}
+
+.screentone-opacity-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: -10;
+  background: linear-gradient(
+  to bottom,
+    #d2b48c 0%,
+    #d2b48c9c 25%,
+    #d2b48c00 100%
+);
+}
+
+.screentone-dark{
+    background-image: radial-gradient(
+        circle at center,
+        black .5px,
+        transparent 0px
+      );
+      background-size: 5px 5px;
+      background-repeat: round;
+}
+.screentone{
+    background-image: radial-gradient(
+        circle at center,
+        var(--screentone-color) var(--screentone-size),
+        transparent var(--screentone-blur)
+      );
+      background-size: var(--screentone-bg-size) var(--screentone-bg-size);
+      background-repeat: round;
+}

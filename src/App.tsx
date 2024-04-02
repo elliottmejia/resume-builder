@@ -7,38 +7,61 @@ import {
   Info,
   Skills,
 } from "components/resume";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useReactToPrint } from "react-to-print";
+import { clearButtons } from "./lib/utils";
+import { Icon } from "@iconify/react";
+import Screentone from "./components/styling/screentone";
 
 function App() {
   const printRef = useRef<HTMLDivElement | null>(null);
   const handlePrint = useReactToPrint({
-    content: () => (printRef.current ? printRef.current : null),
+    content: () => printRef.current,
+    onAfterPrint: () => {
+      clearButtons();
+    },
   });
 
-  //add event listener on window scroll that affects the filter: drop-shadow(-1px -31px 20px #000000); property of root
-
   //TODO: implement parallax
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     // Logic to change filter property based on scroll position
-  //     const scrollPosition = window.scrollY;
-  //     const root = document.getElementById("root");
-  //     if (!root) return;
-  //     root.style.backgroundPositionY = scrollPosition * 1.01 + "px";
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  // }, []);
+
+  const handlePageEdit = () => {
+    clearButtons();
+    if (!editModeEnabled) return;
+    setIsEditing(!isEditing);
+  };
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [editModeEnabled, setEditModeEnabled] = useState(true);
 
   return (
-    <div id="app-container">
+    <div id="app-container" className="relative">
+      {editModeEnabled && (
+        <div
+          id="corner-button-container"
+          className="no-print z-50 animate duration-100 hover:translate-x-1 hover:-translate-y-1 absolute right-0 top-0 cursor-pointer"
+          onClick={handlePageEdit}
+        >
+          <div
+            id="corner-button"
+            className="absolute right-0 top-0 w-0 h-0 z-50"
+          />
+          <Icon
+            icon="ic:sharp-edit"
+            id="edit-button"
+            className="absolute right-1 top-1 z-50 h-6 w-6 text-black"
+          ></Icon>
+        </div>
+      )}
       <Taskbar handlePrint={handlePrint} />
-      <ResumeContainer ref={printRef}>
+      <ResumeContainer className="relative" ref={printRef}>
+        <Screentone className="print-only" variant="dark" gradient />
         <Sidebar>
           <Info />
           <Skills />
         </Sidebar>
-        <ExperienceContainer></ExperienceContainer>
+        <ExperienceContainer>
+          <Screentone />
+        </ExperienceContainer>
       </ResumeContainer>
     </div>
   );

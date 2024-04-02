@@ -29,7 +29,7 @@ const Taskbar = ({ handlePrint }: Props) => {
     <>
       <Menubar
         id="taskbar"
-        className="rounded-none relative  top-2 clear right-2 p-0 w-fit mx-auto"
+        className="rounded-none relative  top-2 clear right-2 p-0 w-fit mx-auto z-50"
         style={{
           clear: "both",
         }}
@@ -46,7 +46,11 @@ const Taskbar = ({ handlePrint }: Props) => {
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <MenubarTrigger className={triggerClasses} onClick={handlePrint}>
+          <MenubarTrigger
+            className={triggerClasses}
+            onClick={handlePrint}
+            id="printButton"
+          >
             Print
           </MenubarTrigger>
         </MenubarMenu>

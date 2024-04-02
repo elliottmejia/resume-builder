@@ -1,10 +1,11 @@
 import { isProd } from "src/lib/utils";
+import { Experience, Info, Skills } from "data/types";
 
 export const HOSTED_DOMAIN = isProd()
   ? "https://resume.elliottmejia.com"
   : "copy successful";
 
-export const infoData = {
+export const infoData: Info = {
   name: "Elliott Mejia",
   tel: "(206) 792-6241",
   email: "mejia.elliott@gmail.com",
@@ -14,7 +15,8 @@ export const infoData = {
   linkedin: "https://www.linkedin.com/in/elliott-mejia/",
   linkedinShort: "/in/elliott-mejia/",
 };
-export const experienceData = [
+
+export const experienceData: Experience[] = [
   {
     title: "Marketing Technologist",
     company: "Datamark Digital",
@@ -61,7 +63,7 @@ export const experienceData = [
   },
 ];
 
-export const skillsData = [
+export const skillsData: Skills[] = [
   {
     title: "Languages",
     skills: [

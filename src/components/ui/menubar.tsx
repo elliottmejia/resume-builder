@@ -6,17 +6,18 @@ import {
 } from "@radix-ui/react-icons"
 import * as MenubarPrimitive from "@radix-ui/react-menubar"
 
-import { cn } from "src/lib/utils"
 
-const MenubarMenu = MenubarPrimitive.Menu
+import { cn } from "src/lib/utils";
 
-const MenubarGroup = MenubarPrimitive.Group
+const MenubarMenu = MenubarPrimitive.Menu;
 
-const MenubarPortal = MenubarPrimitive.Portal
+const MenubarGroup = MenubarPrimitive.Group;
 
-const MenubarSub = MenubarPrimitive.Sub
+const MenubarPortal = MenubarPrimitive.Portal;
 
-const MenubarRadioGroup = MenubarPrimitive.RadioGroup
+const MenubarSub = MenubarPrimitive.Sub;
+
+const MenubarRadioGroup = MenubarPrimitive.RadioGroup;
 
 const Menubar = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Root>,
@@ -30,8 +31,8 @@ const Menubar = React.forwardRef<
     )}
     {...props}
   />
-))
-Menubar.displayName = MenubarPrimitive.Root.displayName
+));
+Menubar.displayName = MenubarPrimitive.Root.displayName;
 
 const MenubarTrigger = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Trigger>,
@@ -40,12 +41,12 @@ const MenubarTrigger = React.forwardRef<
   <MenubarPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex cursor-default select-none items-center rounded-sm px-3 py-1 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground",
+      "taskbar-buttons flex cursor-default select-none items-center rounded-sm px-3 py-1 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground  data-[state=open]:text-accent-foreground",
       className
     )}
     {...props}
   />
-))
+));
 MenubarTrigger.displayName = MenubarPrimitive.Trigger.displayName
 
 const MenubarSubTrigger = React.forwardRef<

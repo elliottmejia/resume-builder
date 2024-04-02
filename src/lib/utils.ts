@@ -21,9 +21,21 @@ export function uuid() {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
 }
 
+
+export const clearButtons = () => {
+  const buttons = Array.from(
+    document.getElementsByClassName("taskbar-buttons")
+  );
+  buttons?.forEach((button: Element) => {
+    (button as HTMLButtonElement).blur();
+  });
+};
+
 export function clipboardCopy(text: string) {
   return () => {
-    navigator.clipboard.writeText(text);
     TODO: "make this work, add a toast";
+    clearButtons();
+
+    navigator.clipboard.writeText(text);
   };
 }

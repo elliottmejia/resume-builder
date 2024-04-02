@@ -39,11 +39,27 @@ html{
   clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
 }
 
+  #sidebar-wrap::after {
+    --sidebar-border-width: 8px;
+    --sidebar-border-color: rgb(57, 56, 56);
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    z-index: 100;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: var(--sidebar-border-width) 0 0 var(--sidebar-border-width);
+    border-color: transparent transparent transparent var(--sidebar-border-color);
+}
+
 #experience{
   background: var(--experience-bg-color);
   position:relative;
   top:.5rem;
-  clip-path: polygon(calc(100% - 20px) 0%, 100% 20px, 100% 100%, 0 100%, 0 0);
+  --exp-clip-len: 52px;
+  clip-path: polygon(calc(100% - var(--exp-clip-len)) 0%, 100% var(--exp-clip-len), 100% 100%, 0 100%, 0 0);
 }
 /* #experience-wrap{
   filter: drop-shadow(-1px 5px 10px #f3f3f336);
@@ -54,13 +70,13 @@ html{
 } */
 #experience-container-gradient{
   height: inherit;
-  opacity:0;
-  width: 2px;
+  opacity: 0.05;
+  width: 96px;
   position: absolute;
   top: 0;
   left: 0;
   background: var(--gradient-bg-color);
-  background: linear-gradient(270deg, var(--experience-bg-color) 0%, var(--sidebar-bg-color) 100%);
+  background: linear-gradient(270deg, var(--experience-bg-color) 0%, #0000008a 100%);
 }
 
 
@@ -96,7 +112,6 @@ html{
 
 
 #app-container {
-
   margin: 0 auto;
   max-width: 8.5in;
   --s: 30px; /* control the size*/
@@ -108,6 +123,7 @@ html{
   position:relative;
   clip-path: polygon(20px 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 20px);
 }
+
 
 /* #app-container::before{
   --borderWidth : 3rem;
@@ -121,6 +137,26 @@ html{
   height:3rem;
 
 } */
+
+#corner-button{
+  /* make a triangle */
+  --corner-button-color: #c7a577aa;
+  --corner-button-len: 60px;
+
+  
+  border-style: solid;
+  border-width: 0 var(--corner-button-len) var(--corner-button-len) 0;
+  border-color: transparent var(--corner-button-color) transparent transparent;
+}
+
+
+#corner-button-container:hover{
+
+  --hover-button-color: #c39f70aa;
+#corner-button{ 
+  border-color: transparent var(--hover-button-color) transparent transparent;
+ }
+}
 
 @media print {
   #app-container::after{
