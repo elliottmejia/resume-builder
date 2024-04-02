@@ -1,16 +1,16 @@
 import {
   Menubar,
-  MenubarCheckboxItem,
+  // MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
+  // MenubarRadioGroup,
+  // MenubarRadioItem,
+  // MenubarSeparator,
+  // MenubarShortcut,
+  // MenubarSub,
+  // MenubarSubContent,
+  // MenubarSubTrigger,
   MenubarTrigger,
 } from "components/ui/menubar";
 import { Icon } from "@iconify/react";
@@ -20,6 +20,7 @@ type Props = {
 };
 
 const Taskbar = ({ handlePrint }: Props) => {
+  const handlePDF = () => {};
   return (
     <Menubar style={{ width: "fit-content", padding: "0 1rem 0 1rem" }}>
       <Icon icon="material-symbols:article-outline-rounded" />
@@ -36,6 +37,9 @@ const Taskbar = ({ handlePrint }: Props) => {
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger onClick={handlePrint}>Print</MenubarTrigger>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger onClick={handlePDF}>PDF</MenubarTrigger>
       </MenubarMenu>
     </Menubar>
   );
