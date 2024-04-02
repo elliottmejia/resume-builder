@@ -7,7 +7,7 @@ import {
   Info,
   Skills,
 } from "components/resume";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useReactToPrint } from "react-to-print";
 
 function App() {
@@ -15,6 +15,19 @@ function App() {
   const handlePrint = useReactToPrint({
     content: () => (printRef.current ? printRef.current : null),
   });
+
+  //add event listener on window scroll that affects the filter: drop-shadow(-1px -31px 20px #000000); property of root
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Logic to change filter property based on scroll position
+      const scrollPosition = window.scrollY;
+      const root = document.getElementById("root");
+      if (!root) return;
+      root.style.backgroundPositionY = scrollPosition * 1.1 + "px";
+    };
+    window.addEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div id="app-container">

@@ -11,8 +11,6 @@
   --tb-clip: 5px;
   clip-path: polygon(var(--tb-clip) 0, calc(100% - var(--tb-clip))  0, 100% var(--tb-clip), 100% calc(100% - var(--tb-clip) ), calc(100% - var(--tb-clip)) 100%, var(--tb-clip) 100%, 0 calc(100% - var(--tb-clip)), 0 var(--tb-clip));
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  perspective: 1000px;
-  perspective-origin: 68% 50%;
 }
 #sidebar{
   background: var(--sidebar-bg-color);
@@ -27,9 +25,15 @@
   top:.5rem;
   clip-path: polygon(calc(100% - 20px) 0%, 100% 20px, 100% 100%, 0 100%, 0 0);
 }
+/* #experience-wrap{
+  filter: drop-shadow(-1px 5px 10px #f3f3f336);
+}
+
+#sidebar-wrap{
+  filter: drop-shadow(-10px -10px 50px #9984a574);
+} */
 #experience-container-gradient{
   height: inherit;
-
   opacity:0;
   width: 2px;
   position: absolute;
@@ -40,15 +44,16 @@
 }
 
 #root {
+  --size: 100px;
   margin: 0 auto;
   background: var(--bg-root);
   padding: 1rem;
   text-align: center;
   background-image: radial-gradient(#212121 20%, transparent 20%),
-  radial-gradient(#635a5a 20%, transparent 20%);
+  radial-gradient(#656565 20%, transparent 20%);
   background-color: #161616;
   background-position: 0 0, 50px 50px;
-  background-size: 100px 100px;
+  background-size: var(--size) var(--size);
 }
 
 
@@ -83,6 +88,7 @@
 
 
 #app-container {
+
   margin: 0 auto;
   max-width: 8.5in;
   --s: 30px; /* control the size*/
@@ -93,7 +99,6 @@
   /* pattern */ 
   position:relative;
   clip-path: polygon(20px 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 20px);
-
 }
 
 /* #app-container::before{
