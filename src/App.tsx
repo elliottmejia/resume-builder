@@ -24,7 +24,7 @@ function App() {
       const scrollPosition = window.scrollY;
       const root = document.getElementById("root");
       if (!root) return;
-      root.style.backgroundPositionY = scrollPosition * 1.1 + "px";
+      root.style.backgroundPositionY = scrollPosition * 1.01 + "px";
     };
     window.addEventListener("scroll", handleScroll);
   }, []);
