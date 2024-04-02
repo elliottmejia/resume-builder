@@ -25,13 +25,13 @@ type Props = {
 };
 
 const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
-  const handlePDF = () => {};
   const [isCheckedEdit, setCheckedEdit] = useState(false);
 
   const handleEditToggle = () => {
     editToggle();
     setCheckedEdit(!isCheckedEdit);
   };
+
   const triggerClasses =
     "px-4 py-2 hover:shadow-pressed rounded-none animate ease-in-out duration-100";
   return (
@@ -64,9 +64,7 @@ const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <MenubarTrigger className={triggerClasses} onClick={handlePDF}>
-            PDF
-          </MenubarTrigger>
+          <MenubarTrigger className={triggerClasses}>PDF</MenubarTrigger>
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger className={triggerClasses}>Edit</MenubarTrigger>

@@ -10,9 +10,8 @@ import {
 import { useRef, useEffect, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import { clearButtons } from "./lib/utils";
-import { Icon } from "@iconify/react";
-import Screentone from "./components/styling/screentone";
-import { infoData } from "./data/data";
+import Screentone from "components/styling/screentone";
+import { CornerButton } from "components/ui";
 
 function App() {
   const printRef = useRef<HTMLDivElement | null>(null);
@@ -37,8 +36,6 @@ function App() {
     }`,
   });
 
-  //TODO: implement parallax
-
   const handlePageEdit = () => {
     clearButtons();
     if (!editModeEnabled) return;
@@ -54,23 +51,7 @@ function App() {
 
   return (
     <div id="app-container" className="relative">
-      {editModeEnabled && (
-        <div
-          id="corner-button-container"
-          className="no-print z-50 animate duration-100 hover:translate-x-1 hover:-translate-y-1 absolute right-0 top-0 cursor-pointer"
-          onClick={handlePageEdit}
-        >
-          <div
-            id="corner-button"
-            className="absolute right-0 top-0 w-0 h-0 z-50"
-          />
-          <Icon
-            icon="ic:sharp-edit"
-            id="edit-button"
-            className="absolute right-1 top-1 z-50 h-6 w-6 text-black"
-          ></Icon>
-        </div>
-      )}
+      {editModeEnabled && <CornerButton handlePageEdit={handlePageEdit} />}
       <Taskbar
         handleColorPrint={handleColorPrint}
         handleBNWPrint={handleBNWPrint}
