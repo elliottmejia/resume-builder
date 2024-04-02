@@ -1,20 +1,31 @@
 
 :root{
-  --bg-root: #292a2b;
+  --bg-root: #99866c;
+  --bg-app-container: #d2b48c;
   --sidebar-bg-color: #ffffff;
   --gradient-bg-color: linear-gradient(to right, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.97) 9.1%, hsla(0, 0%, 100%, 0.925) 17%, hsla(0, 0%, 100%, 0.868) 23.9%, hsla(0, 0%, 100%, 0.801) 30%, hsla(0, 0%, 100%, 0.725) 35.5%, hsla(0, 0%, 100%, 0.644) 40.5%, hsla(0, 0%, 100%, 0.558) 45.4%, hsla(0, 0%, 100%, 0.471) 50.2%, hsla(0, 0%, 100%, 0.385) 55.2%, hsla(0, 0%, 100%, 0.301) 60.5%, hsla(0, 0%, 100%, 0.223) 66.5%, hsla(0, 0%, 100%, 0.151) 73.2%, hsla(0, 0%, 100%, 0.089) 80.9%, hsla(0, 0%, 100%, 0.038) 89.8%, hsla(0, 0%, 100%, 0) 100%);
   --experience-bg-color: #e6e6e6;
   --box-shadow-bg-color: #000000aa;
 }
+#taskbar{
+  --tb-clip: 5px;
+  clip-path: polygon(var(--tb-clip) 0, calc(100% - var(--tb-clip))  0, 100% var(--tb-clip), 100% calc(100% - var(--tb-clip) ), calc(100% - var(--tb-clip)) 100%, var(--tb-clip) 100%, 0 calc(100% - var(--tb-clip)), 0 var(--tb-clip));
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  perspective: 1000px;
+  perspective-origin: 68% 50%;
+}
 #sidebar{
   background: var(--sidebar-bg-color);
   box-shadow: 20px 0 20px -20px var(--box-shadow-bg-color);
+
+  clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
 }
 
 #experience{
   background: var(--experience-bg-color);
   position:relative;
   top:.5rem;
+  clip-path: polygon(calc(100% - 20px) 0%, 100% 20px, 100% 100%, 0 100%, 0 0);
 }
 #experience-container-gradient{
   height: inherit;
@@ -33,6 +44,11 @@
   background: var(--bg-root);
   padding: 1rem;
   text-align: center;
+  background-image: radial-gradient(#212121 20%, transparent 20%),
+  radial-gradient(#635a5a 20%, transparent 20%);
+  background-color: #161616;
+  background-position: 0 0, 50px 50px;
+  background-size: 100px 100px;
 }
 
 
@@ -65,33 +81,33 @@
 }
 
 
+
 #app-container {
   margin: 0 auto;
   max-width: 8.5in;
-  /* pattern */ 
   --s: 30px; /* control the size*/
   --color: hsl(120, 24%, 35%); /* control the color */
   --_g: radial-gradient(#0000 70%,#1a2030 71%);
-  background:
-    var(--_g),var(--_g) calc(var(--s)/2) calc(var(--s)/2),
-    conic-gradient(var(--color) 25%,var(--color) 0 50%,var(--color) 0 75%,var(--color) 0);
-  background-size: var(--s) var(--s); 
-  background-blend-mode: hard-light;
-  /* end pattern */
+  background: var(--bg-app-container);
+
+  /* pattern */ 
   position:relative;
+  clip-path: polygon(20px 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+
 }
 
-#app-container::before{
-  --borderWidth : 52px;
+/* #app-container::before{
+  --borderWidth : 3rem;
   content: "";
   position: absolute;
   z-index: 100;
   background-color: var(--bg-root);
   left: 0;
   top:0;
-  width: 1rem;
-  height: 52px;
-}
+  width:109px; 
+  height:3rem;
+
+} */
 
 @media print {
   #app-container::after{
@@ -100,10 +116,7 @@
   :root{
     --experience-bg-color: #ffffff00;
   }
-
-
 }
-
 
 h1{ 
   font-size: large;
