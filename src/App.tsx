@@ -7,12 +7,19 @@ import {
   Info,
   Skills,
 } from "components/resume";
+import { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
 function App() {
+  const printRef = useRef<HTMLDivElement | null>(null);
+  const handlePrint = useReactToPrint({
+    content: () => (printRef.current ? printRef.current : null),
+  });
+
   return (
     <>
-      <Taskbar />
-      <ResumeContainer className="print_content">
+      <Taskbar handlePrint={handlePrint} />
+      <ResumeContainer ref={printRef}>
         <Sidebar>
           <Info />
           <Skills />

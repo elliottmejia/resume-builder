@@ -33,9 +33,6 @@
   }
 }
 
-@media print { 
-  *:not(.print_content) { display: none !important; } 
-}
 
 
 h1{ 
