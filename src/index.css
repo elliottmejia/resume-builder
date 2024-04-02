@@ -74,3 +74,12 @@
     @apply bg-background text-foreground;
   }
 }
+@media print {
+  .noprint{
+    display:none;
+  }
+}
+
+body{
+  border-radius:50%;
+}

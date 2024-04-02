@@ -17,16 +17,16 @@ function App() {
   });
 
   return (
-    <>
+    <div id="app-container">
       <Taskbar handlePrint={handlePrint} />
       <ResumeContainer ref={printRef}>
         <Sidebar>
           <Info />
           <Skills />
         </Sidebar>
-        <ExperienceContainer />
+        <ExperienceContainer></ExperienceContainer>
       </ResumeContainer>
-    </>
+    </div>
   );
 }
 

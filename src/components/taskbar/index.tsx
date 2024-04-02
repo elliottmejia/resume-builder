@@ -14,6 +14,8 @@ import {
   MenubarTrigger,
 } from "components/ui/menubar";
 import { Icon } from "@iconify/react";
+import { HOSTED_DOMAIN } from "src/data/data";
+import { clipboardCopy } from "src/lib/utils";
 
 type Props = {
   handlePrint: () => void;
@@ -21,14 +23,15 @@ type Props = {
 
 const Taskbar = ({ handlePrint }: Props) => {
   const handlePDF = () => {};
+  const triggerClasses =
+    "px-4 py-2  hover:shadow-pressed rounded-none animate ease-in-out duration-100";
   return (
-    <Menubar style={{ width: "fit-content", padding: "0 1rem 0 1rem" }}>
-      <Icon icon="material-symbols:article-outline-rounded" />
+    <Menubar className="rounded-none relative top-2 -right-8 p-0 w-fit ">
       <MenubarMenu>
-        <MenubarTrigger>Share</MenubarTrigger>
+        <MenubarTrigger className={triggerClasses}>Share</MenubarTrigger>
         <MenubarContent>
           {/* <MenubarItem disabled>New Incognito Window</MenubarItem> */}
-          <MenubarItem>
+          <MenubarItem onClick={() => clipboardCopy(HOSTED_DOMAIN)}>
             <Icon icon="material-symbols:link" />
             Copy Link
           </MenubarItem>
@@ -36,11 +39,16 @@ const Taskbar = ({ handlePrint }: Props) => {
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger onClick={handlePrint}>Print</MenubarTrigger>
+        <MenubarTrigger className={triggerClasses} onClick={handlePrint}>
+          Print
+        </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger onClick={handlePDF}>PDF</MenubarTrigger>
+        <MenubarTrigger className={triggerClasses} onClick={handlePDF}>
+          PDF
+        </MenubarTrigger>
       </MenubarMenu>
+      <div className="hidden px-4 py-2 hover:bg-gray-200 hover:border-radius-pressed "></div>
     </Menubar>
   );
 };

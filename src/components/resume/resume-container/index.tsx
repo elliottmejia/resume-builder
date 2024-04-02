@@ -7,7 +7,7 @@ type Props = {
 
 const ResumeContainer = forwardRef<HTMLDivElement, Props>(
   ({ children, className = "" }, ref) => {
-    const ContainerClasses = `flex flex-row h-fit w-100 pt-4 gap-1 ${className}`;
+    const ContainerClasses = `flex flex-row h-fit w-100 pt-4 ${className}`;
     return (
       <div className={ContainerClasses} ref={ref}>
         {children}

@@ -1,8 +1,9 @@
 import { Icon } from "@iconify/react";
+import { useRef } from "react";
 import {
   Card,
   CardContent,
-  CardDescription,
+  // CardDescription,
   CardHeader,
   CardTitle,
 } from "components/ui/card";
@@ -18,17 +19,38 @@ type Experience = {
 
 type Props = {
   data: Experience;
+  id: string;
   delimiter?: string | "-";
 };
 
-const ExperienceCard = ({ data, delimiter }: Props) => {
+const ExperienceCard = ({ data, delimiter, id }: Props) => {
   //prettier-ignore
   const { title, company, location, startDate, endDate, entries }: Experience = data;
 
   delimiter = " " + (delimiter || "-").trim() + " ";
 
+  type mouseEvent = React.MouseEvent<HTMLDivElement>;
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleModalOpen = (ref: HTMLDivElement | null) => {
+    ref;
+    return null;
+  };
+
+  const handleDoubleClick = (e: mouseEvent) => {
+    const clickRef = cardRef.current ? cardRef.current : null;
+    handleModalOpen(clickRef);
+    console.log(e);
+    return null;
+  };
+
   return (
-    <Card>
+    <Card
+      id="experience-card"
+      ref={cardRef}
+      className=""
+      onDoubleClick={(e) => handleDoubleClick(e)}
+    >
       <CardHeader>
         <CardTitle>
           {title}
@@ -36,7 +58,10 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
           {company}
           {delimiter}
           {location}
-          {delimiter}({startDate}
+          {delimiter}{" "}
+        </CardTitle>
+        <CardTitle className="text-md italic opacity-75">
+          ({startDate}
           &nbsp;to&nbsp;
           {endDate})
         </CardTitle>

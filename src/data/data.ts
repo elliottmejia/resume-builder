@@ -1,3 +1,9 @@
+import { isProd } from "src/lib/utils";
+
+export const HOSTED_DOMAIN = isProd()
+  ? "https://resume.elliottmejia.com"
+  : "copy successful";
+
 export const infoData = {
   name: "Elliott Mejia",
   tel: "(206) 792-6241",

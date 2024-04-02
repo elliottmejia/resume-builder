@@ -1,9 +1,40 @@
+
+:root{
+  --bg-root: #292a2b;
+  --sidebar-bg-color: #ffffff;
+  --gradient-bg-color: linear-gradient(to right, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.97) 9.1%, hsla(0, 0%, 100%, 0.925) 17%, hsla(0, 0%, 100%, 0.868) 23.9%, hsla(0, 0%, 100%, 0.801) 30%, hsla(0, 0%, 100%, 0.725) 35.5%, hsla(0, 0%, 100%, 0.644) 40.5%, hsla(0, 0%, 100%, 0.558) 45.4%, hsla(0, 0%, 100%, 0.471) 50.2%, hsla(0, 0%, 100%, 0.385) 55.2%, hsla(0, 0%, 100%, 0.301) 60.5%, hsla(0, 0%, 100%, 0.223) 66.5%, hsla(0, 0%, 100%, 0.151) 73.2%, hsla(0, 0%, 100%, 0.089) 80.9%, hsla(0, 0%, 100%, 0.038) 89.8%, hsla(0, 0%, 100%, 0) 100%);
+  --experience-bg-color: #e6e6e6;
+  --box-shadow-bg-color: #000000aa;
+}
+#sidebar{
+  background: var(--sidebar-bg-color);
+  box-shadow: 20px 0 20px -20px var(--box-shadow-bg-color);
+}
+
+#experience{
+  background: var(--experience-bg-color);
+  position:relative;
+  top:.5rem;
+}
+#experience-container-gradient{
+  height: inherit;
+
+  opacity:0;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--gradient-bg-color);
+  background: linear-gradient(270deg, var(--experience-bg-color) 0%, var(--sidebar-bg-color) 100%);
+}
+
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  background: var(--bg-root);
+  padding: 1rem;
   text-align: center;
 }
+
 
 .logo {
   height: 6em;
@@ -33,6 +64,45 @@
   }
 }
 
+
+#app-container {
+  margin: 0 auto;
+  max-width: 8.5in;
+  /* pattern */ 
+  --s: 30px; /* control the size*/
+  --color: hsl(120, 24%, 35%); /* control the color */
+  --_g: radial-gradient(#0000 70%,#1a2030 71%);
+  background:
+    var(--_g),var(--_g) calc(var(--s)/2) calc(var(--s)/2),
+    conic-gradient(var(--color) 25%,var(--color) 0 50%,var(--color) 0 75%,var(--color) 0);
+  background-size: var(--s) var(--s); 
+  background-blend-mode: hard-light;
+  /* end pattern */
+  position:relative;
+}
+
+#app-container::before{
+  --borderWidth : 52px;
+  content: "";
+  position: absolute;
+  z-index: 100;
+  background-color: var(--bg-root);
+  left: 0;
+  top:0;
+  width: 1rem;
+  height: 52px;
+}
+
+@media print {
+  #app-container::after{
+    display:none;
+  }
+  :root{
+    --experience-bg-color: #ffffff00;
+  }
+
+
+}
 
 
 h1{ 

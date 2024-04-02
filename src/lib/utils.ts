@@ -20,3 +20,10 @@ export function isTest() {
 export function uuid() {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
 }
+
+export function clipboardCopy(text: string) {
+  return () => {
+    navigator.clipboard.writeText(text);
+    TODO: "make this work, add a toast";
+  };
+}
