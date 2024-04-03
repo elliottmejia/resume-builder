@@ -18,17 +18,15 @@ export const infoData: Info = {
 
 export const experienceData: Experience[] = [
   {
-    title: "Marketing Technologist",
+    title: "Marketing Technology Consultant",
     company: "Datamark Digital",
     location: "Los Angeles, CA",
     startDate: "June 2023",
     endDate: "Present",
     entries: [
-      "Developed and deployed innovative lead-generation automations using Python, Lead Scrape, and High Level, significantly enhancing business operations for this burgeoning startup.",
+      "Developed and deployed several lead-generation automations in Python utilizing the Lead Scrape, D7, and High Level APIs. This resulted in a ~1200% increase in lead generation efficiency.",
 
-      "Collaborated directly with CEO Joe Weaver to strategize and set competitive pricing and Service Level Agreements (SLAs), aligning with the latest market trends in the online presence marketing space.",
-
-      "Generated automated reports in R Markdown.",
+      "Collaborated directly with CEO Joe Weaver in defining data structures, developing custom data pipelines, and implementing data-driven marketing strategies.",
 
       "Led a team of outsourced web developers, efficiently reducing the average Minimum Viable Product (MVP) staging time to one month, thus accelerating pre-revision project delivery timelines.",
 
@@ -42,11 +40,10 @@ export const experienceData: Experience[] = [
     startDate: "March 2023",
     endDate: "June 2023",
     entries: [
-      "Spearheaded the development of a full-stack API-based wishlist app using Tailwind CSS, significantly enhancing customer experience through personalized product recommendations.",
-      "Executed a strategic transition of a Magento-imported theme to Shopify 2.0, enhancing website usability and performance, thus contributing to an improved customer shopping experience.",
-      "Optimized 'collection page' templating performance by replacing Mustache-rendered code with Liquid in 2 hours, eliminating load on Dolls Kill's proprietary PHP backend in favor of Shopify's (autoscaling) servers for a performance improvement of 15%.",
-      "Streamlined 4000 lines of code, achieving a 20% efficiency boost in website loading times and interactive performance, which led to reduced labor costs, lower server load, and improved user engagement.",
-      "Implemented industry-standard lazy loading at a component level, reducing initial page load time by 35% and significantly boosting user retention and engagement.",
+      "Under scope of contract, executed a strategic transition of a Magento-imported theme to Shopify 2.0, enhancing website usability and performance.",
+      "Spearheaded the development of a bespoke wishlist app using Tailwind CSS and React.",
+      "Optimized 'collection page' templating performance by replacing Mustache-rendered code with Liquid, eliminating usage of Dolls Kill's proprietary PHP backend in favor of Shopify's (autoscaling) servers for a local performance improvement of 15%.",
+      "Significantly refactored Dolls Kill's codebase.",
     ],
   },
   {
@@ -109,11 +106,8 @@ export const skillsData: Skills[] = [
   {
     title: "Marketing",
     skills: [
-      "SEO",
-      "SEM",
+      "SEO/SEM",
       "Email Marketing",
-      "Email Deliverability",
-      "Email Automation",
       "SMS Marketing",
       "Lead Generation",
       "Social Media",

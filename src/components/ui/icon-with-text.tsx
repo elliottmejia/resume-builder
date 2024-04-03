@@ -20,6 +20,7 @@ const IconWithText = ({
   className,
   target,
 }: IconWithTextProps) => {
+  !target && target === "_blank";
   return (
     <>
       <div className={cn("flex flex-inline font-bold items-center", className)}>
