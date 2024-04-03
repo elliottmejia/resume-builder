@@ -9,7 +9,7 @@ const Avatar = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Root
     ref={ref}
-    onClick={(e) => {
+    onClick={() => {
       window?.open("https://elliottmejia.com");
     }}
     className={cn(

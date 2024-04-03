@@ -11,7 +11,7 @@ const Skills = () => {
       {skillsData.map((category: CategoryType, idx) => (
         <div key={idx} className="text-left">
           <h3 className="font-bold">{category.title}</h3>
-          <ul className="pl-1 text-sm">
+          <ul className="pl-1 text-xs">
             {category.skills.map((skill, idx) => (
               <li key={idx}>{skill}</li>
             ))}

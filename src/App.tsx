@@ -12,6 +12,7 @@ import { useReactToPrint } from "react-to-print";
 import { clearButtons } from "./lib/utils";
 import Screentone from "components/styling/screentone";
 import { CornerButton } from "components/ui";
+import { getEditModeFromStorage } from "lib/utils";
 
 function App() {
   const printRef = useRef<HTMLDivElement | null>(null);
@@ -37,15 +38,21 @@ function App() {
   });
 
   const handlePageEdit = () => {
+    //initiates editing
     clearButtons();
     if (!editModeEnabled) return;
     setIsEditing(!isEditing);
   };
 
   const [isEditing, setIsEditing] = useState(false);
-  const [editModeEnabled, setEditModeEnabled] = useState(false);
+
+  const [editModeEnabled, setEditModeEnabled] = useState(
+    getEditModeFromStorage
+  );
 
   const handleEditToggle = () => {
+    //toggles edit mode existence
+    localStorage.setItem("editModeEnabled", (!editModeEnabled).toString());
     setEditModeEnabled(!editModeEnabled);
   };
 

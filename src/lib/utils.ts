@@ -39,3 +39,7 @@ export function clipboardCopy(text: string) {
     navigator.clipboard.writeText(text);
   };
 }
+
+  export const getEditModeFromStorage = (): boolean => {
+    return localStorage.getItem("editModeEnabled") === "true";
+  };

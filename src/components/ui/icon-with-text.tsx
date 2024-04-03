@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { cn } from "lib/utils";
 
 type IconWithTextProps = {
   icon: string;
@@ -6,24 +7,32 @@ type IconWithTextProps = {
   text: string;
   src?: string;
   type?: string;
+  className?: string;
+  target?: string;
 };
 
-const IconWithText = ({ icon, title, text, src, type }: IconWithTextProps) => {
+const IconWithText = ({
+  icon,
+  title,
+  text,
+  src,
+  type,
+  className,
+  target,
+}: IconWithTextProps) => {
   return (
     <>
-      <div className="flex flex-inline font-bold items-center">
+      <div className={cn("flex flex-inline font-bold items-center", className)}>
         <Icon icon={icon} />
         &nbsp;{title}
       </div>
-      <p>
-        {src ? (
-          <a href={src} type={type}>
-            {text}
-          </a>
-        ) : (
-          <span>{text}</span>
-        )}
-      </p>
+      {src ? (
+        <a href={src} type={type} target={target} className="text-sm">
+          {text}
+        </a>
+      ) : (
+        <p className="text-sm">{text}</p>
+      )}
     </>
   );
 };

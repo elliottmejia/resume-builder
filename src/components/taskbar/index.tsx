@@ -15,7 +15,7 @@ import {
 } from "components/ui/menubar";
 import { Icon } from "@iconify/react";
 import { HOSTED_DOMAIN } from "src/data/data";
-import { clipboardCopy } from "src/lib/utils";
+import { clipboardCopy, getEditModeFromStorage } from "src/lib/utils";
 import { useState } from "react";
 import { isProd } from "lib/utils";
 
@@ -26,7 +26,7 @@ type Props = {
 };
 
 const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
-  const [isCheckedEdit, setCheckedEdit] = useState(false);
+  const [isCheckedEdit, setCheckedEdit] = useState(getEditModeFromStorage);
 
   const handleEditToggle = () => {
     editToggle();

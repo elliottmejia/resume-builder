@@ -29,7 +29,7 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
     return null;
   };
 
-  const handleDoubleClick = (e: mouseEvent) => {
+  const handleEditClick = (e: mouseEvent) => {
     const clickRef = cardRef.current ? cardRef.current : null;
     handleModalOpen(clickRef);
     console.log(e);
@@ -37,21 +37,16 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
   };
 
   return (
-    <Card
-      id="experience-card"
-      ref={cardRef}
-      className="z-10"
-      onDoubleClick={(e) => handleDoubleClick(e)}
-    >
-      <CardHeader>
-        <CardTitle>
+    <Card id="experience-card" ref={cardRef} className="z-10 relative">
+      <CardHeader className="pb-2 pt-4">
+        <CardTitle className="text-md pt-0">
           {title}
           {delimiter}
           {company}
           {delimiter}
           {location}
         </CardTitle>
-        <CardTitle className="text-md italic opacity-75">
+        <CardTitle className="text-sm italic opacity-75">
           ({startDate}
           &nbsp;to&nbsp;
           {endDate})

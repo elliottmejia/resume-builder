@@ -64,15 +64,20 @@ html{
 @media print {
   #experience{
     clip-path: none;
-    border-top:1px solid black;
-    border-right:1px solid black;
+    border-top:2px solid black ;
   }
   #sidebar{
-    border-top: 1px solid black;
+    border-top: 2px solid black ;
     clip-path:none;
   }
   #resume-container{
-    padding-top:none;
+    padding-top:.4rem;
+  }
+  #corner-button-container{
+    display:none;
+  }
+  #taskbar {
+    display:none;
   }
   
 
@@ -98,18 +103,6 @@ html{
 
 
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
 @keyframes logo-spin {
   from {
@@ -121,8 +114,8 @@ html{
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+ .logo:hover {
+    animation: logo-spin 1 .4s linear;
   }
 }
 

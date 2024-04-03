@@ -24,12 +24,15 @@ export const experienceData: Experience[] = [
     startDate: "June 2023",
     endDate: "Present",
     entries: [
-      "Collaborated directly with CEO Joe Weaver to strategize and set competitive pricing and Service Level Agreements (SLAs), aligning with the latest market trends in the online presence marketing space.",
       "Developed and deployed innovative lead-generation automations using Python, Lead Scrape, and High Level, significantly enhancing business operations for this burgeoning startup.",
-      "Enhanced email marketing strategies, warming over 5,000 cold emails and securing 10 new clients within two months for diverse online presence services.",
-      "Engineered a cron job to automatically generate a comprehensive weekly report on lead automation outcomes, utilizing R Markdown for detailed insights and alerts.",
+
+      "Collaborated directly with CEO Joe Weaver to strategize and set competitive pricing and Service Level Agreements (SLAs), aligning with the latest market trends in the online presence marketing space.",
+
+      "Generated automated reports in R Markdown.",
+
       "Led a team of outsourced web developers, efficiently reducing the average Minimum Viable Product (MVP) staging time to one month, thus accelerating pre-revision project delivery timelines.",
-      "Addressed and resolved technical debt and offered UX expertise, providing personalized support to web clients and improving client satisfaction.",
+
+      "Offered my expertise towards revisions, providing professional, personalized support to development-oriented projects and improving client satisfaction.",
     ],
   },
   {
@@ -54,10 +57,15 @@ export const experienceData: Experience[] = [
     endDate: "March 2023",
     entries: [
       "Pioneered the adoption of a git-based theme management system for Shopify themes, creating a scalable and efficient framework for theme updates and collaborative development, marking a significant advancement in project management and deployment processes.",
+
       "Led a meticulous audit of product tags, enhancing product administration efficiency and dramatically reducing categorization inconsistencies, thereby streamlining inventory management and optimizing operational workflow.",
+
       "Drove a 40% increase in click-through rate (CTR) by designing and implementing a new website interface, directly contributing to heightened user engagement and demonstrating the tangible benefits of integrating user-centered design with strategic business objectives.",
+
       "Successfully integrated Listrak into the Shopify environment without the need for Shopify Plus by developing a custom Laravel API, and seamlessly incorporated Yotpo for customer reviews.",
+
       "Managed the transfer of data from previously used SAAS platforms, thereby enhancing email marketing capabilities and review management. This initiative optimized resource allocation and enriched customer engagement strategies.",
+
       "Took and edited hundreds of product photos as a backup photographer.",
     ],
   },
@@ -80,11 +88,11 @@ export const skillsData: Skills[] = [
   },
   {
     title: "Frameworks",
-    skills: ["React", "Next.js", "Astro", "Django"],
+    skills: ["React", "Next.js", "Astro"],
   },
   {
     title: "Tools",
-    skills: ["Git", "GitHub", "Jira", "Asana", "AWS"],
+    skills: ["Git", "GitHub", "Jira", "Asana"],
   },
   {
     title: "Database",
@@ -92,11 +100,11 @@ export const skillsData: Skills[] = [
   },
   {
     title: "Design",
-    skills: ["Figma", "Photoshop", "Illustrator", "Product Photography"],
+    skills: ["Figma", "Photoshop", "Illustrator"],
   },
   {
     title: "Platforms",
-    skills: ["Shopify", "Magento", "WordPress"],
+    skills: ["Shopify", "WordPress"],
   },
   {
     title: "Marketing",
