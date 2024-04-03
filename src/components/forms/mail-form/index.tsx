@@ -95,7 +95,6 @@ export default function Contact() {
         `New Contact Form Submission from ${data.name || "Site User"}`,
     });
   });
-  const inputClasses = `w-full px-4 py-3 border-2 placeholder:text-gray-800 placeholder:relative dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4 placeholder:-bottom-2 placeholder:-left-2`;
 
   return (
     <>
@@ -122,7 +121,6 @@ export default function Contact() {
                 ? "border-red-500 focus:border-red-500 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
             }
-            placeholder:-bottom-2 placeholder:-left-2 placeholder:relative 
             `}
             {...register("name", {
               required: "Full name is required",
@@ -147,7 +145,6 @@ export default function Contact() {
                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
             }
-            placeholder:-bottom-2 placeholder:-left-2 placeholder:relative 
             `}
             {...register("company", {
               maxLength: 80,
@@ -176,7 +173,6 @@ export default function Contact() {
                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
             }
-            placeholder:-bottom-2 placeholder:-left-2 placeholder:relative
             `}
             {...register("email", {
               required: "Enter your email",
@@ -203,7 +199,6 @@ export default function Contact() {
                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
             }
-            placeholder:-bottom-2 placeholder:-left-2 placeholder:relative
             `}
             {...register("subject", {
               maxLength: 60,
@@ -224,8 +219,6 @@ export default function Contact() {
                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
             }
-            placeholder:bottom-2 placeholder:-left-2 placeholder:relative
-            text:relative text:bottom-2 
             `}
             {...register("message", {
               required: "Enter your Message",
