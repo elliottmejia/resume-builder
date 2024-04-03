@@ -95,10 +95,15 @@ export default function Contact() {
         `New Contact Form Submission from ${data.name || "Site User"}`,
     });
   });
+  const inputClasses = `w-full px-4 py-3 border-2 placeholder:text-gray-800 placeholder:relative dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4 placeholder:-bottom-2 placeholder:-left-2`;
 
   return (
     <>
-      <form onSubmit={onSubmit} className="my-10">
+      <form onSubmit={onSubmit} className="my-4">
+        <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-2">
+          Contact Me
+        </h2>
+
         <input
           type="checkbox"
           id=""
@@ -111,19 +116,21 @@ export default function Contact() {
           <input
             type="text"
             placeholder="Name"
-            autoComplete="true"
+            autoComplete="false"
             className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${
               errors.name
-                ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
+                ? "border-red-500 focus:border-red-500 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-            }`}
+            }
+            placeholder:-bottom-2 placeholder:-left-2 placeholder:relative 
+            `}
             {...register("name", {
               required: "Full name is required",
               maxLength: 80,
             })}
           />
           {errors.name && (
-            <div className="mt-1 text-red-600">
+            <div className="mt-1 text-red-500">
               <small>{errors.name.message as string}</small>
             </div>
           )}
@@ -134,12 +141,14 @@ export default function Contact() {
             type="text"
             placeholder="Company"
             required={false}
-            autoComplete="true"
+            autoComplete="false"
             className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900 focus:ring-4  ${
               errors.company
                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-            }`}
+            }
+            placeholder:-bottom-2 placeholder:-left-2 placeholder:relative 
+            `}
             {...register("company", {
               maxLength: 80,
             })}
@@ -166,7 +175,9 @@ export default function Contact() {
               errors.email
                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-            }`}
+            }
+            placeholder:-bottom-2 placeholder:-left-2 placeholder:relative
+            `}
             {...register("email", {
               required: "Enter your email",
               pattern: {
@@ -191,7 +202,9 @@ export default function Contact() {
               errors.subject
                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-            }`}
+            }
+            placeholder:-bottom-2 placeholder:-left-2 placeholder:relative
+            `}
             {...register("subject", {
               maxLength: 60,
             })}
@@ -210,7 +223,10 @@ export default function Contact() {
               errors.message
                 ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
-            }`}
+            }
+            placeholder:bottom-2 placeholder:-left-2 placeholder:relative
+            text:relative text:bottom-2 
+            `}
             {...register("message", {
               required: "Enter your Message",
             })}

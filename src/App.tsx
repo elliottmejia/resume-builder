@@ -13,6 +13,7 @@ import { clearButtons } from "./lib/utils";
 import Screentone from "components/styling/screentone";
 import { CornerButton } from "components/ui";
 import { getEditModeFromStorage } from "lib/utils";
+import { infoData } from "data/data";
 
 function App() {
   const printRef = useRef<HTMLDivElement | null>(null);
@@ -56,25 +57,44 @@ function App() {
     setEditModeEnabled(!editModeEnabled);
   };
 
+  const NameComp = () => <strong>{infoData.name}</strong>;
+
   return (
-    <div id="app-container" className="relative">
-      {editModeEnabled && <CornerButton handlePageEdit={handlePageEdit} />}
-      <Taskbar
-        handleColorPrint={handleColorPrint}
-        handleBNWPrint={handleBNWPrint}
-        editToggle={handleEditToggle}
-      />
-      <ResumeContainer className="relative" ref={printRef}>
-        <Screentone className="print-only" variant="dark" gradient />
-        <Sidebar>
-          <Info />
-          <Skills />
-        </Sidebar>
-        <ExperienceContainer>
-          <Screentone />
-        </ExperienceContainer>
-      </ResumeContainer>
-    </div>
+    <>
+      <div id="app-container" className="relative">
+        {editModeEnabled && <CornerButton handlePageEdit={handlePageEdit} />}
+        <Taskbar
+          handleColorPrint={handleColorPrint}
+          handleBNWPrint={handleBNWPrint}
+          editToggle={handleEditToggle}
+        />
+        <ResumeContainer className="relative" ref={printRef}>
+          <Screentone className="print-only" variant="dark" gradient />
+          <Sidebar>
+            <Info />
+            <Skills />
+          </Sidebar>
+          <ExperienceContainer>
+            <Screentone />
+          </ExperienceContainer>
+        </ResumeContainer>
+      </div>
+      <div
+        className="relative text-center text-white font-thin top-2  z-50 w-fit mx-auto p-2 rounded-sm text-xs"
+        style={{ background: "rgba(0, 0, 0, 0.7)", maxWidth: "2in" }}
+        id="copyright"
+      >
+        Site design by <NameComp />.
+        <br />
+        Coding by <NameComp />.
+        <br />
+        <NameComp /> is a <NameComp /> company. All <NameComp />
+        <strong>s</strong> reserved.
+        <br />
+        ©2024 <NameComp />
+        <br />
+      </div>
+    </>
   );
 }
 

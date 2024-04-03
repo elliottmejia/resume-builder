@@ -28,7 +28,7 @@ const Info = () => {
             onClick={() => {
               window?.open(portfolio);
             }}
-            className="logo my-2 relative w-16 h-16 animate ease-in-out duration-300 hover:scale-105 hover:rotate-6 z-20 top-[.5rem] left-[.5rem]
+            className="logo my-2 relative w-16 h-16 animate ease-in-out duration-300 hover:scale-105 hover:rotate-6 cursor-pointer z-20 top-[.5rem] left-[.5rem]
             "
           >
             <AvatarFallback style={{ background: "white", color: "black" }}>
