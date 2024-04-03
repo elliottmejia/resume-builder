@@ -52,9 +52,13 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
           {endDate})
         </CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pb-4">
         {entries.map((entry, idx) => (
-          <div key={idx} id={`description-${idx + 1}`} className="py-1 text-sm">
+          <div
+            key={idx}
+            id={`description-${idx + 1}`}
+            className="py-[0.5] text-sm"
+          >
             <Icon
               icon="material-symbols:commit"
               style={{ display: "inline" }}

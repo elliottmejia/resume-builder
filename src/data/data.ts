@@ -10,7 +10,7 @@ export const infoData: Info = {
   tel: "(206) 792-6241",
   email: "mailto:mejia.elliott@gmail.com",
   emailShort: "mejia.elliott@gmail",
-  portfolio: "https://elliottmejia.com",
+  portfolio: "https://www.elliottmejia.com",
   portfolioShort: "elliottmejia.com",
   linkedin: "https://www.linkedin.com/in/elliott-mejia/",
   linkedinShort: "/in/elliott-mejia/",
@@ -41,7 +41,7 @@ export const experienceData: Experience[] = [
     endDate: "June 2023",
     entries: [
       "Under scope of contract, executed a strategic transition of a Magento-imported theme to Shopify 2.0, enhancing website usability and performance.",
-      "Spearheaded the development of a bespoke wishlist app using Tailwind CSS and React.",
+      "Spearheaded the development of a bespoke wishlist app using Tailwind CSS.",
       "Optimized 'collection page' templating performance by replacing Mustache-rendered code with Liquid, eliminating usage of Dolls Kill's proprietary PHP backend in favor of Shopify's (autoscaling) servers for a local performance improvement of 15%.",
       "Significantly refactored Dolls Kill's codebase.",
     ],
@@ -53,7 +53,7 @@ export const experienceData: Experience[] = [
     startDate: "November 2021",
     endDate: "March 2023",
     entries: [
-      "Pioneered the adoption of a git-based theme management system for Shopify themes, creating a scalable and efficient framework for theme updates and collaborative development, marking a significant advancement in project management and deployment processes.",
+      "Pioneered the adoption of a git-based theme management system for Shopify themes, creating a scalable and efficient framework with stability as a KPI.",
 
       "Led a meticulous audit of product tags, enhancing product administration efficiency and dramatically reducing categorization inconsistencies, thereby streamlining inventory management and optimizing operational workflow.",
 
