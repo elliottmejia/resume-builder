@@ -3,6 +3,8 @@ import type { Info } from "data/types";
 import { Avatar, AvatarFallback } from "components/ui/avatar";
 import IconWithText from "ui/icon-with-text";
 import { Icon } from "@iconify/react";
+import Mail from "components/modals/mail";
+import MailForm from "components/forms/mail-form";
 
 const Info = () => {
   const {
@@ -48,13 +50,11 @@ const Info = () => {
       <div id="contact" className="flex flex-col gap-y-2 px-4 ">
         {tel && <IconWithText title="Cell" icon="bx:phone" text={tel} />}
         {email && emailShort && (
-          <IconWithText
-            title="Email"
-            icon="bx:envelope"
-            text={emailShort}
-            type="email"
-            src={email}
-          />
+          <IconWithText title="Email" icon="bx:envelope">
+            <Mail trigger="mejia.elliott@gmail" className="text-sm">
+              <MailForm />
+            </Mail>
+          </IconWithText>
         )}
         {portfolio && portfolioShort && (
           <IconWithText

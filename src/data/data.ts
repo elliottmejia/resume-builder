@@ -28,7 +28,7 @@ export const experienceData: Experience[] = [
 
       "Collaborated directly with CEO Joe Weaver in defining data structures, developing custom data pipelines, and implementing data-driven marketing strategies.",
 
-      "Led a team of outsourced web developers, efficiently reducing the average Minimum Viable Product (MVP) staging time to one month, thus accelerating pre-revision project delivery timelines.",
+      "Led a team of outsourced web developers, efficiently reducing the average MVP staging time to one month, thus accelerating pre-revision project delivery timelines.",
 
       "Offered my expertise towards revisions, providing professional, personalized support to development-oriented projects and improving client satisfaction.",
     ],
@@ -42,7 +42,7 @@ export const experienceData: Experience[] = [
     entries: [
       "Under scope of contract, executed a strategic transition of a Magento-imported theme to Shopify 2.0, enhancing website usability and performance.",
       "Spearheaded the development of a bespoke wishlist app using Tailwind CSS.",
-      "Optimized 'collection page' templating performance by replacing Mustache-rendered code with Liquid, eliminating usage of Dolls Kill's proprietary PHP backend in favor of Shopify's (autoscaling) servers for a local performance improvement of 15%.",
+      "Optimized collection page templating performance by replacing Mustache-rendered code with Liquid, reducing usage of Dolls Kill's own servers in favor of Shopify's for a local performance improvement of 15%.",
       "Significantly refactored Dolls Kill's codebase.",
     ],
   },
@@ -63,7 +63,7 @@ export const experienceData: Experience[] = [
 
       "Managed the transfer of data from previously used SAAS platforms, thereby enhancing email marketing capabilities and review management. This initiative optimized resource allocation and enriched customer engagement strategies.",
 
-      "Took and edited hundreds of product photos as a backup photographer.",
+      "Took and edited product photos in our professional studio as a backup photographer.",
     ],
   },
 ];
@@ -80,7 +80,6 @@ export const skillsData: Skills[] = [
       "CSS",
       "R",
       "Liquid",
-      "PHP",
     ],
   },
   {
@@ -89,7 +88,7 @@ export const skillsData: Skills[] = [
   },
   {
     title: "Tools",
-    skills: ["Git", "GitHub", "Jira", "Asana"],
+    skills: ["GitHub", "Jira", "Asana"],
   },
   {
     title: "Database",
@@ -101,16 +100,16 @@ export const skillsData: Skills[] = [
   },
   {
     title: "Platforms",
-    skills: ["Shopify", "WordPress"],
+    skills: ["Shopify", "WordPress", "AWS"],
   },
   {
     title: "Marketing",
     skills: [
       "SEO/SEM",
+      "Analytics",
       "Email Marketing",
       "SMS Marketing",
       "Lead Generation",
-      "Social Media",
     ],
   },
 ];
