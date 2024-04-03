@@ -6,6 +6,8 @@ import { Icon } from "@iconify/react";
 import Mail from "components/modals/mail";
 import MailForm from "components/forms/mail-form";
 
+//TODO: Move iconWithText instances to a single line each
+
 const Info = () => {
   const {
     name,
