@@ -1,37 +1,49 @@
 // This example uses `@web3forms/react` plugin and tailwindcss for css styling
 
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
-
-//TODO: give errors time
-//TODO: layout shift issues
-//TODO: replace with shdcn form
 
 export default function Contact() {
   const {
     register,
     handleSubmit,
     reset,
-    getValues,
+    // getValues,
     // watch,
     // control,
     // setValue,
     formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm({
-    mode: "onTouched",
+    // https://react-hook-form.com/docs/useform#mode
+    mode: "onSubmit",
   });
+
+  /**
+   * Represents the state of the success status for the mail form.
+   */
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
 
-  const apiKey = import.meta.env.VITE_MAIL_KEY;
+  // Don't worry about exposing this.
+  const apiKey = import.meta.env.VITE_MAIL_KEY || "YOUR_PUBLIC_KEY_HERE";
 
-  const { submit: onSubmit } = useWeb3Forms({
+  /**
+   * Submits the web3 form.
+   * "data" is left unused here, but is useful to have
+   *  in the case of debugging or further processing.
+   *
+   * @param {string} access_key - The access key for the form submission.
+   * @param {Object} settings - The settings object for the form submission.
+   * @param {Function} onSuccess - The callback function to be executed on successful form submission.
+   * @param {Function} onError - The callback function to be executed on form submission error.
+   */
+  const { submit: submitWeb3Form } = useWeb3Forms({
     access_key: apiKey,
     settings: {
-      //TODO: pass company name to from name
-      from_name: getValues("company") + " " + getValues("name"),
-      subject: getValues("subject") || "New Contact Form Submission",
+      //   from_name: "Site User",
+      //   subject: "Immutable message from user",
+      //   replyto: "big.brother.ed...ward@play.com"
     },
     onSuccess: (msg, data) => {
       setIsSuccess(true);
@@ -44,9 +56,49 @@ export default function Contact() {
     },
   });
 
+  /**
+   * **An example of how to preprocess data before submission**
+   *
+   * This passes data into the **submitWeb3Form** function and concatenates the from_name field.
+   * This is just one example of where to process data
+   * and its guts can be modified to suit your needs.
+   *
+   * Optionally, omit the from_name field in this function and
+   *  pass the from_name field directly into the settings{}
+   *  object of the useWeb3Forms hook above ⬆️.
+   *
+   * from_name and many other field types can also be passed like this as HTML:
+   * <input type="hidden" name="from_name" value="any string">
+   * @link https://docs.web3forms.com/getting-started/customizations/from-name
+   *
+   * @param {Object} data - The form data.
+   */
+  //eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onSubmit = handleSubmit((data: any) => {
+    let fromName = "Site User";
+    if (data.company && data.name) {
+      // Company AND Name
+      fromName = `${data.company} | ${data.name}`;
+    } else if (data.company) {
+      // Company NOT Name
+      fromName = `${data.company} | Site user`;
+    } else if (data.name) {
+      // Name NOT Company
+      fromName = `${data.name}`;
+    }
+
+    submitWeb3Form({
+      ...data,
+      from_name: fromName,
+      subject:
+        data.subject ||
+        `New Contact Form Submission from ${data.name || "Site User"}`,
+    });
+  });
+
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="my-10">
+      <form onSubmit={onSubmit} className="my-10">
         <input
           type="checkbox"
           id=""
@@ -81,6 +133,7 @@ export default function Contact() {
           <input
             type="text"
             placeholder="Company"
+            required={false}
             autoComplete="true"
             className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900 focus:ring-4  ${
               errors.company
@@ -88,7 +141,6 @@ export default function Contact() {
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
             }`}
             {...register("company", {
-              required: "Company name is required",
               maxLength: 80,
             })}
           />
@@ -133,6 +185,7 @@ export default function Contact() {
           <input
             type="text"
             placeholder="Subject"
+            required={false}
             autoComplete="false"
             className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900 focus:ring-4  ${
               errors.subject
@@ -140,7 +193,6 @@ export default function Contact() {
                 : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
             }`}
             {...register("subject", {
-              required: "Subject name is required",
               maxLength: 60,
             })}
           />
@@ -152,7 +204,6 @@ export default function Contact() {
         </div>
         <div className="mb-3">
           <textarea
-            //@ts-expect-error typescript is just wrong here, i have no idea why it's throwing this error but do not fucking care.
             name="message"
             placeholder="Your Message"
             className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white dark:placeholder:text-gray-200 dark:bg-gray-900   rounded-md outline-none  h-36 focus:ring-4  ${
@@ -167,7 +218,7 @@ export default function Contact() {
           {errors.message && (
             <div className="mt-1 text-red-600">
               {" "}
-              <small>{errors.message.message as string}</small>
+              <small>{String(errors.message.message)}</small>
             </div>
           )}
         </div>
