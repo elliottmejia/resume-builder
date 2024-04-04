@@ -1,14 +1,20 @@
+import { cn } from "lib/utils";
 type Props = {
   children: React.ReactNode;
+  className?: string;
 };
 
-const Sidebar = ({ children }: Props): React.ReactElement => {
+const Sidebar = ({ children, className }: Props): React.ReactElement => {
+  //TODO: Skills down to the bottom, or add button to see more?
   return (
-    <div className="relative w-fit h-fit sm:h-inherit hidden sm:block">
+    <div className="relative w-full sm:w-fit h-fit sm:h-inherit">
       <div id="sidebar-wrap" className="h-full">
         <div
           id="sidebar"
-          className="p-1 h-fit sm:h-full w-full sm:w-fit bg-white border-left-2 border-black z-10"
+          className={cn(
+            "p-1 h-fit sm:h-full w-full sm:w-fit bg-white border-left-2 border-black z-10",
+            className
+          )}
         >
           {children}
         </div>

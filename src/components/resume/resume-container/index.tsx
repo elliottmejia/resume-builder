@@ -10,7 +10,10 @@ const ResumeContainer = forwardRef<HTMLDivElement, Props>(
   ({ children, className = "" }, ref) => {
     return (
       <div
-        className={cn(`flex flex-row h-fit w-100 pt-4 gap-0`, className)}
+        className={cn(
+          `flex flex-col sm:flex-row h-fit w-100 pt-4 gap-0`,
+          className
+        )}
         id="resume-container"
         ref={ref}
       >

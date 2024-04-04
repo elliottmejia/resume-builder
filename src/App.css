@@ -59,7 +59,7 @@ html{
   position:relative;
   top:.5rem;
   --exp-clip-len: 5vw;
-  clip-path: polygon(calc(100% - var(--exp-clip-len)) 0%, 100% var(--exp-clip-len), 100% 100%, 0 100%, 0 0);
+  /* clip-path: polygon(calc(100% - var(--exp-clip-len)) 0%, 100% var(--exp-clip-len), 100% 100%, 0 100%, 0 0); */
 }
 @media print {
   #experience{

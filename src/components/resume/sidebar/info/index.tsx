@@ -5,6 +5,7 @@ import IconWithText from "ui/icon-with-text";
 import { Icon } from "@iconify/react";
 import Mail from "components/modals/mail";
 import MailForm from "components/forms/mail-form";
+import { cn } from "lib/utils";
 
 //TODO: Move iconWithText instances to a single line each
 
@@ -20,20 +21,40 @@ const Info = () => {
     linkedin,
   }: Info = infoData;
   return (
-    <div id="info" className="flex flex-col w-full text-left">
-      <div id="identity" className="h-fit pb-2 text-left pl-2 ">
-        <div className="relative -top-2 scale-95">
-          <div className="absolute w-16 h-16 rounded-full bg-red-500 top-2 left-0 z-0" />
-          <div className="absolute w-16 h-16 rounded-full bg-cyan-400 top-2 left-4 z-10" />
+    <div
+      id="info"
+      className="flex flex-col justify-center
+            place-items-center sm:place-items-start text-center sm:text-left
+            w-fit sm:w-full mx-auto"
+    >
+      <div
+        id="identity"
+        className="h-fit pb-2 place-items-center text-center sm:place-items-left pl-2"
+      >
+        {/* Avatar */}
+        <div id="circle-parent" className="relative -top-2 scale-95 ">
+          <div className="relative w-fit" id="color-circles">
+            <div className="absolute w-16 h-16 rounded-full bg-red-500 top-2 left-0 " />
+            <div className="absolute w-16 h-16 rounded-full bg-cyan-400 top-2 left-4 " />
+          </div>
 
           <Avatar
+            id="logo"
             onClick={() => {
               window?.open(portfolio);
             }}
-            className="logo my-2 relative w-16 h-16 animate ease-in-out duration-300 hover:scale-105 hover:rotate-6 cursor-pointer z-20 top-[.5rem] left-[.5rem]
+            className="logo
+            w-16 h-16
+            animate ease-in-out duration-500 
+            hover:scale-105 hover:rotate-6 
+            cursor-pointer 
+            my-2 
+            
+            z-20 
+            relative top-[.5rem] left-[.5rem]
             "
           >
-            <AvatarFallback style={{ background: "white", color: "black" }}>
+            <AvatarFallback className={cn("w-fit h-full bg-white text-black")}>
               <Icon icon="file-icons:devcontainer" className="w-full h-full" />
             </AvatarFallback>
           </Avatar>
