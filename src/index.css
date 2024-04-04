@@ -33,6 +33,10 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --experience: 0, 0%, 90%;
+    --shadow: 0, 0%, 0%, 0.667;
+    --sidebar: 0, 0%, 100%;
   }
 
   .dark {

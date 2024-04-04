@@ -1,12 +1,12 @@
 
 :root{
-  --bg-root: #161616;
+  --bg-root: hsl(0, 0%, 9%);
 
-  --bg-app-container: #d2b48c;
-  --sidebar-bg-color: #ffffff;
+  --bg-app-container: hsl(34, 44%, 69%);
+  --sidebar-bg-color: hsl(0, 0%, 100%);
   --gradient-bg-color: linear-gradient(to right, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.97) 9.1%, hsla(0, 0%, 100%, 0.925) 17%, hsla(0, 0%, 100%, 0.868) 23.9%, hsla(0, 0%, 100%, 0.801) 30%, hsla(0, 0%, 100%, 0.725) 35.5%, hsla(0, 0%, 100%, 0.644) 40.5%, hsla(0, 0%, 100%, 0.558) 45.4%, hsla(0, 0%, 100%, 0.471) 50.2%, hsla(0, 0%, 100%, 0.385) 55.2%, hsla(0, 0%, 100%, 0.301) 60.5%, hsla(0, 0%, 100%, 0.223) 66.5%, hsla(0, 0%, 100%, 0.151) 73.2%, hsla(0, 0%, 100%, 0.089) 80.9%, hsla(0, 0%, 100%, 0.038) 89.8%, hsla(0, 0%, 100%, 0) 100%);
-  --experience-bg-color: #e6e6e6;
-  --box-shadow-bg-color: #000000aa;
+  --experience-bg-color: hsl(0, 0%, 90%);
+  --box-shadow-bg-color: hsla(0, 0%, 0%, 0.667);
 }
 html{
   background:var(--bg-root);
@@ -58,7 +58,7 @@ html{
   background: var(--experience-bg-color);
   position:relative;
   top:.5rem;
-  --exp-clip-len: 52px;
+  --exp-clip-len: 5vw;
   clip-path: polygon(calc(100% - var(--exp-clip-len)) 0%, 100% var(--exp-clip-len), 100% 100%, 0 100%, 0 0);
 }
 @media print {

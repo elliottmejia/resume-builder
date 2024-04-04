@@ -42,7 +42,7 @@ export const experienceData: Experience[] = [
     entries: [
       "Under scope of contract, executed a strategic transition of a Magento-imported theme to Shopify 2.0, enhancing website usability and performance.",
       "Spearheaded the development of a bespoke wishlist app using Tailwind CSS.",
-      "Optimized collection page templating performance by replacing Mustache-rendered code with Liquid, reducing usage of Dolls Kill's own servers in favor of Shopify's for a local performance improvement of 15%.",
+      "Improved collection page performance by 15% by refactoring Javascript to Liquid.",
       "Significantly refactored Dolls Kill's codebase.",
     ],
   },
@@ -54,15 +54,12 @@ export const experienceData: Experience[] = [
     endDate: "March 2023",
     entries: [
       "Pioneered the adoption of a git-based theme management system for Shopify themes, creating a scalable and efficient framework with stability as a KPI.",
+      "Designed and created three new storefronts in use by the company: Lestien, Michael Lauren, and Lauren Moshi.",
 
       "Led a meticulous audit of product tags, enhancing product administration efficiency and dramatically reducing categorization inconsistencies, thereby streamlining inventory management and optimizing operational workflow.",
 
-      "Drove a 40% increase in click-through rate (CTR) by designing and implementing a new website interface, directly contributing to heightened user engagement and demonstrating the tangible benefits of integrating user-centered design with strategic business objectives.",
-
-      "Successfully integrated Listrak into the Shopify environment without the need for Shopify Plus by developing a custom Laravel API, and seamlessly incorporated Yotpo for customer reviews.",
-
-      "Managed the transfer of data from previously used SAAS platforms, thereby enhancing email marketing capabilities and review management. This initiative optimized resource allocation and enriched customer engagement strategies.",
-
+      "Created a custom Shopify app to attach webhooks to Listrak, eliminating the need for Shopify Plus and saving the company $2,000 per month.",
+      "Created an internal database of product inventory, sales, and customer data, enabling the company to make data-driven decisions and optimize marketing strategies.",
       "Took and edited product photos in our professional studio as a backup photographer.",
     ],
   },

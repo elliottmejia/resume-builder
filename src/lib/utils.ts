@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function isDev() {
-  import.meta.env.DEV = true;
+  return (import.meta.env.DEV = true);
 }
 
 export function isProd() {
