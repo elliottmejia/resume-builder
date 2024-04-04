@@ -32,7 +32,7 @@ const Info = () => {
         className="h-fit pb-2 place-items-center text-center sm:place-items-left pl-2"
       >
         {/* Avatar */}
-        <div id="circle-parent" className="relative -top-2 scale-95 ">
+        <div id="circle-parent" className="relative -top-2 scale-95">
           <div className="relative w-fit" id="color-circles">
             <div className="absolute w-16 h-16 rounded-full bg-red-500 top-2 left-0 " />
             <div className="absolute w-16 h-16 rounded-full bg-cyan-400 top-2 left-4 " />
@@ -44,17 +44,17 @@ const Info = () => {
               window?.open(portfolio);
             }}
             className="logo
+            relative flex  overflow-hidden rounded-full
             w-16 h-16
             animate ease-in-out duration-500 
             hover:scale-105 hover:rotate-6 
             cursor-pointer 
             my-2 
-            
             z-20 
-            relative top-[.5rem] left-[.5rem]
+             top-[.5rem] left-[.5rem]
             "
           >
-            <AvatarFallback className={cn("w-fit h-full bg-white text-black")}>
+            <AvatarFallback className={cn("w-full h-full text-black")}>
               <Icon icon="file-icons:devcontainer" className="w-full h-full" />
             </AvatarFallback>
           </Avatar>

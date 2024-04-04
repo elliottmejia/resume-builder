@@ -17,7 +17,7 @@ import { infoData } from "data/data";
 import { useFont } from "@react-hooks-library/core";
 import { Loading } from "components/styling";
 import { isDev } from "lib/utils";
-import { resolve } from "path";
+import { useWindowSize } from "@react-hooks-library/core";
 
 const dev = isDev();
 
