@@ -7,6 +7,7 @@ import Mail from "components/modals/mail";
 import MailForm from "components/forms/mail-form";
 import { cn } from "lib/utils";
 
+
 const Info = () => {
   const {
     name,

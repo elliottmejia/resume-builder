@@ -91,7 +91,7 @@ export default function Contact() {
   return (
     <>
       <form onSubmit={onSubmit} className="my-4">
-        <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-2">
+        <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-8">
           Contact Me
         </h2>
 

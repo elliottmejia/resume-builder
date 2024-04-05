@@ -83,3 +83,6 @@
     display:none;
   }
 }
+html {
+  min-width: 430px;
+}

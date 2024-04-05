@@ -67,12 +67,10 @@ export const skillsData: SkillsType[] = [
   {
     title: "Languages",
     skills: [
-      "JavaScript",
-      "TypeScript",
-      "React",
+      "JavaScript (+ Typescript)",
       "Python",
       "HTML",
-      "CSS",
+      "CSS (SASS, Tailwind)",
       "R",
       "Liquid",
     ],
@@ -83,7 +81,15 @@ export const skillsData: SkillsType[] = [
   },
   {
     title: "Tools",
-    skills: ["GitHub", "Jira", "Asana", "Figma", "Photoshop", "Illustrator"],
+    skills: [
+      "GitHub",
+      "Jira",
+      "Asana",
+      "Figma",
+      "Photoshop",
+      "Illustrator",
+      "Vi/Vim/Neovim",
+    ],
   },
   {
     title: "Database",
@@ -91,7 +97,7 @@ export const skillsData: SkillsType[] = [
   },
   {
     title: "Platforms",
-    skills: ["Shopify", "WordPress", "AWS"],
+    skills: ["Shopify", "WordPress", "AWS", "Netlify", "Vercel", "Heroku"],
   },
   {
     title: "Marketing",

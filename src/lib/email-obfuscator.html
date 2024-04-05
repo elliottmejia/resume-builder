@@ -1,0 +1,63 @@
+<span class='email-loader-container'></span>
+<span>Loading Email...</span>
+<img src='email-obfuscator.png' style='display:none'>
+<canvas style='display:none'></canvas>
+<script>
+    (function () {
+        var l = document.querySelector(".email-loader-container");
+        l.className = "";
+        l.id = "email-loader";
+        var canvas = document.querySelector("#email-loader > canvas");
+        var image = document.querySelector("#email-loader > img");
+
+        window.addEventListener("load", function () {
+            if (image.complete && image.naturalHeight !== 0) {
+                processImage();
+            } else {
+                image.onload = processImage;
+            }
+        });
+
+        function processImage() {
+            var width = canvas.width = canvas.height = image.width;
+            var context = canvas.getContext("2d");
+            context.drawImage(image, 0, 0);
+            var binaryString = "";
+            var charCode = String.fromCharCode;
+            var parseInt = parseInt;
+            var imageData = context.getImageData(0, 0, width, width).data;
+            var bits = [];
+            var count = 0;
+
+            for (var i = 0; i < imageData.length; i++) {
+                count++;
+                if (count == 4) {
+                    count = 0;
+                    if (imageData[i] == 0) {
+                        break;
+                    }
+                    continue;
+                }
+                bits.push(imageData[i] > 127 ? 1 : 0);
+                if (bits.length >= 7) {
+                    binaryString += charCode(parseInt(bits.splice(0, 7).join(""), 2));
+                }
+            }
+
+            try {
+                for (var i = 0; i < 100; i++) {
+                    binaryString = atob(binaryString);
+                }
+            } catch (error) {
+                var decodedString = "";
+                for (var i = 0; i < binaryString.length; i += 3) {
+                    var chunk = binaryString.substr(i, 3).replace(/\./, "");
+                    var char = charCode(parseInt(chunk, 10));
+                    decodedString += char;
+                }
+                l.outerHTML = decodedString;
+            }
+        }
+    })();
+</script>
+</span>
