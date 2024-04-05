@@ -1,5 +1,4 @@
 import { Icon } from "@iconify/react";
-import { useRef } from "react";
 
 import {
   Card,
@@ -8,36 +7,42 @@ import {
   CardHeader,
   CardTitle,
 } from "components/ui/card";
-import type { Experience } from "data/types.ts";
+import type { ExpType } from "data/types.ts";
 
 type Props = {
-  data: Experience;
+  data: ExpType;
   delimiter?: string | "-";
 };
 
 const ExperienceCard = ({ data, delimiter }: Props) => {
   //prettier-ignore
-  const { title, company, location, startDate, endDate, entries }: Experience = data;
+  const { title, company, location, startDate, endDate, entries }: ExpType =
+    data;
 
   delimiter = " " + (delimiter || "-").trim() + " ";
 
-  type mouseEvent = React.MouseEvent<HTMLDivElement>;
-  const cardRef = useRef<HTMLDivElement>(null);
+  // type mouseEvent = React.MouseEvent<HTMLDivElement>;
+  // const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleModalOpen = (ref: HTMLDivElement | null) => {
-    ref;
-    return null;
-  };
+  // const handleModalOpen = (ref: HTMLDivElement | null) => {
+  //   ref;
+  //   return null;
+  // };
 
-  const handleEditClick = (e: mouseEvent) => {
-    const clickRef = cardRef.current ? cardRef.current : null;
-    handleModalOpen(clickRef);
-    console.log(e);
-    return null;
-  };
+  // const handleEditClick = (e: mouseEvent) => {
+  //   const clickRef = cardRef.current ? cardRef.current : null;
+  //   handleModalOpen(clickRef);
+  //   console.log(e);
+  //   return null;
+
+  // };
 
   return (
-    <Card id="experience-card" ref={cardRef} className="z-10 relative">
+    <Card
+      id="experience-card"
+      // ref={cardRef}
+      className="z-10 relative"
+    >
       <CardHeader className="pb-2 pt-4">
         <CardTitle className="text-md pt-0">
           {title}
@@ -53,7 +58,7 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
         </CardTitle>
       </CardHeader>
       <CardContent className="pb-4">
-        {entries.map((entry, idx) => (
+        {entries.map((entry: string, idx: number) => (
           <div
             key={idx}
             id={`description-${idx + 1}`}

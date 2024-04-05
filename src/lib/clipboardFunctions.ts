@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 interface Clipboard {
   copy: (text: string) => void;
 }

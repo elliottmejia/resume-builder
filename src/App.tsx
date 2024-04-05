@@ -16,48 +16,29 @@ import { getEditModeFromStorage } from "lib/utils";
 import { infoData } from "data/data";
 import { useFont } from "@react-hooks-library/core";
 import { Loading } from "components/styling";
-import { isDev } from "lib/utils";
-import { useWindowSize } from "@react-hooks-library/core";
 import BottomContainer from "./components/resume/bottom";
-
-const dev = isDev();
 
 function App() {
   //TODO: mobile...
-  // ... print container not working on ios
   // ... test android
   // ... test ipad
-  //TODO: media queries
+  // ... test macos safari
+  // ... test edge
 
   const printRef = useRef<HTMLDivElement | null>(null);
 
-  const {
-    error: fontError,
-    loaded: fontLoaded,
-    // font,
-  } = useFont("Geist", "/fonts/Geist/GeistVF.woff2");
-
-  //TODO: make this work with iphone
-  // macos safari not printing gradient
-  // ios safari not printing
-  const globalPrintSettings = {
+  const { error: fontError, loaded: fontLoaded } = useFont(
+    "Geist",
+    "/fonts/Geist/GeistVF.woff2"
+  );
+  const handleColorPrint = useReactToPrint({
     documentTitle: "",
-    copayStyles: true,
+    copyStyles: true,
     content: () => printRef.current,
     onAfterPrint: () => {
       clearButtons();
     },
     removeAfterPrint: true,
-  };
-  const handleColorPrint = useReactToPrint({
-    ...globalPrintSettings,
-  });
-
-  const handleBNWPrint = useReactToPrint({
-    ...globalPrintSettings,
-    pageStyle: `html, body, #app-container {
-      grayscale: 100%;
-    }`,
   });
 
   const handlePageEdit = () => {
@@ -108,7 +89,6 @@ function App() {
         {editModeEnabled && <CornerButton handlePageEdit={handlePageEdit} />}
         <Taskbar
           handleColorPrint={handleColorPrint}
-          handleBNWPrint={handleBNWPrint}
           editToggle={handleEditToggle}
         />
         <ResumeContainer className="relative" ref={printRef}>

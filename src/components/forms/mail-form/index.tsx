@@ -1,5 +1,3 @@
-// This example uses `@web3forms/react` plugin and tailwindcss for css styling
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
@@ -41,12 +39,12 @@ export default function Contact() {
       //   subject: "Immutable message from user",
       //   replyto: "big.brother.ed...ward@play.com"
     },
-    onSuccess: (msg, data) => {
+    onSuccess: (msg) => {
       setIsSuccess(true);
       setMessage(msg);
       reset();
     },
-    onError: (msg, data) => {
+    onError: (msg) => {
       setIsSuccess(false);
       setMessage(msg);
     },
@@ -157,7 +155,6 @@ export default function Contact() {
             id="email_address"
             type="email"
             placeholder="Email Address"
-            //@ts-expect-error typescript is just wrong here, i have no idea why it's throwing this error but do not fucking care.
             name="email"
             autoComplete="false"
             className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 dark:text-white rounded-md outline-none dark:placeholder:text-gray-200 dark:bg-gray-900   focus:ring-4  ${

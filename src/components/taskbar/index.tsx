@@ -1,6 +1,6 @@
 import {
   Menubar,
-  // MenubarCheckboxItem,
+  MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
@@ -17,27 +17,23 @@ import { Icon } from "@iconify/react";
 import IconWithText from "components/ui/icon-with-text";
 import { toast } from "components/ui/use-toast";
 import { HOSTED_DOMAIN } from "src/data/data";
-import {
-  clipboardCopy,
-  //getEditModeFromStorage,
-} from "src/lib/utils";
-// import { useState } from "react";
-//import { isProd } from "lib/utils";
+import { clipboardCopy, getEditModeFromStorage } from "src/lib/utils";
+import { useState } from "react";
+import { isProd } from "lib/utils";
 import { cn } from "lib/utils";
 
 type Props = {
   handleColorPrint: () => void;
-  handleBNWPrint: () => void;
   editToggle: () => void;
 };
 //eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
-  // const [isCheckedEdit, setCheckedEdit] = useState(getEditModeFromStorage);
+const Taskbar = ({ handleColorPrint, editToggle }: Props) => {
+  const [isCheckedEdit, setCheckedEdit] = useState(getEditModeFromStorage);
 
-  // const handleEditToggle = () => {
-  //   editToggle();
-  //   setCheckedEdit(!isCheckedEdit);
-  // };
+  const handleEditToggle = () => {
+    editToggle();
+    setCheckedEdit(!isCheckedEdit);
+  };
   const handleCopyLink = () => {
     toast({
       title: "Link copied to clipboard",
@@ -81,7 +77,7 @@ const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
             </MenubarTrigger>
           </a>
         </MenubarMenu>
-        {/* {!isProd() && (
+        {!isProd() && (
           <MenubarMenu>
             <MenubarTrigger
               className={triggerClasses}
@@ -104,7 +100,7 @@ const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
               </MenubarCheckboxItem>
             </MenubarContent>
           </MenubarMenu>
-        )} */}
+        )}
         <div className="hidden px-4 py-2 hover:bg-gray-200 hover:border-radius-pressed "></div>
       </Menubar>
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const EmailObfuscator = () => {
   const loaderRef = useRef(null);
@@ -7,8 +7,9 @@ const EmailObfuscator = () => {
 
   useEffect(() => {
     const processImage = () => {
-      const canvas = canvasRef.current;
-      const image = imageRef.current;
+      const canvas = canvasRef?.current;
+      const image = imageRef?.current;
+      if (!canvas || !image) return;
       const width = (canvas.width = canvas.height = image.width);
       const context = canvas.getContext("2d");
       context.drawImage(image, 0, 0);
@@ -44,15 +45,15 @@ const EmailObfuscator = () => {
           const char = charCode(parseInt(chunk, 10));
           decodedString += char;
         }
-        loaderRef.current.outerHTML = decodedString;
+        if (loaderRef.current) loaderRef.current.outerHTML = decodedString;
       }
     };
 
-    const image = imageRef.current;
-    if (image.complete && image.naturalHeight !== 0) {
+    const image = imageRef?.current;
+    if (image?.complete && image?.naturalHeight !== 0) {
       processImage();
     } else {
-      image.onload = processImage;
+      if (image) image.onload = processImage;
     }
   }, []);
 
