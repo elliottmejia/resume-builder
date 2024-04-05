@@ -94,7 +94,18 @@ html{
   #taskbar {
     display:none;
   }
-  
+  .shadow{
+    box-shadow: none; 
+  }
+  Card::after{
+    display:none;
+  }
+  Card::before{
+    display:none;
+  }
+  .hover\:shadow-lsgraf:hover{
+    box-shadow: none;
+  }
 }
 
 

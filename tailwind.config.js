@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        print: { raw: "print" },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
