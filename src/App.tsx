@@ -87,7 +87,6 @@ function App() {
     //hacking the event loop a bit to ensure the font is loaded before rendering
     if (fontLoaded || fontError) {
       setTimeout(() => {
-        dev && console.log("Page loaded");
         setDelayFinished(true);
       }, 1);
     }

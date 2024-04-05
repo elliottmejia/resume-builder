@@ -1,8 +1,9 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { copyToClipboard } from "./clipboardFunctions";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function isDev() {
@@ -21,7 +22,6 @@ export function uuid() {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
 }
 
-
 export const clearButtons = () => {
   const buttons = Array.from(
     document.getElementsByClassName("taskbar-buttons")
@@ -32,12 +32,8 @@ export const clearButtons = () => {
 };
 
 export function clipboardCopy(text: string) {
-  return () => {
-    TODO: "make this work, add a toast";
-    clearButtons();
-
-    navigator.clipboard.writeText(text);
-  };
+  clearButtons();
+  copyToClipboard(text);
 }
 
   export const getEditModeFromStorage = (): boolean => {
