@@ -19,13 +19,9 @@ export default function Contact() {
     mode: "onSubmit",
   });
 
-  /**
-   * Represents the state of the success status for the mail form.
-   */
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
 
-  // Don't worry about exposing this.
   const apiKey = import.meta.env.VITE_MAIL_KEY || "YOUR_PUBLIC_KEY_HERE";
 
   /**
@@ -57,11 +53,7 @@ export default function Contact() {
   });
 
   /**
-   * **An example of how to preprocess data before submission**
-   *
    * This passes data into the **submitWeb3Form** function and concatenates the from_name field.
-   * This is just one example of where to process data
-   * and its guts can be modified to suit your needs.
    *
    * Optionally, omit the from_name field in this function and
    *  pass the from_name field directly into the settings{}

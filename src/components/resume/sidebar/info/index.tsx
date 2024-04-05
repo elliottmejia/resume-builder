@@ -1,13 +1,11 @@
 import { infoData } from "data/data";
-import type { Info } from "data/types";
+import type { InfoType } from "data/types";
 import { Avatar, AvatarFallback } from "components/ui/avatar";
 import IconWithText from "ui/icon-with-text";
 import { Icon } from "@iconify/react";
 import Mail from "components/modals/mail";
 import MailForm from "components/forms/mail-form";
 import { cn } from "lib/utils";
-
-//TODO: Move iconWithText instances to a single line each
 
 const Info = () => {
   const {
@@ -19,7 +17,7 @@ const Info = () => {
     portfolioShort,
     linkedinShort,
     linkedin,
-  }: Info = infoData;
+  }: InfoType = infoData;
   return (
     <div
       id="info"
@@ -29,14 +27,18 @@ const Info = () => {
     >
       <div
         id="identity"
-        className="h-fit pb-2 place-items-center text-center sm:place-items-left pl-2"
+        className="h-fit pb-2 place-items-center text-center sm:place-items-left sm:pl-2"
       >
         {/* Avatar */}
-        <div id="circle-parent" className="relative -top-2 scale-95">
-          <div className="relative w-fit" id="color-circles">
+        <div id="circle-parent" className="relative -top-2 scale-95 sm:-left-7">
+          {/* <div className="relative w-fit" id="color-circles">
             <div className="absolute w-16 h-16 rounded-full bg-red-500 top-2 left-0 " />
             <div className="absolute w-16 h-16 rounded-full bg-cyan-400 top-2 left-4 " />
-          </div>
+          </div> */}
+          <img
+            src="/circles.png"
+            className="h-[61px] absolute top-2 right-8"
+          ></img>
 
           <Avatar
             id="logo"
@@ -44,14 +46,15 @@ const Info = () => {
               window?.open(portfolio);
             }}
             className="logo
-            relative flex  overflow-hidden rounded-full
+             flex  overflow-hidden rounded-full
             w-16 h-16
             animate ease-in-out duration-500 
             hover:scale-105 hover:rotate-6 
             cursor-pointer 
             my-2 
             z-20 
-             top-[.5rem] left-[.5rem]
+            relative
+             top-[.5rem] -right-[27.5px]
             "
           >
             <AvatarFallback className={cn("w-full h-full text-black")}>
@@ -70,7 +73,10 @@ const Info = () => {
         </h1>
       </div>
 
-      <div id="contact" className="flex flex-col gap-y-2 px-4 ">
+      <div
+        id="contact"
+        className="grid grid-cols-2 mt-4 sm:px-4 pb-4 sm:pb-0 sm:mt-0 sm:flex sm:flex-col gap-y-2  "
+      >
         {tel && <IconWithText title="Cell" icon="bx:phone" text={tel} />}
         {email && emailShort && (
           <IconWithText title="Email" icon="bx:envelope">

@@ -3,14 +3,17 @@
   --bg-root: hsl(0, 0%, 9%);
 
   --bg-app-container: hsl(34, 44%, 69%);
+  --sidebar-border-color: #3d3838;
   --sidebar-bg-color: hsl(0, 0%, 100%);
   --gradient-bg-color: linear-gradient(to right, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.97) 9.1%, hsla(0, 0%, 100%, 0.925) 17%, hsla(0, 0%, 100%, 0.868) 23.9%, hsla(0, 0%, 100%, 0.801) 30%, hsla(0, 0%, 100%, 0.725) 35.5%, hsla(0, 0%, 100%, 0.644) 40.5%, hsla(0, 0%, 100%, 0.558) 45.4%, hsla(0, 0%, 100%, 0.471) 50.2%, hsla(0, 0%, 100%, 0.385) 55.2%, hsla(0, 0%, 100%, 0.301) 60.5%, hsla(0, 0%, 100%, 0.223) 66.5%, hsla(0, 0%, 100%, 0.151) 73.2%, hsla(0, 0%, 100%, 0.089) 80.9%, hsla(0, 0%, 100%, 0.038) 89.8%, hsla(0, 0%, 100%, 0) 100%);
   --experience-bg-color: hsl(0, 0%, 90%);
   --box-shadow-bg-color: hsla(0, 0%, 0%, 0.667);
+  --phi: 61%; /* 1 divided by phi */
 }
 html{
   background:var(--bg-root);
 }
+
 
 #root {
   --size: 100px;
@@ -35,40 +38,52 @@ html{
 #sidebar{
   background: var(--sidebar-bg-color);
   box-shadow: 20px 0 20px -20px var(--box-shadow-bg-color);
+  --sb-clip: 20px;
 
-  clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+  clip-path: polygon(var(--sb-clip) 0, 100% 0, 100% 100%, 0 100%, 0 var(--sb-clip));
+}
+#sidebar-after-polygon{
+ position: absolute;
+
+ height: 46px;
+ width: 100%;
+ content: "";
+ left: 0;
+ background: var(--sidebar-border-color);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 39% 100%);
 }
 
-  #sidebar-wrap::after {
-    --sidebar-border-width: 8px;
-    --sidebar-border-color: rgb(57, 56, 56);
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: -8px;
-    z-index: 100;
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: var(--sidebar-border-width) 0 0 var(--sidebar-border-width);
-    border-color: transparent transparent transparent var(--sidebar-border-color);
+
+#sidebar-wrap::after {
+  --sidebar-border-width: 8px;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: -8px;
+  z-index: 100;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: var(--sidebar-border-width) 0 0 var(--sidebar-border-width);
+  border-color: transparent transparent transparent var(--sidebar-border-color);
 }
 
 #experience{
   background: var(--experience-bg-color);
   position:relative;
-  top:.5rem;
   --exp-clip-len: 5vw;
-  /* clip-path: polygon(calc(100% - var(--exp-clip-len)) 0%, 100% var(--exp-clip-len), 100% 100%, 0 100%, 0 0); */
 }
 @media print {
   #experience{
     clip-path: none;
-    border-top:2px solid black ;
+    border-top:2px solid var(--sidebar-border-color) ;
   }
   #sidebar{
-    border-top: 2px solid black ;
+    border-top: 2px solid var(--sidebar-border-color) ;
     clip-path:none;
+  }
+  #sidebar-after-polygon{
+    display:none;
   }
   #resume-container{
     padding-top:.4rem;
@@ -80,16 +95,9 @@ html{
     display:none;
   }
   
-
 }
 
-/* #experience-wrap{
-  filter: drop-shadow(-1px 5px 10px #f3f3f336);
-}
 
-#sidebar-wrap{
-  filter: drop-shadow(-10px -10px 50px #9984a574);
-} */
 #experience-container-gradient{
   height: inherit;
   opacity: 0.05;
@@ -100,9 +108,6 @@ html{
   background: var(--gradient-bg-color);
   background: linear-gradient(270deg, var(--experience-bg-color) 0%, #0000008a 100%);
 }
-
-
-
 
 @keyframes logo-spin {
   from {
@@ -187,4 +192,21 @@ h1{
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
+}
+
+@media screen and (max-width: 640px) {
+  #sidebar{
+    clip-path: polygon(var(--sb-clip) 0, calc(100% - 23px) 0, 100% 23px, 100% 100%, 0 100%, 0 var(--sb-clip));
+  }
+  #experience-container-gradient{
+    display:none;
+  }
+
+  #app-container{ 
+    clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%, 0 20px);
+  }
+  #experience{
+    clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0% 100%, 0 20px);
+  }
+
 }

@@ -1,11 +1,11 @@
 import { isProd } from "src/lib/utils";
-import { Experience, Info, Skills } from "data/types";
+import { ExpType, InfoType, SkillsType, EduType, CertType } from "data/types";
 
 export const HOSTED_DOMAIN = isProd()
   ? "https://resume.elliottmejia.com"
   : "copy successful";
 
-export const infoData: Info = {
+export const infoData: InfoType = {
   name: "Elliott Mejia",
   tel: "(206) 792-6241",
   email: "mailto:mejia.elliott@gmail.com",
@@ -16,7 +16,7 @@ export const infoData: Info = {
   linkedinShort: "/in/elliott-mejia/",
 };
 
-export const experienceData: Experience[] = [
+export const experienceData: ExpType[] = [
   {
     title: "Marketing Technology Consultant",
     company: "Datamark Digital",
@@ -55,9 +55,7 @@ export const experienceData: Experience[] = [
     entries: [
       "Pioneered the adoption of a git-based theme management system for Shopify themes, creating a scalable and efficient framework with stability as a KPI.",
       "Designed and created three new storefronts in use by the company: Lestien, Michael Lauren, and Lauren Moshi.",
-
-      "Led a meticulous audit of product tags, enhancing product administration efficiency and dramatically reducing categorization inconsistencies, thereby streamlining inventory management and optimizing operational workflow.",
-
+      "Led a meticulous audit of business data, enhancing product administration efficiency and dramatically reducing categorization inconsistencies.",
       "Created a custom Shopify app to attach webhooks to Listrak, eliminating the need for Shopify Plus and saving the company $2,000 per month.",
       "Created an internal database of product inventory, sales, and customer data, enabling the company to make data-driven decisions and optimize marketing strategies.",
       "Took and edited product photos in our professional studio as a backup photographer.",
@@ -65,7 +63,7 @@ export const experienceData: Experience[] = [
   },
 ];
 
-export const skillsData: Skills[] = [
+export const skillsData: SkillsType[] = [
   {
     title: "Languages",
     skills: [
@@ -81,19 +79,15 @@ export const skillsData: Skills[] = [
   },
   {
     title: "Frameworks",
-    skills: ["React", "Next.js", "Astro"],
+    skills: ["React", "Next.js", "Astro", "Django"],
   },
   {
     title: "Tools",
-    skills: ["GitHub", "Jira", "Asana"],
+    skills: ["GitHub", "Jira", "Asana", "Figma", "Photoshop", "Illustrator"],
   },
   {
     title: "Database",
     skills: ["MongoDB", "SQL", "GraphQL"],
-  },
-  {
-    title: "Design",
-    skills: ["Figma", "Photoshop", "Illustrator"],
   },
   {
     title: "Platforms",
@@ -107,6 +101,37 @@ export const skillsData: Skills[] = [
       "Email Marketing",
       "SMS Marketing",
       "Lead Generation",
+    ],
+  },
+];
+
+export const eduData: EduType[] = [
+  {
+    institution: "Icon College of Music",
+    degree: "Audio Engineering",
+    startDate: "2019",
+    endDate: "2020",
+  },
+];
+
+export const certData: CertType[] = [
+  {
+    issuer: "Shopify",
+    certs: [
+      {
+        title: "Liquid Storefronts for Theme Developers",
+        issueDate: "2022",
+      },
+    ],
+  },
+  {
+    issuer: "Google",
+    certs: [
+      {
+        title: "Google Data Analytics",
+
+        issueDate: "2024",
+      },
     ],
   },
 ];

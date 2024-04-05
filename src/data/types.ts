@@ -1,4 +1,4 @@
-export type Experience = {
+export type ExpType = {
   title: string;
   company: string;
   location: string;
@@ -7,7 +7,7 @@ export type Experience = {
   entries: string[];
 };
 
-export type Info = {
+export type InfoType = {
   name: string;
   tel?: string;
   email?: string;
@@ -18,7 +18,22 @@ export type Info = {
   linkedinShort?: string;
 };
 
-export type Skills = {
+export type SkillsType = {
   title: string;
   skills: string[];
+};
+
+export type EduType = {
+  institution: string;
+  degree: string;
+  startDate: string;
+  endDate: string;
+};
+
+export type CertType = {
+  issuer: string;
+  certs: {
+    title: string;
+    issueDate: string;
+  }[];
 };

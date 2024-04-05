@@ -18,6 +18,7 @@ import { useFont } from "@react-hooks-library/core";
 import { Loading } from "components/styling";
 import { isDev } from "lib/utils";
 import { useWindowSize } from "@react-hooks-library/core";
+import BottomContainer from "./components/resume/bottom";
 
 const dev = isDev();
 
@@ -36,6 +37,9 @@ function App() {
     // font,
   } = useFont("Geist", "/fonts/Geist/GeistVF.woff2");
 
+  //TODO: make this work with iphone
+  // macos safari not printing gradient
+  // ios safari not printing
   const globalPrintSettings = {
     documentTitle: "",
     copayStyles: true,
@@ -100,7 +104,7 @@ function App() {
     <>
       <div
         id="app-container"
-        className="relative font-geist animate duration-200 fade-in "
+        className="relative font-geist animate duration-200 fade-in"
       >
         {editModeEnabled && <CornerButton handlePageEdit={handlePageEdit} />}
         <Taskbar
@@ -112,23 +116,30 @@ function App() {
           <Screentone className="print-only" variant="dark" gradient />
           <Sidebar>
             <Info />
-            <Skills />
+            <Skills className="hidden sm:block" instance="sidebar" />
           </Sidebar>
           <ExperienceContainer>
             <Screentone />
+            <Skills
+              className="block sm:hidden grid grid-cols-3 gap-2"
+              instance="bottom"
+            />
+
+            <BottomContainer />
           </ExperienceContainer>
         </ResumeContainer>
       </div>
       <div
         className="relative text-center text-white font-thin top-2  z-50 w-fit mx-auto p-2 rounded-sm text-xs"
-        style={{ background: "rgba(0, 0, 0, 0.7)", maxWidth: "2in" }}
+        style={{ background: "rgba(0, 0, 0, 0.7)", maxWidth: "3in" }}
         id="copyright"
       >
         Site design by <NameBold />.
         <br />
         Coding by <NameBold />.
         <br />
-        <NameBold /> is a <NameBold /> company. All <NameBold />
+        <NameBold /> is a <NameBold /> company.
+        <br /> All <NameBold />
         <strong>s</strong> reserved.
         <br />
         ©2024 <NameBold />.

@@ -5,5 +5,4 @@ import Info from "./sidebar/info";
 import Skills from "./sidebar/skills";
 import Cutout from "./cutout";
 
-
 export { ExperienceContainer, ResumeContainer, Sidebar, Info, Skills, Cutout };

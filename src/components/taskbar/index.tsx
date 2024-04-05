@@ -39,7 +39,7 @@ const Taskbar = ({ handleColorPrint, handleBNWPrint, editToggle }: Props) => {
     <>
       <Menubar
         id="taskbar"
-        className="rounded-none relative top-2 -right-4 p-0 w-fit mx-auto z-50"
+        className="rounded-none relative top-2 sm:-right-4 p-0 w-fit mx-auto z-50"
         style={{
           clear: "both",
         }}
