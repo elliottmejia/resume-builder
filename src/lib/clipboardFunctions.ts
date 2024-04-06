@@ -1,25 +1,25 @@
-//@ts-nocheck
+import { isIos } from "lib/utils";
 
 interface Clipboard {
   copy: (text: string) => void;
 }
 
-const Clipboard: Clipboard = (function (
-  window,
-  document,
-  navigator
-): Clipboard {
+const Clipboard: Clipboard = (function (window, document): Clipboard {
+  if (document === undefined)
+    console.error("document undefined @ clipboardFunctions ln:8");
+
   if (typeof window === "undefined") {
+    console.error("window undefined");
     return null;
   }
   //eslint-disable-next-line @typescript-eslint/no-explicit-any
   let textArea: any;
 
-  function isOS() {
-    return navigator?.userAgent.match(/ipad|iphone/i);
-  }
-
   function createTextArea(text: string) {
+    if (!document) {
+      console.error("document undefined @ clipboardFunctions ln:18");
+      return;
+    }
     textArea = document?.createElement("textArea");
     textArea.value = text;
     document?.body.appendChild(textArea);
@@ -28,7 +28,7 @@ const Clipboard: Clipboard = (function (
   function selectText() {
     let range, selection;
 
-    if (isOS()) {
+    if (isIos()) {
       range = document?.createRange();
       range?.selectNodeContents(textArea);
       selection = window?.getSelection();
@@ -56,8 +56,7 @@ const Clipboard: Clipboard = (function (
   };
 })(
   typeof window !== "undefined" ? window : undefined,
-  typeof document !== "undefined" ? document : undefined,
-  typeof navigator !== "undefined" ? navigator : undefined
+  typeof document !== "undefined" ? document : undefined
 );
 
 export const copyToClipboard = (textToCopy: string | undefined) => {

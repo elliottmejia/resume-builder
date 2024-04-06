@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function isDev() {
-  return (import.meta.env.DEV = true);
+  return import.meta.env.MODE === "dev";
 }
 
 export function isProd() {
@@ -40,7 +40,6 @@ export const clearButtons = () => {
 };
 
 export function clipboardCopy(text: string) {
-  clearButtons();
   copyToClipboard(text);
 }
 

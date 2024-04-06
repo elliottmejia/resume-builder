@@ -1,8 +1,29 @@
-import { useState } from "react";
+import {
+  useState,
+  // useEffect
+} from "react";
 import { useForm } from "react-hook-form";
+// import { clipboardCopy } from "lib/utils";
+import { Button } from "components/ui/button";
 import useWeb3Forms from "@web3forms/react";
+import { IconWithText } from "src/components/ui";
 
 export default function Contact() {
+  //
+  //TODO: get this working...
+  // if error, save values of form
+  // const handleClipboardCopy = () => {
+  //   clipboardCopy("mejia.elliott@gmail.com");
+  // };
+
+  // let formValues;
+
+  // const handleSetFormValues = () => {
+  //   Object.keys(formValues).forEach((key) => {
+  //     setValue(key, formValues[key]);
+  //   });
+  // };
+
   const {
     register,
     handleSubmit,
@@ -10,11 +31,14 @@ export default function Contact() {
     // getValues,
     // watch,
     // control,
-    // setValue,
+    setValue,
     formState: { errors, isSubmitSuccessful, isSubmitting },
   } = useForm({
     // https://react-hook-form.com/docs/useform#mode
     mode: "onSubmit",
+    resetOptions: {
+      keepDirtyValues: true,
+    },
   });
 
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
@@ -45,10 +69,20 @@ export default function Contact() {
       reset();
     },
     onError: (msg) => {
+      // formValues = getValues();
       setIsSuccess(false);
       setMessage(msg);
+      // handleSetFormValues();
     },
   });
+  // useEffect(() => {
+  //   if (formValues) {
+  //     console.log(formValues);
+  //     Object.keys(formValues).forEach((key) => {
+  //       setValue(key, formValues[key]);
+  //     });
+  //   }
+  // }, [formValues, setValue]);
 
   /**
    * This passes data into the **submitWeb3Form** function and concatenates the from_name field.
@@ -89,9 +123,31 @@ export default function Contact() {
   return (
     <>
       <form onSubmit={onSubmit} className="my-4">
-        <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-8">
-          Contact Me
-        </h2>
+        <div className="mb-4">
+          <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-2">
+            Contact Me
+          </h2>
+          <div className="ml-1">
+            {/* <span className="underline mr-4">or</span>
+            <Button
+              type="button"
+              onClick={handleClipboardCopy}
+              className="bg-black"
+            >
+              <IconWithText icon="mdi:link">Copy</IconWithText>
+            </Button> */}
+            <span className="underline mr-4">or</span>
+            <Button
+              type="button"
+              className="bg-black"
+              onClick={() => {
+                window.open("mailto:mejia.elliott@gmail.com");
+              }}
+            >
+              <IconWithText icon="mdi:email">Open</IconWithText>
+            </Button>
+          </div>
+        </div>
 
         <input
           type="checkbox"
@@ -223,7 +279,7 @@ export default function Contact() {
 
         <button
           type="submit"
-          className="w-full py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 dark:bg-white dark:text-black "
+          className="w-full py-4 font-semibold text-white transition-colors bg-black rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 dark:bg-white dark:text-black "
         >
           {isSubmitting ? (
             <svg
