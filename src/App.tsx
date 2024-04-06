@@ -12,7 +12,7 @@ import { useReactToPrint } from "react-to-print";
 import { clearButtons } from "./lib/utils";
 import Screentone from "components/styling/screentone";
 import { CornerButton } from "components/ui";
-import { getEditModeFromStorage } from "lib/utils";
+import { getEditModeFromStorage, isIphone } from "lib/utils";
 import { infoData } from "data/data";
 import { useFont } from "@react-hooks-library/core";
 import { Loading } from "components/styling";
@@ -24,6 +24,7 @@ function App() {
   // ... test ipad
   // ... test macos safari
   // ... test edge
+  const agentIphone = isIphone();
 
   const printRef = useRef<HTMLDivElement | null>(null);
 
@@ -84,7 +85,11 @@ function App() {
     <>
       <div
         id="app-container"
-        className="relative font-geist animate duration-200 fade-in"
+        className={
+          agentIphone
+            ? "  relative font-geist animate duration-200 fade-in"
+            : "  relative font-geist animate duration-200 fade-in"
+        }
       >
         {editModeEnabled && <CornerButton handlePageEdit={handlePageEdit} />}
         <Taskbar

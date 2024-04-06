@@ -10,9 +10,7 @@ const Clipboard: Clipboard = (function (
   navigator
 ): Clipboard {
   if (typeof window === "undefined") {
-    return {
-      copy: (text: string) => {},
-    };
+    return null;
   }
   //eslint-disable-next-line @typescript-eslint/no-explicit-any
   let textArea: any;

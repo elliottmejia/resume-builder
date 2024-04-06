@@ -20,7 +20,7 @@ export default function Contact() {
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
 
-  const apiKey = import.meta.env.VITE_MAIL_KEY || "YOUR_PUBLIC_KEY_HERE";
+  const apiKey = import.meta.env.VITE_MAIL_KEY;
 
   /**
    * Submits the web3 form.
@@ -194,7 +194,7 @@ export default function Contact() {
             })}
           />
           {errors.subject && (
-            <div className="mt-1 text-red-600">
+            <div className="mt-1 text-red-600 text-md">
               <small>{errors.subject.message as string}</small>
             </div>
           )}
@@ -214,7 +214,7 @@ export default function Contact() {
             })}
           />
           {errors.message && (
-            <div className="mt-1 text-red-600">
+            <div className="mt-1 text-md text-red-600">
               {" "}
               <small>{String(errors.message.message)}</small>
             </div>
@@ -253,12 +253,12 @@ export default function Contact() {
       </form>
 
       {isSubmitSuccessful && isSuccess && (
-        <div className="mt-3 text-sm text-center text-green-500">
+        <div className="mt-3 text-md text-center text-green-500">
           {message || "Success. Message sent successfully"}
         </div>
       )}
       {isSubmitSuccessful && !isSuccess && (
-        <div className="mt-3 text-sm text-center text-red-500">
+        <div className="mt-3 text-md text-center text-red-500">
           {message || "Something went wrong. Please try later."}
         </div>
       )}

@@ -139,6 +139,7 @@ html{
 
 #app-container {
   margin: 0 auto;
+  width:fit-content;
   max-width: 8.5in;
   --s: 30px; /* control the size*/
   --color: hsl(120, 24%, 35%); /* control the color */
@@ -205,6 +206,13 @@ h1{
   -webkit-filter: grayscale(100%);
 }
 
+@media screen and (max-width: 500px) {
+  #root{
+    margin: 0 auto;
+    padding:0;
+
+  }
+}
 @media screen and (max-width: 640px) {
   #sidebar{
     clip-path: polygon(var(--sb-clip) 0, calc(100% - 23px) 0, 100% 23px, 100% 100%, 0 100%, 0 var(--sb-clip));
@@ -219,5 +227,8 @@ h1{
   #experience{
     clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0% 100%, 0 20px);
   }
+}
 
+.experience-clip-path-ios{
+  clip-path: none !important; 
 }

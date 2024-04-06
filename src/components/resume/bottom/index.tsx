@@ -1,4 +1,4 @@
-import { cn, uuid } from "lib/utils";
+import { cn } from "lib/utils";
 import { Card, CardTitle, CardContent } from "components/ui";
 import { Icon } from "@iconify/react";
 import { eduData, certData } from "data/data";

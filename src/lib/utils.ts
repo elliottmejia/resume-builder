@@ -18,6 +18,14 @@ export function isTest() {
   return import.meta.env.MODE === "test";
 }
 
+export function isIos() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent);
+}
+
+export function isIphone() {
+  return /iPhone|iPod/.test(navigator.userAgent);
+}
+
 export function uuid() {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
 }
