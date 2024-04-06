@@ -87,7 +87,7 @@ function App() {
         id="app-container"
         className={
           agentIphone
-            ? "  relative font-geist animate duration-200 fade-in"
+            ? "no-clip  relative font-geist animate duration-200 fade-in"
             : "  relative font-geist animate duration-200 fade-in"
         }
       >

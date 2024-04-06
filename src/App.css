@@ -235,6 +235,6 @@ h1{
   }
 }
 
-.experience-clip-path-ios{
-  clip-path: none !important; 
+.no-clip{
+  clip-path: none !important;
 }
