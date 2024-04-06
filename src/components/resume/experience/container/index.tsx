@@ -15,7 +15,7 @@ const ExperienceContainer = forwardRef<HTMLDivElement, Props>(
       "bg-gray-100 p-4 md:p-8 h-full w-full min-w-8 text-left flex flex-col gap-y-2 relative sm:top-[0.5rem] ";
 
     if (agentIos) {
-      ExperienceContainerClasses += " .experience-clip-path-ios";
+      ExperienceContainerClasses += " experience-clip-path-ios";
     }
 
     return (

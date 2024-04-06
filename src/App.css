@@ -210,8 +210,14 @@ h1{
   #root{
     margin: 0 auto;
     padding:0;
+    width:fit-content;
+    overflow:clip;
 
   }
+  #experience{
+    clip-path: none;
+  }
+
 }
 @media screen and (max-width: 640px) {
   #sidebar{
