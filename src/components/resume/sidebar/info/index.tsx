@@ -38,7 +38,7 @@ const Info = () => {
           </div> */}
           <img
             src="/circles.png"
-            className="h-[61px] absolute top-2 right-8"
+            className="h-[61px] absolute top-2 right-8 animate duration-500 ease-in"
           ></img>
 
           <Avatar

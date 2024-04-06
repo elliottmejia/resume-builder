@@ -1,4 +1,4 @@
-import { cn } from "lib/utils";
+import { cn, uuid } from "lib/utils";
 import { Card, CardTitle, CardContent } from "components/ui";
 import { Icon } from "@iconify/react";
 import { eduData, certData } from "data/data";
@@ -55,17 +55,17 @@ CERTIFICATIONS
           {certData.map((data: CertType, index: number) => {
             const { certs, issuer } = data;
             return (
-              <div key={issuer + index} className="text-[10pt]">
+              <div key={issuer + "-" + index} className="text-[10pt]">
                 <strong className="text-[11pt]">{issuer}</strong>
                 <br />
                 {certs.map((cert, index) => {
                   return (
-                    <>
-                      <i key={index} className="text-[#3F3F3F]">
+                    <div key={index}>
+                      <i className="text-[#3F3F3F]">
                         {cert.title} - {cert.issueDate}
                       </i>
                       <br />
-                    </>
+                    </div>
                   );
                 })}
               </div>
