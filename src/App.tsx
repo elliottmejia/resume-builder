@@ -17,6 +17,7 @@ import { infoData } from "data/data";
 import { useFont } from "@react-hooks-library/core";
 import { Loading } from "components/styling";
 import BottomContainer from "./components/resume/bottom";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   //TODO: mobile...
@@ -83,6 +84,7 @@ function App() {
 
   return (
     <>
+      <Analytics />
       <div
         id="app-container"
         className={
