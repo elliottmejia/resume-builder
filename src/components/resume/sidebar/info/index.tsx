@@ -43,15 +43,11 @@ const Info = () => {
 
           <Avatar
             id="logo"
-            onClick={() => {
-              window?.open(portfolio);
-            }}
             className="logo
              flex  overflow-hidden rounded-full
             w-16 h-16
             animate ease-in-out duration-500 
             hover:scale-105 hover:rotate-6 
-            cursor-pointer 
             my-2 
             z-20 
             relative
@@ -81,7 +77,7 @@ const Info = () => {
         {tel && <IconWithText title="Cell" icon="bx:phone" text={tel} />}
         {email && emailShort && (
           <IconWithText title="Email" icon="bx:envelope">
-            <Mail trigger="mejia.elliott@gmail" className="text-sm">
+            <Mail trigger="info@elliottmejia.com" className="text-sm">
               <MailForm />
             </Mail>
           </IconWithText>

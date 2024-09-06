@@ -141,7 +141,9 @@ export default function Contact() {
               type="button"
               className="bg-black"
               onClick={() => {
-                window.open("mailto:mejia.elliott@gmail.com");
+                window.open(
+                  "mailto:info@elliottmejia.com?subject=FORM: Reaching Out to Elliott Mejia"
+                );
               }}
             >
               <IconWithText icon="mdi:email">Open</IconWithText>
