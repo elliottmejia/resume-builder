@@ -25,11 +25,9 @@ export const experienceData: ExpType[] = [
     endDate: "Present",
     entries: [
       "Developed and deployed several lead-generation automations in Python utilizing the Lead Scrape, D7, and High Level APIs. This resulted in a ~1200% increase in lead generation efficiency.",
-
+      "Created a business database in MySQL, optimizing data storage and retrieval processes to enhance the accuracy and efficiency of client information management. Additionally, integrated data analytics tools that enabled real-time insights into customer behavior, empowering marketing strategies with actionable data points.",
       "Collaborated directly with CEO Joe Weaver in defining data structures, developing custom data pipelines, and implementing data-driven marketing strategies.",
-
       "Led a team of outsourced web developers, efficiently reducing the average MVP staging time to one month, thus accelerating pre-revision project delivery timelines.",
-
       "Offered my expertise towards revisions, providing professional, personalized support to development-oriented projects and improving client satisfaction.",
     ],
   },
@@ -41,6 +39,8 @@ export const experienceData: ExpType[] = [
     endDate: "June 2023",
     entries: [
       "Under scope of contract, executed a strategic transition of a Magento-imported theme to Shopify 2.0, enhancing website usability and performance.",
+      "Leveraged PHP to optimize e-commerce backend processes, enhancing code maintainability, rendering speed, and scalability along with the use of PostgreSQL.",
+      "Leveraged Mustache templating, developed reusable components and refactored legacy code, improving workflow efficiency and site performance. Many of these templates were refactored into components, while some were updated on the fly.",
       "Spearheaded the development of a bespoke wishlist app using Tailwind CSS.",
       "Improved collection page performance by 15% by refactoring Javascript to Liquid.",
       "Significantly refactored Dolls Kill's codebase.",
