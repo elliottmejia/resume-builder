@@ -43,7 +43,8 @@ export const experienceData: ExpType[] = [
       "Leveraged Mustache templating, developed reusable components and refactored legacy code, improving workflow efficiency and site performance. Many of these templates were refactored into components, while some were updated on the fly.",
       "Spearheaded the development of a bespoke wishlist app using Tailwind CSS.",
       "Improved collection page performance by 15% by refactoring Javascript to Liquid.",
-      "Significantly refactored Dolls Kill's codebase.",
+      "Utilized React CDN to create hydrating components, mitigating the need for page refreshes in some areas.",
+      "Significantly refactored Dolls Kill's codebase, balancing creative and technical needs as the website shifted to a more formal development process at the same time as a redesign.",
     ],
   },
   {
