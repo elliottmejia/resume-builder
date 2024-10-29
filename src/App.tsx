@@ -116,7 +116,7 @@ function App() {
         </ResumeContainer>
       </div>
       <div
-        className="relative text-center text-white font-thin top-2  z-50 w-fit mx-auto p-2 rounded-sm text-xs"
+        className="relative text-center text-white font-thin top-2  z-50 w-fit mx-auto p-2 rounded-sm text-xs print:hidden"
         style={{ background: "rgba(0, 0, 0, 0.7)", maxWidth: "3in" }}
         id="copyright"
       >
