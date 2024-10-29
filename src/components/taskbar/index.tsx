@@ -67,7 +67,7 @@ const Taskbar = ({ handleColorPrint, editToggle }: Props) => {
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <a download href="/Elliott_Mejia_Resume_Apr2024.pdf">
+          <a download href="/Elliott_Mejia_Resume_Oct_24.pdf">
             <MenubarTrigger className={cn(triggerClasses, " ")}>
               <Icon
                 icon="typcn:download"
