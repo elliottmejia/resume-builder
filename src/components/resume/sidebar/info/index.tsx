@@ -36,10 +36,10 @@ const Info = () => {
             <div className="absolute w-16 h-16 rounded-full bg-red-500 top-2 left-0 " />
             <div className="absolute w-16 h-16 rounded-full bg-cyan-400 top-2 left-4 " />
           </div> */}
-          <img
+          {/* <img
             src="/circles.png"
             className="h-[61px] absolute top-2 right-8 animate duration-500 ease-in"
-          ></img>
+          ></img> */}
 
           <Avatar
             id="logo"
