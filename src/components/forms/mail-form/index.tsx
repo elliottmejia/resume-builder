@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "components/ui/button";
 import useWeb3Forms from "@web3forms/react";
 import { IconWithText } from "src/components/ui";
+import { infoData } from "src/data/data";
 
 export default function Contact() {
   //
@@ -44,8 +45,6 @@ export default function Contact() {
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
 
-  const apiKey = import.meta.env.VITE_MAIL_KEY;
-
   /**
    * Submits the web3 form.
    * "data" is left unused here, but is useful to have
@@ -57,7 +56,7 @@ export default function Contact() {
    * @param {Function} onError - The callback function to be executed on form submission error.
    */
   const { submit: submitWeb3Form } = useWeb3Forms({
-    access_key: apiKey,
+    access_key: "bb3b9644-a8c3-4219-b570-4fbbfc0fb1ea",
     settings: {
       //   from_name: "Site User",
       //   subject: "Immutable message from user",
@@ -125,7 +124,7 @@ export default function Contact() {
       <form onSubmit={onSubmit} className="my-4">
         <div className="mb-4">
           <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-2">
-            Contact Me
+            Contact Elliott
           </h2>
           <div className="ml-1">
             {/* <span className="underline mr-4">or</span>
@@ -141,7 +140,8 @@ export default function Contact() {
               type="button"
               className="bg-black"
               onClick={() => {
-                window.open("mailto:mejia.elliott@gmail.com");
+                console.log(infoData.email);
+                window.open(`mailto:${infoData.email}`);
               }}
             >
               <IconWithText icon="mdi:email">Open</IconWithText>

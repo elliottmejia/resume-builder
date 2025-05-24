@@ -13,11 +13,11 @@ import { clearButtons } from "./lib/utils";
 import Screentone from "components/styling/screentone";
 import { CornerButton } from "components/ui";
 import { getEditModeFromStorage, isIphone } from "lib/utils";
-import { infoData } from "data/data";
 import { useFont } from "@react-hooks-library/core";
 import { Loading } from "components/styling";
 import BottomContainer from "./components/resume/bottom";
 import { Analytics } from "@vercel/analytics/react";
+import CtrlOverride from "./components/keypress/ctrl-override";
 
 function App() {
   //TODO: mobile...
@@ -62,8 +62,6 @@ function App() {
     setEditModeEnabled(!editModeEnabled);
   };
 
-  const NameBold = () => <strong>{infoData.name}</strong>;
-
   const [delayFinished, setDelayFinished] = useState(false);
 
   useEffect(() => {
@@ -84,6 +82,7 @@ function App() {
 
   return (
     <>
+      <CtrlOverride onPress={() => alert("pressed ctrl")} />
       <Analytics />
       <div
         id="app-container"
@@ -99,15 +98,14 @@ function App() {
           editToggle={handleEditToggle}
         />
         <ResumeContainer className="relative" ref={printRef}>
-          <Screentone className="print-only" variant="dark" gradient />
           <Sidebar>
             <Info />
             <Skills className="hidden sm:block" instance="sidebar" />
           </Sidebar>
           <ExperienceContainer>
-            <Screentone />
+            {/* <Screentone /> */}
             <Skills
-              className="block sm:hidden grid grid-cols-3 gap-2"
+              className="sm:hidden grid grid-cols-3 gap-2"
               instance="bottom"
             />
 
@@ -120,15 +118,6 @@ function App() {
         style={{ background: "rgba(0, 0, 0, 0.7)", maxWidth: "3in" }}
         id="copyright"
       >
-        Site design by <NameBold />.
-        <br />
-        Coding by <NameBold />.
-        <br />
-        <NameBold /> is a <NameBold /> company.
-        <br /> All <NameBold />
-        <strong>s</strong> reserved.
-        <br />
-        ©2024 <NameBold />.
         <br />
       </div>
     </>

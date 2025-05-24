@@ -13,7 +13,6 @@ const Info = () => {
     name,
     tel,
     email,
-    emailShort,
     portfolio,
     portfolioShort,
     linkedinShort,
@@ -79,9 +78,9 @@ const Info = () => {
         className="grid grid-cols-2 mt-4 sm:px-4 pb-4 sm:pb-0 sm:mt-0 sm:flex sm:flex-col gap-y-2  "
       >
         {tel && <IconWithText title="Cell" icon="bx:phone" text={tel} />}
-        {email && emailShort && (
+        {email && (
           <IconWithText title="Email" icon="bx:envelope">
-            <Mail trigger="mejia.elliott@gmail" className="text-sm">
+            <Mail trigger="mejia.elliott@gmail.com" className="text-sm">
               <MailForm />
             </Mail>
           </IconWithText>

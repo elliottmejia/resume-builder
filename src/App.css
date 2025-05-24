@@ -1,17 +1,14 @@
 
 :root{
-  --bg-root: hsl(0, 0%, 9%);
+  --bg-root: hsl(0, 0%, 100%);
 
-  --bg-app-container: hsl(34, 44%, 69%);
+  --bg-app-container: hsla(0, 0%, 0%, 0);
   --sidebar-border-color: #3d3838;
   --sidebar-bg-color: hsl(0, 0%, 100%);
-  --gradient-bg-color: linear-gradient(to right, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.97) 9.1%, hsla(0, 0%, 100%, 0.925) 17%, hsla(0, 0%, 100%, 0.868) 23.9%, hsla(0, 0%, 100%, 0.801) 30%, hsla(0, 0%, 100%, 0.725) 35.5%, hsla(0, 0%, 100%, 0.644) 40.5%, hsla(0, 0%, 100%, 0.558) 45.4%, hsla(0, 0%, 100%, 0.471) 50.2%, hsla(0, 0%, 100%, 0.385) 55.2%, hsla(0, 0%, 100%, 0.301) 60.5%, hsla(0, 0%, 100%, 0.223) 66.5%, hsla(0, 0%, 100%, 0.151) 73.2%, hsla(0, 0%, 100%, 0.089) 80.9%, hsla(0, 0%, 100%, 0.038) 89.8%, hsla(0, 0%, 100%, 0) 100%);
-  --experience-bg-color: hsl(0, 0%, 90%);
-  --box-shadow-bg-color: hsla(0, 0%, 0%, 0.667);
+  --gradient-bg-color: linear-gradient(to right, hsl(0, 0%, 65%) 0%, hsla(0, 0%, 100%, 0.97) 9.1%, hsla(0, 0%, 100%, 0.925) 17%, hsla(0, 0%, 100%, 0.868) 23.9%, hsla(0, 0%, 100%, 0.801) 30%, hsla(0, 0%, 100%, 0.725) 35.5%, hsla(0, 0%, 100%, 0.644) 40.5%, hsla(0, 0%, 100%, 0.558) 45.4%, hsla(0, 0%, 100%, 0.471) 50.2%, hsla(0, 0%, 100%, 0.385) 55.2%, hsla(0, 0%, 100%, 0.301) 60.5%, hsla(0, 0%, 100%, 0.223) 66.5%, hsla(0, 0%, 100%, 0.151) 73.2%, hsla(0, 0%, 100%, 0.089) 80.9%, hsla(0, 0%, 100%, 0.038) 89.8%, hsla(0, 0%, 100%, 0) 100%);
+  --experience-bg-color: hsl(0, 0%, 79%);
+  --box-shadow-bg-color: hsla(0, 0%, 91%, 0.506);
   --phi: 61%; /* 1 divided by phi */
-}
-html{
-  background:var(--bg-root);
 }
 
 
@@ -22,9 +19,9 @@ html{
   padding: 1rem;
   padding-bottom: 4rem;
   text-align: center;
-  background-image: radial-gradient(#212121 20%, transparent 20%),
-  radial-gradient(#656565 20%, transparent 20%);
-  background-color: #161616;
+  /* background-image: radial-gradient(#212121 20%, transparent 20%), 
+  radial-gradient(#656565 20%, transparent 20%);*/
+  background-color: #6f6f6f;
   background-position: 0 0, 50px 50px;
   background-size: var(--size) var(--size);
   position:relative;
@@ -44,7 +41,6 @@ html{
 }
 #sidebar-after-polygon{
  position: absolute;
-
  height: 46px;
  width: 100%;
  content: "";
@@ -93,6 +89,7 @@ html{
   }
   #taskbar {
     display:none;
+    position: absolute;
   }
   .shadow{
     box-shadow: none; 
