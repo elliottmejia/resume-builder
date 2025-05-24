@@ -17,7 +17,6 @@ import { useFont } from "@react-hooks-library/core";
 import { Loading } from "components/styling";
 import BottomContainer from "./components/resume/bottom";
 import { Analytics } from "@vercel/analytics/react";
-import CtrlOverride from "./components/keypress/ctrl-override";
 
 function App() {
   //TODO: mobile...
@@ -82,7 +81,6 @@ function App() {
 
   return (
     <>
-      <CtrlOverride onPress={() => alert("pressed ctrl")} />
       <Analytics />
       <div
         id="app-container"
