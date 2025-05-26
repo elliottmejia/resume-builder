@@ -1,7 +1,7 @@
 import { skillsData, certData } from "data/data";
 import { cn } from "lib/utils";
 import { Card } from "components/ui/card";
-import { SkillsType, CertType } from "data/types";
+import { Skills as SkillsType, Cert } from "data/types";
 
 type Props = {
   className?: string;
@@ -38,7 +38,7 @@ const Skills = (props: Props) => {
         </>
       )}
       {instance === "sidebar" &&
-        certData.map((data: CertType, idx: number) => (
+        certData.map((data: Cert, idx: number) => (
           <div key={idx} className="text-left">
             <h3 className="font-bold text-[14px]">{data.issuer}</h3>
             {data.certs.map((cert, idx) => (

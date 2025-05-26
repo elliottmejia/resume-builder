@@ -1,12 +1,11 @@
 import { infoData } from "data/data";
-import type { InfoType } from "data/types";
+import type { Info as InfoType } from "data/types";
 import { Avatar, AvatarFallback } from "components/ui/avatar";
 import IconWithText from "ui/icon-with-text";
 import { Icon } from "@iconify/react";
 import Mail from "components/modals/mail";
 import MailForm from "components/forms/mail-form";
 import { cn } from "lib/utils";
-
 
 const Info = () => {
   const {

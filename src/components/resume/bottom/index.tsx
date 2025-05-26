@@ -2,7 +2,7 @@ import { cn } from "lib/utils";
 import { Card, CardTitle, CardContent } from "components/ui";
 import { Icon } from "@iconify/react";
 import { eduData, certData } from "data/data";
-import type { EduType, CertType } from "data/types";
+import type { Edu, Cert } from "data/types";
 
 type Props = {
   children?: React.ReactNode;
@@ -22,7 +22,7 @@ const BottomContainer = (props: Props) => {
           Education
         </CardTitle>
         <CardContent className="p-0 mt-2 mb-1 h-fit">
-          {eduData.map((data: EduType, index: number) => {
+          {eduData.map((data: Edu, index: number) => {
             const { institution, degree, startDate, endDate } = data;
 
             return (
@@ -52,7 +52,7 @@ CERTIFICATIONS
           Certifications
         </CardTitle>
         <CardContent className="p-0 mt-2 mb-1 h-fit flex flex-col gap-2">
-          {certData.map((data: CertType, index: number) => {
+          {certData.map((data: Cert, index: number) => {
             const { certs, issuer } = data;
             return (
               <div key={issuer + "-" + index} className="text-[10pt]">

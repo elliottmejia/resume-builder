@@ -7,17 +7,16 @@ import {
   CardHeader,
   CardTitle,
 } from "components/ui/card";
-import type { ExpType } from "data/types.ts";
+import type { Exp } from "data/types.ts";
 
 type Props = {
-  data: ExpType;
+  data: Exp;
   delimiter?: string | "-";
 };
 
 const ExperienceCard = ({ data, delimiter }: Props) => {
   //prettier-ignore
-  const { title, company, location, startDate, endDate, entries }: ExpType =
-    data;
+  const { title, company, location, startDate, endDate, entries }: Exp = data;
 
   delimiter = " " + (delimiter || "-").trim() + " ";
 
