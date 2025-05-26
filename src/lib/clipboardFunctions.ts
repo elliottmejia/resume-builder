@@ -17,7 +17,7 @@ const Clipboard: Clipboard = (function (window, document): Clipboard {
 
   function createTextArea(text: string) {
     if (!document) {
-      console.error("document undefined @ clipboardFunctions ln:18");
+      console.error("document undefined @ clipboardFunctions");
       return;
     }
     textArea = document?.createElement("textArea");

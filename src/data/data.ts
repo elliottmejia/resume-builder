@@ -1,11 +1,11 @@
 import { isProd } from "src/lib/utils";
-import { ExpType, InfoType, SkillsType, EduType, CertType } from "data/types";
+import { Exp, Info, Skills, Edu, Cert } from "data/types";
 
 export const HOSTED_DOMAIN = isProd()
   ? "https://resume.elliottmejia.com"
   : "copy successful";
 
-export const infoData: InfoType = {
+export const infoData: Info = {
   name: "Elliott Mejia",
   tel: "(206) 792-6241",
   email: "info@elliottmejia.com",
@@ -16,7 +16,7 @@ export const infoData: InfoType = {
   linkedinShort: "/in/elliott-mejia/",
 };
 
-export const experienceData: ExpType[] = [
+export const experienceData: Exp[] = [
   {
     title: "Freelance Developer",
     company: "Parahumana",
@@ -39,7 +39,7 @@ export const experienceData: ExpType[] = [
     entries: [
       "Led migration of Magento-based theme to Shopify 2.0, boosting site performance and maintainability.",
       "Refactored backend PHP and PostgreSQL systems to enhance performance and scalability of e-commerce logic.",
-      "Modularized Mustache templates and implemented reusable Shopify components to streamline frontend development.",
+      "Modularized migration-band-aid Mustache templates and implemented reusable Shopify components to streamline frontend development.",
       "Built a custom wishlist app using Tailwind CSS, improving user engagement and retention.",
       "Improved collection page load times by 15% by converting complex JavaScript logic to native Liquid rendering.",
       "Integrated CDN-hosted React components to support dynamic content without full-page reloads.",
@@ -47,7 +47,7 @@ export const experienceData: ExpType[] = [
     ],
   },
   {
-    title: "Ecommerce Developer",
+    title: "Ecommerce Coordinator",
     company: "Lauren Moshi",
     location: "Commerce, CA",
     startDate: "November 2021",
@@ -55,6 +55,7 @@ export const experienceData: ExpType[] = [
     entries: [
       "Introduced Git-based theme version control system, enhancing dev team collaboration and deployment reliability.",
       "Designed and deployed three Shopify storefronts—Lestien, Michael Lauren, and Lauren Moshi—with distinct brand identities.",
+      "Managed product upload pipelines between four departments.",
       "Conducted a comprehensive audit of product data, reducing misclassification and streamlining merchandising operations.",
       "Built a Shopify app integrating Listrak webhooks, saving $2,000/month by eliminating need for Shopify Plus.",
       "Created internal analytics dashboard aggregating sales, inventory, and customer data to support strategic planning.",
@@ -63,7 +64,7 @@ export const experienceData: ExpType[] = [
   },
 ];
 
-export const skillsData: SkillsType[] = [
+export const skillsData: Skills[] = [
   {
     title: "Languages",
     skills: [
@@ -82,45 +83,53 @@ export const skillsData: SkillsType[] = [
   {
     title: "Tools",
     skills: [
-      "GitHub",
+      "Webflow",
+      "Shopify",
       "Jira",
       "Asana",
       "Figma",
       "Photoshop",
       "Illustrator",
-      "Vi/Vim/Neovim",
     ],
   },
   {
     title: "Database",
-    skills: ["MongoDB", "SQL", "GraphQL"],
+    skills: ["MongoDB", "SQL", "GraphQL", "PostgreSQL"],
   },
   {
     title: "Platforms",
-    skills: ["Shopify", "WordPress", "AWS", "Netlify", "Vercel", "Heroku"],
+    skills: [
+      "Shopify",
+      "WordPress",
+      "AWS",
+      "Netlify",
+      "Vercel",
+      "Heroku",
+      "Webflow",
+    ],
   },
   {
     title: "Marketing",
-    skills: [
-      "SEO/SEM",
-      "Analytics",
-      "Email Marketing",
-      "SMS Marketing",
-      "Lead Generation",
-    ],
+    skills: ["SEO/SEM", "Analytics", "Email/SMS Marketing", "Lead Generation"],
   },
 ];
 
-export const eduData: EduType[] = [
+export const eduData: Edu[] = [
   {
     institution: "Icon College of Music",
     degree: "Audio Engineering",
     startDate: "2019",
     endDate: "2020",
   },
+  {
+    institution: "University of the People",
+    degree: "Computer Science",
+    startDate: "2025",
+    endDate: "",
+  },
 ];
 
-export const certData: CertType[] = [
+export const certData: Cert[] = [
   {
     issuer: "Shopify",
     certs: [

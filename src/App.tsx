@@ -101,7 +101,7 @@ function App() {
             <Skills className="hidden sm:block" instance="sidebar" />
           </Sidebar>
           <ExperienceContainer>
-            {/* <Screentone /> */}
+            <Screentone />
             <Skills
               className="sm:hidden grid grid-cols-3 gap-2"
               instance="bottom"
@@ -116,6 +116,7 @@ function App() {
         style={{ background: "rgba(0, 0, 0, 0.7)", maxWidth: "3in" }}
         id="copyright"
       >
+        © Elliott Mejia, 2025
         <br />
       </div>
     </>

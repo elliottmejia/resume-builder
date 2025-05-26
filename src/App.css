@@ -6,8 +6,8 @@
   --sidebar-border-color: #3d3838;
   --sidebar-bg-color: hsl(0, 0%, 100%);
   --gradient-bg-color: linear-gradient(to right, hsl(0, 0%, 65%) 0%, hsla(0, 0%, 100%, 0.97) 9.1%, hsla(0, 0%, 100%, 0.925) 17%, hsla(0, 0%, 100%, 0.868) 23.9%, hsla(0, 0%, 100%, 0.801) 30%, hsla(0, 0%, 100%, 0.725) 35.5%, hsla(0, 0%, 100%, 0.644) 40.5%, hsla(0, 0%, 100%, 0.558) 45.4%, hsla(0, 0%, 100%, 0.471) 50.2%, hsla(0, 0%, 100%, 0.385) 55.2%, hsla(0, 0%, 100%, 0.301) 60.5%, hsla(0, 0%, 100%, 0.223) 66.5%, hsla(0, 0%, 100%, 0.151) 73.2%, hsla(0, 0%, 100%, 0.089) 80.9%, hsla(0, 0%, 100%, 0.038) 89.8%, hsla(0, 0%, 100%, 0) 100%);
-  --experience-bg-color: hsl(0, 0%, 79%);
-  --box-shadow-bg-color: hsla(0, 0%, 91%, 0.506);
+  --experience-bg-color: hsl(0, 0%, 81%);
+  --box-shadow-bg-color: hsla(0, 0%, 100%, 0.506);
   --phi: 61%; /* 1 divided by phi */
 }
 
@@ -24,6 +24,8 @@
   background-color: #6f6f6f;
   background-position: 0 0, 50px 50px;
   background-size: var(--size) var(--size);
+  background: #2A7B9B;
+background: radial-gradient(circle, rgb(101, 124, 133) 0%, rgb(213, 141, 40) 50%, rgb(101, 124, 133) 100%);
   position:relative;
 }
 
@@ -70,26 +72,26 @@
   --exp-clip-len: 5vw;
 }
 @media print {
+  .experience-card:hover{
+    transform:none!important;
+  }
   #experience{
     clip-path: none;
-    border-top:2px solid var(--sidebar-border-color) ;
+    border-top: transparent ;
+
   }
   #sidebar{
-    border-top: 2px solid var(--sidebar-border-color) ;
-    clip-path:none;
+    border-top: transparent; 
+  clip-path:none;
   }
   #sidebar-after-polygon{
     display:none;
   }
   #resume-container{
-    padding-top:.4rem;
+    padding:0.25in;
   }
   #corner-button-container{
     display:none;
-  }
-  #taskbar {
-    display:none;
-    position: absolute;
   }
   .shadow{
     box-shadow: none; 
@@ -102,6 +104,21 @@
   }
   .hover\:shadow-lsgraf:hover{
     box-shadow: none;
+  }
+  #taskbar{
+    display:none;
+  }
+  #app-container::after{
+    display:none;
+  }
+  :root{
+    --experience-bg-color: #ffffff00;
+  }
+  #sidebar-wrap::after {
+    --sidebar-border-width: 0px;
+    border-style: solid;
+    border-width: var(--sidebar-border-width) 0 0 var(--sidebar-border-width);
+    border-color: transparent;
   }
 }
 
@@ -180,15 +197,6 @@
 #corner-button{ 
   border-color: transparent var(--hover-button-color) transparent transparent;
  }
-}
-
-@media print {
-  #app-container::after{
-    display:none;
-  }
-  :root{
-    --experience-bg-color: #ffffff00;
-  }
 }
 
 h1{ 

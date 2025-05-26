@@ -39,9 +39,8 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
 
   return (
     <Card
-      id="experience-card"
       // ref={cardRef}
-      className="z-10 relative"
+      className="experience-card z-10 relative"
     >
       <CardHeader className="pb-2 pt-4">
         <CardTitle className="text-md pt-0">
