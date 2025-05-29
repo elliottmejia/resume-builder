@@ -48,7 +48,7 @@ const Info = () => {
              flex  overflow-hidden rounded-full
             w-16 h-16
             animate ease-in-out duration-500 
-            hover:scale-105 hover:rotate-6 
+             hover:rotate-6
             cursor-pointer 
             my-2 
             z-20 

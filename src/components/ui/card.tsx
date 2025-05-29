@@ -1,8 +1,7 @@
 import * as React from "react"
 
-import { cn, isIos } from "src/lib/utils";
+import { cn } from "src/lib/utils";
 
-let hoverClass = !isIos() ? "hover:scale-105" : "";
 
 
 const Card = React.forwardRef<
@@ -14,7 +13,6 @@ const Card = React.forwardRef<
     className={cn(
       "rounded-xl border bg-card text-card-foreground shadow print:shadow-none animate duration-300 ease-in-out hover:shadow-lsgraf print:border-[#c8c8c8] print:border-1",
       className,
-      hoverClass
     )}
     {...props}
   />

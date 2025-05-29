@@ -21,16 +21,17 @@ const BottomContainer = (props: Props) => {
           </span>
           Education
         </CardTitle>
-        <CardContent className="p-0 mt-2 mb-1 h-fit">
+        <CardContent className="p-0 mt-2 h-fit">
           {eduData.map((data: Edu, index: number) => {
-            const { institution, degree, startDate, endDate } = data;
+            const { institution, degree, location, startDate, endDate } = data;
 
             return (
-              <div key={institution + index} className="text-[10pt]">
+              <div key={institution + index} className="text-[10pt] pt-2">
                 <strong className="font-bold">{institution}</strong>
                 <br />
                 <i className="text-[#3F3F3F]">{degree}</i>
                 <br />
+                <p className="text-[#3F3F3F]">{location}</p>
                 <p className="text-[#3F3F3F]">
                   {startDate} - {endDate}
                 </p>

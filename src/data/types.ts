@@ -25,6 +25,7 @@ export type Skills = {
 
 export type Edu = {
   institution: string;
+  location?: string;
   degree: string;
   startDate: string;
   endDate: string;

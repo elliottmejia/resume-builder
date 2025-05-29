@@ -18,12 +18,13 @@ export const infoData: Info = {
 
 export const experienceData: Exp[] = [
   {
-    title: "Freelance Developer",
+    title: "Freelance Developer | Full Stack Engineer",
     company: "Parahumana",
     location: "Los Angeles, CA",
     startDate: "June 2023",
     endDate: "Present",
     entries: [
+      "Created and deployed several AI/ML & pure algorithmic automations to generate leads through webscraping and API work via n8n, VPS, and Make, among others.",
       "Engineered and deployed lead scraping tools and automation workflows for diverse client needs, improving outreach efficiency.",
       "Built and monetized custom Astro.js templates tailored for SEO and visual storytelling.",
       "Designed bespoke internal software for solar sales workflows, improving quote speed and lead conversion.",
@@ -72,22 +73,28 @@ export const skillsData: Skills[] = [
       "Python",
       "HTML",
       "CSS (SASS, Tailwind)",
-      "R",
       "Liquid",
     ],
   },
   {
-    title: "Frameworks",
-    skills: ["React", "Next.js", "Astro", "Django"],
+    title: "Libraries & Frameworks",
+    skills: [
+      "PyTorch",
+      "TensorFlow (js, py)",
+      "React",
+      "Next.js",
+      "Astro",
+      "Django",
+    ],
   },
   {
     title: "Tools",
     skills: [
       "Webflow",
+      "Figma",
       "Shopify",
       "Jira",
       "Asana",
-      "Figma",
       "Photoshop",
       "Illustrator",
     ],
@@ -101,15 +108,14 @@ export const skillsData: Skills[] = [
     skills: [
       "Shopify",
       "WordPress",
-      "AWS",
-      "Netlify",
       "Vercel",
       "Heroku",
       "Webflow",
+      "VPS (Digital Ocean, Linode)",
     ],
   },
   {
-    title: "Marketing",
+    title: "Growth & Analytics",
     skills: ["SEO/SEM", "Analytics", "Email/SMS Marketing", "Lead Generation"],
   },
 ];
@@ -117,15 +123,17 @@ export const skillsData: Skills[] = [
 export const eduData: Edu[] = [
   {
     institution: "Icon College of Music",
+    location: "Los Angeles, CA",
     degree: "Audio Engineering",
     startDate: "2019",
     endDate: "2020",
   },
   {
-    institution: "University of the People",
-    degree: "Computer Science",
-    startDate: "2025",
-    endDate: "",
+    institution: "North Seattle College",
+    location: "Seattle, WA",
+    degree: "Coursework in Computer Science",
+    startDate: "2018",
+    endDate: "2019",
   },
 ];
 
@@ -136,6 +144,15 @@ export const certData: Cert[] = [
       {
         title: "Liquid Storefronts for Theme Developers",
         issueDate: "2022",
+      },
+    ],
+  },
+  {
+    issuer: "Harvard University edX",
+    certs: [
+      {
+        title: "CS50's Introduction to Computer Science",
+        issueDate: "2020",
       },
     ],
   },
