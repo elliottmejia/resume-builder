@@ -18,30 +18,34 @@ export const infoData: Info = {
 
 export const experienceData: Exp[] = [
   {
-    title: "Freelance Developer | Full Stack Engineer",
+    title: "Freelance Web Developer | API specialist",
     company: "Parahumana",
     location: "Los Angeles, CA",
     startDate: "June 2023",
     endDate: "Present",
     entries: [
-      "Created and deployed several AI/ML & pure algorithmic automations to generate leads through webscraping and API work via n8n, VPS, and Make, among others.",
+      "Developed several API service paths for various clients across many verticals.",
       "Engineered and deployed lead scraping tools and automation workflows for diverse client needs, improving outreach efficiency.",
-      "Built and monetized custom Astro.js templates tailored for SEO and visual storytelling.",
-      "Designed bespoke internal software for solar sales workflows, improving quote speed and lead conversion.",
-      "Provided expert code reviews and architectural guidance to client development teams, elevating technical standards and stakeholder satisfaction.",
+      "Built and monetized custom websites tailored for SEO and visual storytelling.",
+      "Connected services such as Notion and Google Sheets; Etsy and Shopify, as a main selling point for some market segments.",
+      "Wrote custom dashboards for clients using to visualize data and track KPIs in real-time, querying Shopify and Wordpress APIs through serverless functions.",
+      "Designed bespoke internal software for sales workflows, improving quote speed and lead conversion.",
+
     ],
   },
   {
     title: "Front End Developer (contract)",
     company: "Dolls Kill",
     location: "Los Angeles, CA",
-    startDate: "March 2023",
+    startDate: "March 2022",
     endDate: "June 2023",
     entries: [
       "Led migration of Magento-based theme to Shopify 2.0, boosting site performance and maintainability.",
-      "Refactored backend PHP and PostgreSQL systems to enhance performance and scalability of e-commerce logic.",
+      "Refactored PHP and PostgreSQL systems to enhance performance and scalability of e-commerce logic.",
+      "Fixed a critical bug that was causing 20+ second product collection loads due to improper load balancing on the fly.",
+      "Wrote Shopify scripts to allowlist discounts for employee emails, destroying a path to discount fraud.",
       "Modularized migration-band-aid Mustache templates and implemented reusable Shopify components to streamline frontend development.",
-      "Built a custom wishlist app using Tailwind CSS, improving user engagement and retention.",
+      "Built a custom wishlist app, improving user engagement and retention.",
       "Improved collection page load times by 15% by converting complex JavaScript logic to native Liquid rendering.",
       "Integrated CDN-hosted React components to support dynamic content without full-page reloads.",
       "Drove large-scale refactor of frontend architecture during concurrent rebranding, aligning dev practices with product design goals.",
@@ -54,7 +58,6 @@ export const experienceData: Exp[] = [
     startDate: "November 2021",
     endDate: "March 2023",
     entries: [
-      "Introduced Git-based theme version control system, enhancing dev team collaboration and deployment reliability.",
       "Designed and deployed three Shopify storefronts—Lestien, Michael Lauren, and Lauren Moshi—with distinct brand identities.",
       "Managed product upload pipelines between four departments.",
       "Conducted a comprehensive audit of product data, reducing misclassification and streamlining merchandising operations.",
@@ -144,15 +147,6 @@ export const certData: Cert[] = [
       {
         title: "Liquid Storefronts for Theme Developers",
         issueDate: "2022",
-      },
-    ],
-  },
-  {
-    issuer: "Harvard University edX",
-    certs: [
-      {
-        title: "CS50's Introduction to Computer Science",
-        issueDate: "2020",
       },
     ],
   },
