@@ -1,3 +1,3 @@
 # TODO
 
-- [ ] Put location under title
+- [x] Put location under title
