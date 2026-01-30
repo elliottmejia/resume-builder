@@ -18,58 +18,98 @@ export const infoData: Info = {
 
 export const experienceData: Exp[] = [
   {
-    title: "Freelance Web Developer | API specialist",
+    // CHANGE TITLE: Emphasize API support aspect. Consider: "API Integration Specialist | Technical Consultant"
+    // This better aligns with "Technical Support Engineer" framing
+    title: "Freelance API Integration Specialist | Technical Consultant",
     company: "Parahumana",
     location: "Los Angeles, CA",
     startDate: "June 2023",
     endDate: "Present",
     entries: [
+      // REORDER: Lead with API/integration support work. Suggested order below:
+
+      // 1st - REWRITE: Frame as client-facing API support. e.g.:
+      // "Provided technical consultation and API integration support for clients across multiple verticals, troubleshooting complex integration issues and documenting solutions"
       "Developed several API service paths for various clients across many verticals.",
-      "Engineered and deployed lead scraping tools and automation workflows for diverse client needs",
-      "Built and monetized custom websites tailored for SEO and visual storytelling.",
+
+      // 2nd - KEEP & ENHANCE: Add troubleshooting angle. e.g.:
+      // "Integrated SaaS platforms (Notion, Google Sheets, Etsy, Shopify) via REST APIs, providing ongoing technical support for client implementations"
       "Connected services such as Notion and Google Sheets; Etsy and Shopify, as a main selling point for some market segments.",
+
+      // 3rd - KEEP & ENHANCE: Emphasize monitoring/debugging aspect. e.g.:
+      // "Built real-time monitoring dashboards querying Shopify and WordPress APIs via serverless functions, enabling clients to track KPIs and diagnose issues"
       "Wrote custom dashboards for clients using to visualize data and track KPIs in real-time, querying Shopify and Wordpress APIs through serverless functions.",
+
+      // 4th - REWRITE: Emphasize sales workflow knowledge (Outreach is sales-focused). e.g.:
+      // "Designed internal sales workflow tools and lead tracking systems, gaining deep understanding of sales processes and CRM integrations"
       "Designed bespoke internal software for sales workflows and lead tracking.",
+
+      // 5th - KEEP but deprioritize (less relevant to support role)
+      "Engineered and deployed lead scraping tools and automation workflows for diverse client needs",
+
+      // REMOVE or heavily deprioritize - not relevant to API support role
+      "Built and monetized custom websites tailored for SEO and visual storytelling.",
 
     ],
   },
   {
+    // CHANGE TITLE: Consider "Platform Engineer (contract)" or "Technical Developer (contract)"
     title: "Front End Developer (contract)",
     company: "Dolls Kill",
     location: "Los Angeles, CA",
     startDate: "March 2022",
     endDate: "June 2023",
     entries: [
-      "Led migration of Magento-based theme to Shopify 2.0, boosting site performance and maintainability.",
-      "Refactored PHP and PostgreSQL systems to enhance performance and scalability of e-commerce logic.",
+      // REORDER: Lead with troubleshooting/debugging wins - critical for Tier 3 support
+
+      // 1st - MOVE TO TOP (currently 3rd): Best bullet for support role. Shows root cause analysis. REWRITE:
+      // "Diagnosed and resolved critical performance bug causing 20+ second page loads by identifying improper load balancing, deploying production fix under time pressure"
       "Fixed a critical bug that was causing 20+ second product collection loads due to improper load balancing on the fly.",
+
+      // 2nd - MOVE UP: PostgreSQL is in Outreach's stack. REWRITE:
+      // "Troubleshot and optimized PHP/PostgreSQL backend systems, resolving performance bottlenecks in enterprise e-commerce platform"
+      "Refactored PHP and PostgreSQL systems to enhance performance and scalability of e-commerce logic.",
+
+      // 3rd - KEEP: Enterprise platform migration = scale experience
+      "Led migration of Magento-based theme to Shopify 2.0, boosting site performance and maintainability.",
+
+      // 4th - MOVE UP: Shows scripting + security awareness. REWRITE:
+      // "Developed custom validation scripts to prevent discount fraud, collaborating with security team to protect revenue integrity"
       "Wrote Shopify scripts to allowlist discounts for employee emails, destroying a path to discount fraud.",
+
+      // 5th - KEEP: Performance debugging
+      "Converted complex JavaScript logic to native Liquid rendering, improving page load times.",
+
+      // REMOVE for this application - pure frontend work, less relevant:
       "Modularized migration-band-aid Mustache templates and implemented reusable Shopify components to streamline frontend development.",
       "Built a custom in-theme wishlist app using React CDN in Shopify, pixel perfect to design specs.",
-      "Converted complex JavaScript logic to native Liquid rendering, improving page load times.",
       "Integrated CDN-hosted React components to support dynamic content without full-page reloads.",
       "Drove large-scale refactor of frontend architecture during concurrent rebranding, aligning dev practices with product design goals.",
     ],
   },
   {
-    title: "Ecommerce Coordinator",
+    title: "Ecommerce Technical Coordinator",
     company: "Lauren Moshi",
     location: "Commerce, CA",
     startDate: "November 2021",
     endDate: "March 2023",
     entries: [
-      "Designed and deployed three Shopify storefronts—Lestien, Michael Lauren, and Lauren Moshi—with distinct brand identities.",
-      "Managed product upload pipelines between four departments.",
+      "Developed custom Shopify app with dynamic webhook integrations for Listrak, providing cost-effective alternative to Shopify Plus.",
+      "Built and maintained API integrations between Shopify and third-party logistics providers using serverless functions, troubleshooting sync issues across systems",
+      "Managed product management and upload pipelines between four departments.",
+      "Led comprehensive audit of product data across three storefronts, identifying and resolving data inconsistencies",
       "Conducted a comprehensive audit of product data, reducing misclassification and streamlining merchandising operations.",
-      "Built a Shopify app that allowed for dynamic webhooks from Listrak, eliminating the need for Shopify Plus.",
-      "Provided backup product photography and post-production editing to maintain visual content pipeline.",
-      "Automated inventory sync between Shopify and third-party logistics providers using APIs and serverless functions.",
+      "Designed and deployed three Shopify storefronts—Lestien, Michael Lauren, and Lauren Moshi—with distinct brand identities.",
       "Wrote shipping ticket markup to style tickets for warehouse efficiency.",
       "Optimized site SEO through keyword research and metadata enhancements, increasing organic traffic.",
-      "Collaborated with marketing to implement promotional strategies that boosted online sales.",
+      "Collaborated with marketing to implement experiential and promotional strategies that boosted online sales.",
     ],
   },
 ];
+
+// SKILLS SECTION - MAJOR RESTRUCTURE NEEDED for Outreach role
+// Their tech stack: Ruby on Rails, Node.js, Elixir/Golang, ElasticSearch, MySQL, AWS, Docker, Kubernetes
+// Their tools: Salesforce/Dynamics, Gmail, Zendesk, Slack, VOIP, Jira, Tableau, DataDog, Kibana, Splunk
 
 export const skillsData: Skills[] = [
   {
@@ -77,63 +117,83 @@ export const skillsData: Skills[] = [
     skills: [
       "JavaScript (+ Typescript)",
       "Python",
-      "HTML",
+      "Ruby",
+      "Go",
+      "C++",      
       "CSS (SASS, Tailwind)",
       "Liquid",
     ],
   },
   {
+    // RENAME: Consider "APIs & Frameworks" to emphasize API work
     title: "Libraries & Frameworks",
     skills: [
+      "Node.js",
+      "Next.js",
+      "Django",      
+      "Rest APIs",
+      "GraphQL",
       "PyTorch",
       "TensorFlow (js, py)",
-      "React",
-      "Next.js",
       "Astro",
-      "Django",
     ],
   },
   {
+    // RENAME: Consider "Support & Collaboration Tools"
     title: "Tools",
     skills: [
+      "Jira",
+      "Postman",
+      "Zendesk",
+      "Slack",
+      "Shopify",
+      "Asana",
       "Webflow",
       "Figma",
-      "Shopify",
-      "Jira",
-      "Asana",
       "Photoshop",
       "Illustrator",
     ],
   },
   {
     title: "Database",
-    skills: ["MongoDB", "SQL", "GraphQL", "PostgreSQL"],
-  },
-  {
-    title: "Platforms",
     skills: [
-      "Shopify",
-      "WordPress",
-      "Vercel",
-      "Heroku",
-      "Webflow",
-      "VPS (Digital Ocean, Linode)",
+      "SQL | PostgreSQL | MySQL",
+      "ElasticSearch",
+      "MongoDB",
+      "GraphQL",
     ],
   },
   {
+    // RENAME: Consider "Cloud & Infrastructure"
+    title: "Cloud & Infrastructure",
+    skills: [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Vercel",
+      "Heroku",
+      "VPS (Digital Ocean, Linode)",
+      "Shopify"
+    ],
+  },
+  {
+    // RENAME: Consider "Monitoring & Analytics" - more relevant to support
     title: "Growth & Analytics",
-    skills: ["SEO/SEM", "Analytics", "Email/SMS Marketing", "Lead Generation"],
+    skills: [
+      "Analytics",
+      "Data Dog",
+      "Google Analytics",
+      "Tableau",
+      "Hotjar",
+      "SEO/SEM",
+      "Email/SMS Marketing",
+      "Lead Generation",
+    ],
   },
 ];
 
+// EDUCATION - Consider reordering or minimizing for this application
 export const eduData: Edu[] = [
-  {
-    institution: "Icon College of Music",
-    location: "Los Angeles, CA",
-    degree: "Audio Engineering",
-    startDate: "2019",
-    endDate: "2020",
-  },
   {
     institution: "North Seattle College",
     location: "Seattle, WA",
@@ -141,7 +201,9 @@ export const eduData: Edu[] = [
     startDate: "2018",
     endDate: "2019",
   },
+
 ];
+
 
 export const certData: Cert[] = [
   {
@@ -158,7 +220,6 @@ export const certData: Cert[] = [
     certs: [
       {
         title: "Google Data Analytics",
-
         issueDate: "2024",
       },
     ],
