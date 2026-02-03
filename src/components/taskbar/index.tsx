@@ -23,11 +23,11 @@ import { isProd } from "lib/utils";
 import { cn } from "lib/utils";
 
 type Props = {
-  handleColorPrint: () => void;
+  handleDownload: () => void;
   editToggle: () => void;
 };
-//eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Taskbar = ({ handleColorPrint, editToggle }: Props) => {
+
+const Taskbar = ({ handleDownload, editToggle }: Props) => {
   const [isCheckedEdit, setCheckedEdit] = useState(getEditModeFromStorage);
 
   const handleEditToggle = () => {
@@ -67,27 +67,17 @@ const Taskbar = ({ handleColorPrint, editToggle }: Props) => {
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <a download href="/Elliott_Mejia_Resume_Oct_24.pdf">
-            <MenubarTrigger className={cn(triggerClasses, " ")}>
-              <Icon
-                icon="typcn:download"
-                className="relative -top-[2px] "
-                height="22px"
-              />
-            </MenubarTrigger>
-          </a>
+          <MenubarTrigger
+            className={cn(triggerClasses, " ")}
+            onClick={handleDownload}
+          >
+            <Icon
+              icon="typcn:download"
+              className="relative -top-[2px] "
+              height="22px"
+            />
+          </MenubarTrigger>
         </MenubarMenu>
-        {!isProd() && (
-          <MenubarMenu>
-            <MenubarTrigger
-              className={triggerClasses}
-              onClick={handleColorPrint}
-              id="printButton"
-            >
-              Print
-            </MenubarTrigger>
-          </MenubarMenu>
-        )}
         {!isProd() && (
           <MenubarMenu>
             <MenubarTrigger className={triggerClasses}>Edit</MenubarTrigger>

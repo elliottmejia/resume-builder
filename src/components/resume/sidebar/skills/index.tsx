@@ -1,4 +1,4 @@
-import { skillsData, certData } from "data/data";
+import { skillsData, certData, currentProjects } from "data/data";
 import { cn } from "lib/utils";
 import { Card } from "components/ui/card";
 import { Skills as SkillsType, Cert } from "data/types";
@@ -53,6 +53,22 @@ const Skills = (props: Props) => {
             ))}
           </div>
         ))}
+      {instance === "sidebar" && (
+        <>
+          <br />
+          <h3 className="text-left font-bold">Current Projects</h3>
+          <ul className="pl-1 text-xs text-left">
+            {currentProjects.map((project, idx) => (
+              <li
+                key={idx}
+                className="hover:translate-x-1 animate duration-300 ease-out"
+              >
+                {project}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
       {instance === "bottom" &&
         skillsData.map((category: SkillsType, idx) => (
           <Card key={idx} className="text-left p-2 bg-white z-10">
