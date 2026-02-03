@@ -8,7 +8,6 @@ import {
   Skills,
 } from "components/resume";
 import { useRef, useState, useEffect } from "react";
-import { useReactToPrint } from "react-to-print";
 import { clearButtons } from "./lib/utils";
 import Screentone from "components/styling/screentone";
 import { CornerButton } from "components/ui";
@@ -17,6 +16,9 @@ import { useFont } from "@react-hooks-library/core";
 import { Loading } from "components/styling";
 import BottomContainer from "./components/resume/bottom";
 import { Analytics } from "@vercel/analytics/react";
+import { pdf } from "@react-pdf/renderer";
+import ResumePDF from "components/resume-pdf";
+import { infoData } from "data/data";
 
 function App() {
   //TODO: mobile...
@@ -32,15 +34,17 @@ function App() {
     "Geist",
     "/fonts/Geist/GeistVF.woff2"
   );
-  const handleColorPrint = useReactToPrint({
-    documentTitle: "",
-    copyStyles: true,
-    content: () => printRef.current,
-    onAfterPrint: () => {
-      clearButtons();
-    },
-    removeAfterPrint: true,
-  });
+
+  const handleDownload = async () => {
+    const filename = `${infoData.name.replace(/\s+/g, "_")}_Resume.pdf`;
+    const blob = await pdf(<ResumePDF />).toBlob();
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
 
   const handlePageEdit = () => {
     //initiates editing
@@ -91,10 +95,7 @@ function App() {
         }
       >
         {editModeEnabled && <CornerButton handlePageEdit={handlePageEdit} />}
-        <Taskbar
-          handleColorPrint={handleColorPrint}
-          editToggle={handleEditToggle}
-        />
+        <Taskbar handleDownload={handleDownload} editToggle={handleEditToggle} />
         <ResumeContainer className="relative" ref={printRef}>
           <Sidebar>
             <Info />

@@ -28,27 +28,11 @@ export const experienceData: Exp[] = [
     entries: [
       // REORDER: Lead with API/integration support work. Suggested order below:
 
-      // 1st - REWRITE: Frame as client-facing API support. e.g.:
-      // "Provided technical consultation and API integration support for clients across multiple verticals, troubleshooting complex integration issues and documenting solutions"
-      "Developed several API service paths for various clients across many verticals.",
+      "Provided technical consultation and API integration support for clients across multiple verticals, troubleshooting complex integration issues and documenting solutions",
 
-      // 2nd - KEEP & ENHANCE: Add troubleshooting angle. e.g.:
-      // "Integrated SaaS platforms (Notion, Google Sheets, Etsy, Shopify) via REST APIs, providing ongoing technical support for client implementations"
-      "Connected services such as Notion and Google Sheets; Etsy and Shopify, as a main selling point for some market segments.",
-
-      // 3rd - KEEP & ENHANCE: Emphasize monitoring/debugging aspect. e.g.:
-      // "Built real-time monitoring dashboards querying Shopify and WordPress APIs via serverless functions, enabling clients to track KPIs and diagnose issues"
-      "Wrote custom dashboards for clients using to visualize data and track KPIs in real-time, querying Shopify and Wordpress APIs through serverless functions.",
-
-      // 4th - REWRITE: Emphasize sales workflow knowledge (Outreach is sales-focused). e.g.:
-      // "Designed internal sales workflow tools and lead tracking systems, gaining deep understanding of sales processes and CRM integrations"
+      "Integrated SaaS platforms (Notion, Google Sheets, Etsy, Shopify) via REST APIs, providing ongoing technical support for client implementations and resolving integration issues",
+      "Built real-time monitoring dashboards querying Shopify and WordPress APIs via serverless functions, enabling clients to track KPIs and diagnose issues","Designed internal sales workflow tools and lead tracking systems, gaining deep understanding of sales processes and CRM integrations",
       "Designed bespoke internal software for sales workflows and lead tracking.",
-
-      // 5th - KEEP but deprioritize (less relevant to support role)
-      "Engineered and deployed lead scraping tools and automation workflows for diverse client needs",
-
-      // REMOVE or heavily deprioritize - not relevant to API support role
-      "Built and monetized custom websites tailored for SEO and visual storytelling.",
 
     ],
   },
@@ -57,7 +41,7 @@ export const experienceData: Exp[] = [
     title: "Front End Developer (contract)",
     company: "Dolls Kill",
     location: "Los Angeles, CA",
-    startDate: "March 2022",
+    startDate: "March 2023",
     endDate: "June 2023",
     entries: [
       // REORDER: Lead with troubleshooting/debugging wins - critical for Tier 3 support
@@ -84,7 +68,7 @@ export const experienceData: Exp[] = [
       "Modularized migration-band-aid Mustache templates and implemented reusable Shopify components to streamline frontend development.",
       "Built a custom in-theme wishlist app using React CDN in Shopify, pixel perfect to design specs.",
       "Integrated CDN-hosted React components to support dynamic content without full-page reloads.",
-      "Drove large-scale refactor of frontend architecture during concurrent rebranding, aligning dev practices with product design goals.",
+     // "Drove large-scale refactor of frontend architecture during concurrent rebranding, aligning dev practices with product design goals.",
     ],
   },
   {
@@ -100,9 +84,6 @@ export const experienceData: Exp[] = [
       "Led comprehensive audit of product data across three storefronts, identifying and resolving data inconsistencies",
       "Conducted a comprehensive audit of product data, reducing misclassification and streamlining merchandising operations.",
       "Designed and deployed three Shopify storefronts—Lestien, Michael Lauren, and Lauren Moshi—with distinct brand identities.",
-      "Wrote shipping ticket markup to style tickets for warehouse efficiency.",
-      "Optimized site SEO through keyword research and metadata enhancements, increasing organic traffic.",
-      "Collaborated with marketing to implement experiential and promotional strategies that boosted online sales.",
     ],
   },
 ];
@@ -204,6 +185,9 @@ export const eduData: Edu[] = [
 
 ];
 
+export const currentProjects: string[] = [
+  "Restaurant-style ticket printer task-management integration with ClickUp and an old Raspberry Pi",
+  "A spectrogram plugin that detects RMS values across draggable frequency bands using JUCE framework in C++",];
 
 export const certData: Cert[] = [
   {
