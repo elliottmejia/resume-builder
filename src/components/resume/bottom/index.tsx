@@ -1,16 +1,17 @@
 import { cn } from "lib/utils";
 import { Card, CardTitle, CardContent } from "components/ui";
 import { Icon } from "@iconify/react";
-import { eduData, certData } from "data/data";
 import type { Edu, Cert } from "data/types";
 
 type Props = {
   children?: React.ReactNode;
   className?: string;
+  eduData: Edu[];
+  certData: Cert[];
 };
 
 const BottomContainer = (props: Props) => {
-  const { className, children } = props;
+  const { className, children, eduData, certData } = props;
   const cardClasses = "w-full h-fit bg-white z-10 p-2 sm:pl-6 sm:pt-4";
   return (
     <div className={cn("flex flex-col gap-2", className)}>
@@ -40,7 +41,7 @@ const BottomContainer = (props: Props) => {
           })}
         </CardContent>
       </Card>
-      {/* 
+      {/*
 
 CERTIFICATIONS
 

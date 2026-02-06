@@ -1,5 +1,5 @@
 import { isProd } from "src/lib/utils";
-import { Exp, Info, Skills, Edu, Cert } from "data/types";
+import { Exp, Info, Skills, Edu, Cert, ResumeVariant } from "data/types";
 
 export const HOSTED_DOMAIN = isProd()
   ? "https://resume.elliottmejia.com"
@@ -24,7 +24,14 @@ export const experienceData: Exp[] = [
     startDate: "June 2023",
     endDate: "Present",
     entries: [
-      "Created and deployed several AI/ML & pure algorithmic automations to generate leads through webscraping and API work via n8n, VPS, and Make, among others.",
+      `Created and deployed several AI/ML & pure algorithmic automations to generate leads through webscraping and API work via n8n, VPS, and Make, among others.\n
+      Engineered and deployed lead scraping tools and automation workflows for diverse client needs, improving outreach efficiency.\n
+      Built and monetized custom Astro.js templates tailored for SEO and visual storytelling.\n
+      Designed bespoke internal software for solar sales workflows, improving quote speed and lead conversion.\n
+      Provided expert code reviews and architectural guidance to client development teams, elevating technical standards and stakeholder satisfaction.
+      `,
+
+
       "Engineered and deployed lead scraping tools and automation workflows for diverse client needs, improving outreach efficiency.",
       "Built and monetized custom Astro.js templates tailored for SEO and visual storytelling.",
       "Designed bespoke internal software for solar sales workflows, improving quote speed and lead conversion.",
@@ -167,3 +174,16 @@ export const certData: Cert[] = [
     ],
   },
 ];
+
+export const resumeConfig: Record<string, ResumeVariant> = {
+  default: {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: experienceData,
+    skills: skillsData,
+    education: eduData,
+    certifications: certData,
+  },
+};
+
+export const DEFAULT_VARIANT = "default";

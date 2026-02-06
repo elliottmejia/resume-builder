@@ -1,4 +1,3 @@
-import { infoData } from "data/data";
 import type { Info as InfoType } from "data/types";
 import { Avatar, AvatarFallback } from "components/ui/avatar";
 import IconWithText from "ui/icon-with-text";
@@ -7,7 +6,11 @@ import Mail from "components/modals/mail";
 import MailForm from "components/forms/mail-form";
 import { cn } from "lib/utils";
 
-const Info = () => {
+type Props = {
+  data: InfoType;
+};
+
+const Info = ({ data }: Props) => {
   const {
     name,
     tel,
@@ -16,7 +19,7 @@ const Info = () => {
     portfolioShort,
     linkedinShort,
     linkedin,
-  }: InfoType = infoData;
+  } = data;
   return (
     <div
       id="info"
@@ -30,15 +33,6 @@ const Info = () => {
       >
         {/* Avatar */}
         <div id="circle-parent" className="relative -top-2 scale-95 sm:-left-7">
-          {/* <div className="relative w-fit" id="color-circles">
-            <div className="absolute w-16 h-16 rounded-full bg-red-500 top-2 left-0 " />
-            <div className="absolute w-16 h-16 rounded-full bg-cyan-400 top-2 left-4 " />
-          </div> */}
-          {/* <img
-            src="/circles.png"
-            className="h-[61px] absolute top-2 right-8 animate duration-500 ease-in"
-          ></img> */}
-
           <Avatar
             id="logo"
             onClick={() => {
@@ -47,11 +41,11 @@ const Info = () => {
             className="logo
              flex  overflow-hidden rounded-full
             w-16 h-16
-            animate ease-in-out duration-500 
+            animate ease-in-out duration-500
              hover:rotate-6
-            cursor-pointer 
-            my-2 
-            z-20 
+            cursor-pointer
+            my-2
+            z-20
             relative
              top-[.5rem] -right-[27.5px]
             "
