@@ -4,13 +4,6 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  // MenubarRadioGroup,
-  // MenubarRadioItem,
-  // MenubarSeparator,
-  // MenubarShortcut,
-  // MenubarSub,
-  // MenubarSubContent,
-  // MenubarSubTrigger,
   MenubarTrigger,
 } from "components/ui/menubar";
 import { Icon } from "@iconify/react";
@@ -22,12 +15,12 @@ import { isProd } from "lib/utils";
 import { cn } from "lib/utils";
 
 type Props = {
-  handleColorPrint: () => void;
+  handleDownload: () => void;
   editToggle: () => void;
   hostedDomain: string;
 };
-//eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Taskbar = ({ handleColorPrint, editToggle, hostedDomain }: Props) => {
+
+const Taskbar = ({ handleDownload, editToggle, hostedDomain }: Props) => {
   const [isCheckedEdit, setCheckedEdit] = useState(getEditModeFromStorage);
 
   const handleEditToggle = () => {
@@ -57,37 +50,25 @@ const Taskbar = ({ handleColorPrint, editToggle, hostedDomain }: Props) => {
         <MenubarMenu>
           <MenubarTrigger className={triggerClasses}>Share</MenubarTrigger>
           <MenubarContent>
-            {/* <MenubarItem disabled>New Incognito Window</MenubarItem> */}
             <MenubarItem onClick={handleCopyLink}>
               <IconWithText icon="material-symbols:link" className="gap-2">
                 Copy Link
               </IconWithText>
             </MenubarItem>
-            {/* <MenubarItem>Email Pdf</MenubarItem> */}
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
-          <a download href="/Elliott_Mejia_Resume_Oct_24.pdf">
-            <MenubarTrigger className={cn(triggerClasses, " ")}>
-              <Icon
-                icon="typcn:download"
-                className="relative -top-[2px] "
-                height="22px"
-              />
-            </MenubarTrigger>
-          </a>
+          <MenubarTrigger
+            className={cn(triggerClasses, " ")}
+            onClick={handleDownload}
+          >
+            <Icon
+              icon="typcn:download"
+              className="relative -top-[2px] "
+              height="22px"
+            />
+          </MenubarTrigger>
         </MenubarMenu>
-        {!isProd() && (
-          <MenubarMenu>
-            <MenubarTrigger
-              className={triggerClasses}
-              onClick={handleColorPrint}
-              id="printButton"
-            >
-              Print
-            </MenubarTrigger>
-          </MenubarMenu>
-        )}
         {!isProd() && (
           <MenubarMenu>
             <MenubarTrigger className={triggerClasses}>Edit</MenubarTrigger>

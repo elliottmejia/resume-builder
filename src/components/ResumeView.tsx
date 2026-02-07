@@ -1,8 +1,9 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useRef, useState } from "react";
-import { useReactToPrint } from "react-to-print";
 import { clearButtons, getEditModeFromStorage, isIphone } from "lib/utils";
 import { resumeConfig, DEFAULT_VARIANT } from "data/data";
+import { pdf } from "@react-pdf/renderer";
+import ResumePDF from "components/resume-pdf";
 import Taskbar from "components/taskbar";
 import {
   ExperienceContainer,
@@ -26,18 +27,21 @@ const ResumeView = () => {
   const agentIphone = isIphone();
   const printRef = useRef<HTMLDivElement | null>(null);
 
-  const handleColorPrint = useReactToPrint({
-    documentTitle: "",
-    copyStyles: true,
-    content: () => printRef.current,
-    onAfterPrint: () => {
-      clearButtons();
-    },
-    removeAfterPrint: true,
-  });
+  const handleDownload = async () => {
+    const filename = `${config.info.name.replace(/\s+/g, "_")}_Resume.pdf`;
+    const blob = await pdf(<ResumePDF />).toBlob();
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
 
   const [isEditing, setIsEditing] = useState(false);
-  const [editModeEnabled, setEditModeEnabled] = useState(getEditModeFromStorage);
+  const [editModeEnabled, setEditModeEnabled] = useState(
+    getEditModeFromStorage
+  );
 
   const handlePageEdit = () => {
     clearButtons();
@@ -62,7 +66,7 @@ const ResumeView = () => {
       >
         {editModeEnabled && <CornerButton handlePageEdit={handlePageEdit} />}
         <Taskbar
-          handleColorPrint={handleColorPrint}
+          handleDownload={handleDownload}
           editToggle={handleEditToggle}
           hostedDomain={config.hostedDomain}
         />
@@ -74,6 +78,7 @@ const ResumeView = () => {
               instance="sidebar"
               skillsData={config.skills}
               certData={config.certifications}
+              currentProjects={config.currentProjects}
             />
           </Sidebar>
           <ExperienceContainer experienceData={config.experience}>
@@ -90,14 +95,6 @@ const ResumeView = () => {
             />
           </ExperienceContainer>
         </ResumeContainer>
-      </div>
-      <div
-        className="relative text-center text-white font-thin top-2  z-50 w-fit mx-auto p-2 rounded-sm text-xs print:hidden"
-        style={{ background: "rgba(0, 0, 0, 0.7)", maxWidth: "3in" }}
-        id="copyright"
-      >
-        © Elliott Mejia, 2025
-        <br />
       </div>
     </>
   );

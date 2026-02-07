@@ -34,7 +34,10 @@ function App() {
     <>
       <Analytics />
       <Routes>
-        <Route path="/" element={<Navigate to={`/${DEFAULT_VARIANT}`} replace />} />
+        <Route
+          path="/"
+          element={<Navigate to={`/${DEFAULT_VARIANT}`} replace />}
+        />
         <Route path="/:variant" element={<ResumeView />} />
       </Routes>
     </>

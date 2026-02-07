@@ -46,13 +46,14 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
           {title}
           {delimiter}
           {company}
-          {delimiter}
-          {location}
+
         </CardTitle>
         <CardTitle className="text-sm italic opacity-75">
           ({startDate}
           &nbsp;to&nbsp;
           {endDate})
+          {delimiter}
+          {location}
         </CardTitle>
       </CardHeader>
       <CardContent className="pb-4">

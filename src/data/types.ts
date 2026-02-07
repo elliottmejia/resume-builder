@@ -46,4 +46,5 @@ export type ResumeVariant = {
   skills: Skills[];
   education: Edu[];
   certifications: Cert[];
+  currentProjects: string[];
 };
