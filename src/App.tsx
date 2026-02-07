@@ -1,74 +1,21 @@
 import "./App.css";
-import Taskbar from "components/taskbar";
-import {
-  ExperienceContainer,
-  ResumeContainer,
-  Sidebar,
-  Info,
-  Skills,
-} from "components/resume";
-import { useRef, useState, useEffect } from "react";
-import { clearButtons } from "./lib/utils";
-import Screentone from "components/styling/screentone";
-import { CornerButton } from "components/ui";
-import { getEditModeFromStorage, isIphone } from "lib/utils";
+import { useState, useEffect } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useFont } from "@react-hooks-library/core";
 import { Loading } from "components/styling";
-import BottomContainer from "./components/resume/bottom";
 import { Analytics } from "@vercel/analytics/react";
-import { pdf } from "@react-pdf/renderer";
-import ResumePDF from "components/resume-pdf";
-import { infoData } from "data/data";
+import { DEFAULT_VARIANT } from "data/data";
+import ResumeView from "components/ResumeView";
 
 function App() {
-  //TODO: mobile...
-  // ... test android
-  // ... test ipad
-  // ... test macos safari
-  // ... test edge
-  const agentIphone = isIphone();
-
-  const printRef = useRef<HTMLDivElement | null>(null);
-
   const { error: fontError, loaded: fontLoaded } = useFont(
     "Geist",
     "/fonts/Geist/GeistVF.woff2"
   );
 
-  const handleDownload = async () => {
-    const filename = `${infoData.name.replace(/\s+/g, "_")}_Resume.pdf`;
-    const blob = await pdf(<ResumePDF />).toBlob();
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = filename;
-    link.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const handlePageEdit = () => {
-    //initiates editing
-    clearButtons();
-    if (!editModeEnabled) return;
-    setIsEditing(!isEditing);
-  };
-
-  const [isEditing, setIsEditing] = useState(false);
-
-  const [editModeEnabled, setEditModeEnabled] = useState(
-    getEditModeFromStorage
-  );
-
-  const handleEditToggle = () => {
-    //toggles edit mode existence
-    localStorage.setItem("editModeEnabled", (!editModeEnabled).toString());
-    setEditModeEnabled(!editModeEnabled);
-  };
-
   const [delayFinished, setDelayFinished] = useState(false);
 
   useEffect(() => {
-    //hacking the event loop a bit to ensure the font is loaded before rendering
     if (fontLoaded || fontError) {
       setTimeout(() => {
         setDelayFinished(true);
@@ -86,40 +33,13 @@ function App() {
   return (
     <>
       <Analytics />
-      <div
-        id="app-container"
-        className={
-          agentIphone
-            ? "no-clip  relative font-geist animate duration-200 fade-in"
-            : "  relative font-geist animate duration-200 fade-in"
-        }
-      >
-        {editModeEnabled && <CornerButton handlePageEdit={handlePageEdit} />}
-        <Taskbar handleDownload={handleDownload} editToggle={handleEditToggle} />
-        <ResumeContainer className="relative" ref={printRef}>
-          <Sidebar>
-            <Info />
-            <Skills className="hidden sm:block" instance="sidebar" />
-          </Sidebar>
-          <ExperienceContainer>
-            <Screentone />
-            <Skills
-              className="sm:hidden grid grid-cols-3 gap-2"
-              instance="bottom"
-            />
-
-            <BottomContainer />
-          </ExperienceContainer>
-        </ResumeContainer>
-      </div>
-      <div
-        className="relative text-center text-white font-thin top-2  z-50 w-fit mx-auto p-2 rounded-sm text-xs print:hidden"
-        style={{ background: "rgba(0, 0, 0, 0.7)", maxWidth: "3in" }}
-        id="copyright"
-      >
-        © Elliott Mejia, 2025
-        <br />
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={<Navigate to={`/${DEFAULT_VARIANT}`} replace />}
+        />
+        <Route path="/:variant" element={<ResumeView />} />
+      </Routes>
     </>
   );
 }

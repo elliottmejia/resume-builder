@@ -1,16 +1,17 @@
 import ExperienceCard from "../card";
-import { experienceData } from "src/data/data";
 import { forwardRef } from "react";
 import { cn, isIos } from "lib/utils";
+import type { Exp } from "data/types";
 
 type Props = {
   children?: React.ReactNode;
   className?: string;
+  experienceData: Exp[];
 };
 const agentIos = isIos();
 
 const ExperienceContainer = forwardRef<HTMLDivElement, Props>(
-  ({ children, className }: Props, ref) => {
+  ({ children, className, experienceData }: Props, ref) => {
     let ExperienceContainerClasses =
       "bg-gray-100 p-4 md:p-8 h-full w-full min-w-8 text-left flex flex-col gap-y-2 relative sm:top-[0.5rem] ";
 

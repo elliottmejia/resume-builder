@@ -1,5 +1,5 @@
 import { isProd } from "src/lib/utils";
-import { Exp, Info, Skills, Edu, Cert } from "data/types";
+import { Exp, Info, Skills, Edu, Cert, ResumeVariant } from "data/types";
 
 export const HOSTED_DOMAIN = isProd()
   ? "https://resume.elliottmejia.com"
@@ -31,9 +31,9 @@ export const experienceData: Exp[] = [
       "Provided technical consultation and API integration support for clients across multiple verticals, troubleshooting complex integration issues and documenting solutions",
 
       "Integrated SaaS platforms (Notion, Google Sheets, Etsy, Shopify) via REST APIs, providing ongoing technical support for client implementations and resolving integration issues",
-      "Built real-time monitoring dashboards querying Shopify and WordPress APIs via serverless functions, enabling clients to track KPIs and diagnose issues","Designed internal sales workflow tools and lead tracking systems, gaining deep understanding of sales processes and CRM integrations",
+      "Built real-time monitoring dashboards querying Shopify and WordPress APIs via serverless functions, enabling clients to track KPIs and diagnose issues",
+      "Designed internal sales workflow tools and lead tracking systems, gaining deep understanding of sales processes and CRM integrations",
       "Designed bespoke internal software for sales workflows and lead tracking.",
-
     ],
   },
   {
@@ -68,7 +68,7 @@ export const experienceData: Exp[] = [
       "Modularized migration-band-aid Mustache templates and implemented reusable Shopify components to streamline frontend development.",
       "Built a custom in-theme wishlist app using React CDN in Shopify, pixel perfect to design specs.",
       "Integrated CDN-hosted React components to support dynamic content without full-page reloads.",
-     // "Drove large-scale refactor of frontend architecture during concurrent rebranding, aligning dev practices with product design goals.",
+      // "Drove large-scale refactor of frontend architecture during concurrent rebranding, aligning dev practices with product design goals.",
     ],
   },
   {
@@ -100,7 +100,7 @@ export const skillsData: Skills[] = [
       "Python",
       "Ruby",
       "Go",
-      "C++",      
+      "C++",
       "CSS (SASS, Tailwind)",
       "Liquid",
     ],
@@ -111,7 +111,7 @@ export const skillsData: Skills[] = [
     skills: [
       "Node.js",
       "Next.js",
-      "Django",      
+      "Django",
       "Rest APIs",
       "GraphQL",
       "PyTorch",
@@ -137,12 +137,7 @@ export const skillsData: Skills[] = [
   },
   {
     title: "Database",
-    skills: [
-      "SQL | PostgreSQL | MySQL",
-      "ElasticSearch",
-      "MongoDB",
-      "GraphQL",
-    ],
+    skills: ["SQL | PostgreSQL | MySQL", "ElasticSearch", "MongoDB", "GraphQL"],
   },
   {
     // RENAME: Consider "Cloud & Infrastructure"
@@ -154,7 +149,7 @@ export const skillsData: Skills[] = [
       "Vercel",
       "Heroku",
       "VPS (Digital Ocean, Linode)",
-      "Shopify"
+      "Shopify",
     ],
   },
   {
@@ -182,12 +177,12 @@ export const eduData: Edu[] = [
     startDate: "2018",
     endDate: "2019",
   },
-
 ];
 
 export const currentProjects: string[] = [
   "Restaurant-style ticket printer task-management integration with ClickUp and an old Raspberry Pi",
-  "A spectrogram plugin that detects RMS values across draggable frequency bands using JUCE framework in C++",];
+  "A spectrogram plugin that detects RMS values across draggable frequency bands using JUCE framework in C++",
+];
 
 export const certData: Cert[] = [
   {
@@ -209,3 +204,41 @@ export const certData: Cert[] = [
     ],
   },
 ];
+
+const corkGeniusExp: Exp = {
+  title: "Customer Service Support / E-Commerce Administrator",
+  company: "Cork Genius",
+  location: "Los Angeles, CA",
+  startDate: "June 2019",
+  endDate: "June 2021",
+  entries: [
+    "Served as senior point of escalation for complex customer issues, diagnosing root causes across storefront, payment, and fulfillment systems before engaging vendor support",
+    "Maintained service continuity and customer satisfaction through the 2020 global supply chain disruption, adapting fulfillment workflows to navigate carrier delays and inventory shortages",
+    "Troubleshot order and inventory sync discrepancies between e-commerce platform, third-party integrations, and payment processors, identifying data flow breakdowns across systems",
+    "Analyzed customer-reported issues to identify platform-level bugs and integration failures, compiling reproducible steps for development team resolution",
+  ],
+};
+const cvExp: Exp[] = [...experienceData, corkGeniusExp];
+
+export const resumeConfig: Record<string, ResumeVariant> = {
+  default: {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: experienceData,
+    skills: skillsData,
+    education: eduData,
+    certifications: certData,
+    currentProjects: currentProjects,
+  },
+  cv: {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: cvExp,
+    skills: skillsData,
+    education: eduData,
+    certifications: certData,
+    currentProjects: currentProjects,
+  },
+};
+
+export const DEFAULT_VARIANT = "default";

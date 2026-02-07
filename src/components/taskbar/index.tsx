@@ -4,19 +4,11 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  // MenubarRadioGroup,
-  // MenubarRadioItem,
-  // MenubarSeparator,
-  // MenubarShortcut,
-  // MenubarSub,
-  // MenubarSubContent,
-  // MenubarSubTrigger,
   MenubarTrigger,
 } from "components/ui/menubar";
 import { Icon } from "@iconify/react";
 import IconWithText from "components/ui/icon-with-text";
 import { toast } from "components/ui/use-toast";
-import { HOSTED_DOMAIN } from "src/data/data";
 import { clipboardCopy, getEditModeFromStorage } from "src/lib/utils";
 import { useState } from "react";
 import { isProd } from "lib/utils";
@@ -25,9 +17,10 @@ import { cn } from "lib/utils";
 type Props = {
   handleDownload: () => void;
   editToggle: () => void;
+  hostedDomain: string;
 };
 
-const Taskbar = ({ handleDownload, editToggle }: Props) => {
+const Taskbar = ({ handleDownload, editToggle, hostedDomain }: Props) => {
   const [isCheckedEdit, setCheckedEdit] = useState(getEditModeFromStorage);
 
   const handleEditToggle = () => {
@@ -40,7 +33,7 @@ const Taskbar = ({ handleDownload, editToggle }: Props) => {
       description:
         "Share it with your favorite recruiter... If that's you, you're my favorite recruiter!",
     });
-    clipboardCopy(HOSTED_DOMAIN);
+    clipboardCopy(hostedDomain);
   };
 
   const triggerClasses =
@@ -57,13 +50,11 @@ const Taskbar = ({ handleDownload, editToggle }: Props) => {
         <MenubarMenu>
           <MenubarTrigger className={triggerClasses}>Share</MenubarTrigger>
           <MenubarContent>
-            {/* <MenubarItem disabled>New Incognito Window</MenubarItem> */}
             <MenubarItem onClick={handleCopyLink}>
               <IconWithText icon="material-symbols:link" className="gap-2">
                 Copy Link
               </IconWithText>
             </MenubarItem>
-            {/* <MenubarItem>Email Pdf</MenubarItem> */}
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>

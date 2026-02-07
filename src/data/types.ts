@@ -38,3 +38,13 @@ export type Cert = {
     issueDate: string;
   }[];
 };
+
+export type ResumeVariant = {
+  hostedDomain: string;
+  info: Info;
+  experience: Exp[];
+  skills: Skills[];
+  education: Edu[];
+  certifications: Cert[];
+  currentProjects: string[];
+};

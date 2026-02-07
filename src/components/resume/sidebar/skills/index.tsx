@@ -1,4 +1,3 @@
-import { skillsData, certData, currentProjects } from "data/data";
 import { cn } from "lib/utils";
 import { Card } from "components/ui/card";
 import { Skills as SkillsType, Cert } from "data/types";
@@ -6,10 +5,13 @@ import { Skills as SkillsType, Cert } from "data/types";
 type Props = {
   className?: string;
   instance: "bottom" | "sidebar";
+  skillsData: SkillsType[];
+  certData: Cert[];
+  currentProjects?: string[];
 };
 
 const Skills = (props: Props) => {
-  const { className, instance } = props;
+  const { className, instance, skillsData, certData, currentProjects } = props;
   return (
     <div
       id={`skills-${instance}`}
@@ -53,7 +55,7 @@ const Skills = (props: Props) => {
             ))}
           </div>
         ))}
-      {instance === "sidebar" && (
+      {instance === "sidebar" && currentProjects && currentProjects.length > 0 && (
         <>
           <br />
           <h3 className="text-left font-bold">Current Projects</h3>
@@ -85,53 +87,3 @@ const Skills = (props: Props) => {
 };
 
 export default Skills;
-
-// export const skillsData = [
-//   {
-//     title: "Languages",
-//     skills: [
-//       "JavaScript",
-//       "TypeScript",
-//       "React",
-//       "Python",
-//       "HTML",
-//       "CSS",
-//       "R",
-//       "Liquid",
-//       "Jekyl",
-//       "Ruby",
-//       "PHP",
-//       "Java",
-//     ],
-//   },
-//   {
-//     title: "Frameworks",
-//     skills: ["React", "Next.js", "Gatsby", "Node.js", "Express"],
-//   },
-//   {
-//     title: "Tools",
-//     skills: ["Git", "GitHub", "GitLab", "Jira", "Asana", "AWS"],
-//   },
-//   {
-//     title: "Databases",
-//     skills: ["MongoDB", "PostgreSQL", "MySQL", "SQLite"],
-//   },
-//   {
-//     title: "Design",
-//     skills: ["Figma", "Photoshop", "Illustrator", "InDesign"],
-//   },
-//   {
-//     title: "Platforms",
-//     skills: ["Shopify", "Magento", "WordPress"],
-//   },
-//   {
-//     title: "Marketing",
-//     skills: [
-//       "SEO",
-//       "SEM",
-//       "Email Marketing",
-//       "Lead Generation",
-//       "Social Media Marketing",
-//     ],
-//   },
-// ];

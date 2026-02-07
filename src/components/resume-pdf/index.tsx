@@ -9,19 +9,20 @@ import {
 
 // Disable hyphenation - words wrap to next line instead of breaking with "-"
 Font.registerHyphenationCallback((word) => [word]);
-import {
-  infoData,
-  experienceData,
-  skillsData,
-  eduData,
-  certData,
-  currentProjects,
-} from "data/data";
+import { ResumeVariant } from "data/types";
 import { styles } from "./styles";
 
 const MAX_BULLETS_PER_JOB = 9;
 
-const ResumePDF = () => (
+type Props = {
+  config: ResumeVariant;
+  unlimitBullets?: boolean;
+};
+
+const ResumePDF = ({ config, unlimitBullets }: Props) => {
+  const { info: infoData, experience: experienceData, skills: skillsData, education: eduData, certifications: certData, currentProjects } = config;
+  const bulletLimit = unlimitBullets ? undefined : MAX_BULLETS_PER_JOB;
+  return (
   <Document>
     <Page size="LETTER" style={styles.page}>
       {/* Left Column */}
@@ -90,7 +91,7 @@ const ResumePDF = () => (
             <Text style={styles.companyLine}>
               {job.company} | {job.location} | {job.startDate} - {job.endDate}
             </Text>
-            {job.entries.slice(0, MAX_BULLETS_PER_JOB).map((entry, bulletIdx) => (
+            {(bulletLimit ? job.entries.slice(0, bulletLimit) : job.entries).map((entry, bulletIdx) => (
               <View key={bulletIdx} style={styles.bulletContainer}>
                 <Text style={styles.bulletText}>• {entry}</Text>
               </View>
@@ -118,5 +119,7 @@ const ResumePDF = () => (
     </Page>
   </Document>
 );
+
+};
 
 export default ResumePDF;
