@@ -3,7 +3,7 @@ import { Exp, Info, Skills, Edu, Cert, ResumeVariant } from "data/types";
 
 export const HOSTED_DOMAIN = isProd()
   ? "https://resume.elliottmejia.com"
-  : "copy successful";
+  : "http://localhost:5173";
 
 export const infoData: Info = {
   name: "Elliott Mejia",
@@ -216,9 +216,24 @@ const corkGeniusExp: Exp = {
     "Maintained service continuity and customer satisfaction through the 2020 global supply chain disruption, adapting fulfillment workflows to navigate carrier delays and inventory shortages",
     "Troubleshot order and inventory sync discrepancies between e-commerce platform, third-party integrations, and payment processors, identifying data flow breakdowns across systems",
     "Analyzed customer-reported issues to identify platform-level bugs and integration failures, compiling reproducible steps for development team resolution",
+    "Began in sales, transitioning to customer support and e-commerce administration as the company scaled, gaining comprehensive understanding of the full customer journey and technical ecosystem",
   ],
 };
-const cvExp: Exp[] = [...experienceData, corkGeniusExp];
+
+const hexCladExp: Exp = {
+  title: "Salesman",
+  company: "HexClad",
+  location: "Seattle, WA + National",
+  startDate: "2018",
+  endDate: "2019",
+  entries: [
+    "Drove $2M in sales in 2018 by providing in-depth product demonstrations",
+    "Modified demonstration techniques to adapt to different store layouts and customer demographics, optimizing engagement and conversion rates",
+    "Traveled nationally to support sales efforts across 20+ Costco locations, collaborating with regional managers to identify high-traffic stores and tailor demonstrations to local customer preferences",
+  ],
+};
+
+const cvExp: Exp[] = [...experienceData, corkGeniusExp, hexCladExp];
 
 export const resumeConfig: Record<string, ResumeVariant> = {
   default: {
