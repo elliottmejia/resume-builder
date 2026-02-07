@@ -29,7 +29,8 @@ const ResumeView = () => {
 
   const handleDownload = async () => {
     const filename = `${config.info.name.replace(/\s+/g, "_")}_Resume.pdf`;
-    const blob = await pdf(<ResumePDF />).toBlob();
+    const isCV = variant !== DEFAULT_VARIANT;
+    const blob = await pdf(<ResumePDF config={config} unlimitBullets={isCV} />).toBlob();
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;

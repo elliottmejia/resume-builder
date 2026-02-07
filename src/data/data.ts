@@ -205,11 +205,34 @@ export const certData: Cert[] = [
   },
 ];
 
+const corkGeniusExp: Exp = {
+  title: "Customer Service Support / E-Commerce Administrator",
+  company: "Cork Genius",
+  location: "Los Angeles, CA",
+  startDate: "June 2019",
+  endDate: "June 2021",
+  entries: [
+    "Served as senior point of escalation for complex customer issues, diagnosing root causes across storefront, payment, and fulfillment systems before engaging vendor support",
+    "Troubleshot order and inventory sync discrepancies between e-commerce platform, third-party integrations, and payment processors, identifying data flow breakdowns across systems",
+    "Analyzed customer-reported issues to identify platform-level bugs and integration failures, compiling reproducible steps for development team resolution",
+  ],
+};
+const cvExp: Exp[] = [...experienceData, corkGeniusExp];
+
 export const resumeConfig: Record<string, ResumeVariant> = {
-  "default": {
+  default: {
     hostedDomain: HOSTED_DOMAIN,
     info: infoData,
     experience: experienceData,
+    skills: skillsData,
+    education: eduData,
+    certifications: certData,
+    currentProjects: currentProjects,
+  },
+  cv: {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: cvExp,
     skills: skillsData,
     education: eduData,
     certifications: certData,
