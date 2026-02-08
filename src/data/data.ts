@@ -230,6 +230,7 @@ const hexCladExp: Exp = {
     "Drove $2M in sales in 2018 by providing in-depth product demonstrations",
     "Modified demonstration techniques to adapt to different store layouts and customer demographics, optimizing engagement and conversion rates",
     "Traveled nationally to support sales efforts across 20+ Costco locations, collaborating with regional managers to identify high-traffic stores and tailor demonstrations to local customer preferences",
+    "Collaborated with marketing team to provide customer feedback and insights from in-store interactions, informing future campaign strategies",
   ],
 };
 
