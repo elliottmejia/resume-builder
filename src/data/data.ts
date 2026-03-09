@@ -208,6 +208,108 @@ const hexCladExp: Exp = {
 
 const cvExp: Exp[] = [...experienceData, corkGeniusExp, hexCladExp];
 
+const shopifyExp: Exp[] = [
+  {
+    title: "Freelance Shopify Developer | Technical Consultant",
+    company: "Parahumana",
+    location: "Los Angeles, CA",
+    startDate: "June 2023",
+    endDate: "Present",
+    entries: [
+      "Designed and implemented Shopify webhook listeners and serverless middleware to sync order and inventory events with third-party platforms, applying event-driven patterns including retry logic and idempotency",
+      "Built real-time monitoring dashboards querying Shopify Admin and Storefront GraphQL APIs via serverless functions, enabling clients to track KPIs and diagnose integration failures",
+      "Integrated SaaS platforms (Shopify, Notion, Google Sheets) via REST APIs, architecting backend middleware for e-commerce clients across multiple verticals",
+      "Designed internal CRM-connected sales workflow tools, gaining deep expertise in data flows between e-commerce systems and business platforms",
+    ],
+  },
+  {
+    title: "Front End Developer (contract)",
+    company: "Dolls Kill",
+    location: "Los Angeles, CA",
+    startDate: "March 2023",
+    endDate: "June 2023",
+    entries: [
+      "Led migration of Magento-based storefront to Shopify Online Store 2.0, improving theme architecture, maintainability, and storefront performance",
+      "Diagnosed and resolved a critical bug causing 20+ second product collection loads, delivering immediate LCP and Core Web Vitals improvements",
+      "Developed Shopify Scripts to enforce employee discount allowlists, eliminating a fraud vector — directly analogous to Shopify Functions-based discount logic",
+      "Converted complex JavaScript logic to native Liquid rendering, reducing page weight and improving load performance across collection and product pages",
+      "Built a custom in-theme wishlist app using React in Shopify, pixel-perfect to design specs, without external app dependencies",
+    ],
+  },
+  {
+    title: "Ecommerce Technical Coordinator",
+    company: "Lauren Moshi",
+    location: "Commerce, CA",
+    startDate: "November 2021",
+    endDate: "March 2023",
+    entries: [
+      "Developed a custom private Shopify app with dynamic webhook integrations for Listrak (CDP/ESP), enabling automated customer segmentation and email/SMS flows without a Shopify Plus subscription",
+      "Architected and maintained API integrations between Shopify and third-party logistics providers using serverless functions, ensuring order and fulfillment data consistency across systems",
+      "Designed and deployed three Shopify storefronts — Lestien, Michael Lauren, and Lauren Moshi — with distinct brand identities, custom themes, and modular Liquid component systems",
+      "Managed product data pipelines across four internal departments; audited metadata across three storefronts, identifying and resolving data inconsistencies",
+    ],
+  },
+];
+
+const shopifySkills: Skills[] = [
+  {
+    title: "Languages",
+    skills: [
+      "JavaScript (+ TypeScript)",
+      "Liquid",
+      "Python",
+      "Ruby",
+      "CSS (SASS, Tailwind)",
+    ],
+  },
+  {
+    title: "Shopify Platform",
+    skills: [
+      "Shopify Plus / Online Store 2.0",
+      "Shopify Scripts / Functions",
+      "Custom Private Apps",
+      "Checkout Extensibility",
+      "App Bridge",
+    ],
+  },
+  {
+    title: "APIs & Integrations",
+    skills: [
+      "GraphQL (Admin & Storefront APIs)",
+      "REST APIs",
+      "Webhooks & Event-Driven Systems",
+      "Node.js",
+      "Next.js / Headless Commerce",
+    ],
+  },
+  {
+    title: "Tools & DevOps",
+    skills: [
+      "GitHub Actions / CI/CD",
+      "Docker",
+      "Vercel",
+      "AWS",
+      "Postman",
+      "Jira",
+      "Figma",
+    ],
+  },
+  {
+    title: "Database",
+    skills: ["PostgreSQL", "MongoDB", "ElasticSearch", "MySQL"],
+  },
+  {
+    title: "Analytics & Marketing",
+    skills: [
+      "Klaviyo / Listrak (CDP/ESP)",
+      "Google Analytics",
+      "Datadog",
+      "Hotjar",
+      "SEO/SEM",
+    ],
+  },
+];
+
 export const resumeConfig: Record<string, ResumeVariant> = {
   default: {
     hostedDomain: HOSTED_DOMAIN,
@@ -223,6 +325,15 @@ export const resumeConfig: Record<string, ResumeVariant> = {
     info: infoData,
     experience: cvExp,
     skills: skillsData,
+    education: eduData,
+    certifications: certData,
+    currentProjects: currentProjects,
+  },
+  shopify: {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: shopifyExp,
+    skills: shopifySkills,
     education: eduData,
     certifications: certData,
     currentProjects: currentProjects,
