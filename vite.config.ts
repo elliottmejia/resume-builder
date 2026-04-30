@@ -5,6 +5,10 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   envDir: "./env",
+  server: {
+      allowedHosts: true,
+
+  },
   resolve: {
     alias: {
       src: "/src",

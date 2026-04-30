@@ -310,6 +310,89 @@ const shopifySkills: Skills[] = [
   },
 ];
 
+const sophiaInfo: Info = {
+  name: "Sophia de Vito",
+  tel: "(818) 919-3145",
+  email: "sophiadvt@gmail.com",
+  emailShort: "sophiadvt@gmail.com",
+  linkedin: "https://www.linkedin.com/in/sophiadevito/",
+  linkedinShort: "/in/sophiadevito/",
+};
+
+const sophiaExp: Exp[] = [
+  {
+    title: "Account Executive",
+    company: "RPA",
+    location: "Santa Monica, CA",
+    startDate: "January 2023",
+    endDate: "Present",
+    entries: [
+      "Manage multiple digital, TV, and streaming campaigns for La-Z-Boy Corporate and 35+ independent dealers, trafficking creative on schedule with close attention to detail",
+      "Assist with creative development for La-Z-Boy's organic social pages, including writing project briefs, participating in internal reviews, and facilitating feedback and approvals between clients and creatives",
+      "Coordinate VO recording sessions with clients and producers for TV and radio customizations, and assist with content capture at scheduled shoots",
+      "Manage yearly media planning for independent dealers, collaborating with media teams to build budget recommendations and facilitate campaign set-up",
+      "Assist with yearly competitive presentations, pulling research, building decks, and presenting findings to clients",
+      "Set up regular and ad hoc meetings with Corporate clients, dealers, and internal teams; transcribe notes for team reference",
+      "Handle admin tasks including expense reports, travel booking, and event planning for in-office client visits",
+    ],
+  },
+  {
+    title: "Backend Administrator",
+    company: "One Health Labs",
+    location: "Los Angeles, CA",
+    startDate: "March 2021",
+    endDate: "January 2023",
+    entries: [
+      "Managed and reported Covid-19 results for 30+ TV, film, and commercial productions; sent email result reports to patients with strong attention to accuracy and patient information integrity",
+      "Used SharePoint daily to track results, patient information, and internal records",
+      "Reported positive results to Covid Compliance Officers and maintained clear daily case records",
+      "Monitored customer service email account to assist with service inquiries, patient results, and new business requests",
+      "Completed daily tasks on tight deadlines while maintaining composure under pressure",
+      "Handled confidential patient information in compliance with HIPAA guidelines",
+    ],
+  },
+];
+
+const sophiaSkills: Skills[] = [
+  {
+    title: "Account & Campaign Management",
+    skills: [
+      "Campaign trafficking (digital, TV, streaming)",
+      "Media planning & budget recommendations",
+      "Client communication & relationship management",
+      "Creative brief writing & internal reviews",
+    ],
+  },
+  {
+    title: "Tools & Platforms",
+    skills: [
+      "Microsoft Word, PowerPoint & Excel",
+      "SharePoint",
+      "Google Workspace",
+    ],
+  },
+  {
+    title: "Core Strengths",
+    skills: [
+      "Highly organized and detail-oriented",
+      "Strong written and verbal communication",
+      "Project planning and execution",
+      "Adaptable to fast-changing priorities",
+      "HIPAA-compliant data handling",
+    ],
+  },
+];
+
+const sophiaEdu: Edu[] = [
+  {
+    institution: "University of California, Irvine",
+    location: "Irvine, CA",
+    degree: "B.A. in Business Economics & Political Science",
+    startDate: "September 2016",
+    endDate: "June 2020",
+  },
+];
+
 export const resumeConfig: Record<string, ResumeVariant> = {
   default: {
     hostedDomain: HOSTED_DOMAIN,
@@ -337,6 +420,15 @@ export const resumeConfig: Record<string, ResumeVariant> = {
     education: eduData,
     certifications: certData,
     currentProjects: currentProjects,
+  },
+  sophia: {
+    hostedDomain: HOSTED_DOMAIN,
+    info: sophiaInfo,
+    experience: sophiaExp,
+    skills: sophiaSkills,
+    education: sophiaEdu,
+    certifications: [],
+    currentProjects: [],
   },
 };
 
