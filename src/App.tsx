@@ -23,11 +23,8 @@ function App() {
     }
   }, [fontLoaded, fontError]);
 
-  if (!fontLoaded) {
+  if (!fontLoaded || !delayFinished) {
     return <Loading />;
-  }
-  if (!delayFinished) {
-    return null;
   }
 
   return (

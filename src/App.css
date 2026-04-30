@@ -1,69 +1,32 @@
 
 :root{
-  --bg-root: hsl(0, 0%, 100%);
+  --bg-root: hsl(0, 0%, 93%);
 
-  --bg-app-container: hsla(0, 0%, 0%, 0);
-  --sidebar-border-color: #3d3838;
-  --sidebar-bg-color: hsl(0, 0%, 100%);
-  --gradient-bg-color: linear-gradient(to right, hsl(0, 0%, 65%) 0%, hsla(0, 0%, 100%, 0.97) 9.1%, hsla(0, 0%, 100%, 0.925) 17%, hsla(0, 0%, 100%, 0.868) 23.9%, hsla(0, 0%, 100%, 0.801) 30%, hsla(0, 0%, 100%, 0.725) 35.5%, hsla(0, 0%, 100%, 0.644) 40.5%, hsla(0, 0%, 100%, 0.558) 45.4%, hsla(0, 0%, 100%, 0.471) 50.2%, hsla(0, 0%, 100%, 0.385) 55.2%, hsla(0, 0%, 100%, 0.301) 60.5%, hsla(0, 0%, 100%, 0.223) 66.5%, hsla(0, 0%, 100%, 0.151) 73.2%, hsla(0, 0%, 100%, 0.089) 80.9%, hsla(0, 0%, 100%, 0.038) 89.8%, hsla(0, 0%, 100%, 0) 100%);
-  --experience-bg-color: hsl(0, 0%, 81%);
-  --box-shadow-bg-color: hsla(0, 0%, 100%, 0.506);
-  --phi: 61%; /* 1 divided by phi */
+  --bg-app-container: hsl(0, 0%, 100%);
+  --sidebar-border-color: #d1d5db;
+  --sidebar-bg-color: hsl(220, 15%, 96%);
+  --gradient-bg-color: none;
+  --experience-bg-color: hsl(0, 0%, 100%);
+  --box-shadow-bg-color: hsla(0, 0%, 0%, 0.06);
+  --phi: 61%;
 }
 
 
 #root {
-  --size: 100px;
   margin: 0 auto;
   background: var(--bg-root);
   padding: 1rem;
   padding-bottom: 4rem;
   text-align: center;
-  /* background-image: radial-gradient(#212121 20%, transparent 20%), 
-  radial-gradient(#656565 20%, transparent 20%);*/
-  background-color: #6f6f6f;
-  background-position: 0 0, 50px 50px;
-  background-size: var(--size) var(--size);
-  background: #2A7B9B;
-background: radial-gradient(circle, rgb(101, 124, 133) 0%, rgb(213, 141, 40) 50%, rgb(101, 124, 133) 100%);
-  position:relative;
+  position: relative;
 }
 
 #taskbar{
-  --tb-clip: 5px;
-  clip-path: polygon(var(--tb-clip) 0, calc(100% - var(--tb-clip))  0, 100% var(--tb-clip), 100% calc(100% - var(--tb-clip) ), calc(100% - var(--tb-clip)) 100%, var(--tb-clip) 100%, 0 calc(100% - var(--tb-clip)), 0 var(--tb-clip));
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 3px, rgba(0, 0, 0, 0.06) 0px 2px 6px;
 }
 #sidebar{
   background: var(--sidebar-bg-color);
-  box-shadow: 20px 0 20px -20px var(--box-shadow-bg-color);
-  --sb-clip: 20px;
-
-  clip-path: polygon(var(--sb-clip) 0, 100% 0, 100% 100%, 0 100%, 0 var(--sb-clip));
-}
-#sidebar-after-polygon{
- position: absolute;
- height: 46px;
- width: 100%;
- content: "";
- left: 0;
- background: var(--sidebar-border-color);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 39% 100%);
-}
-
-
-#sidebar-wrap::after {
-  --sidebar-border-width: 8px;
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: -8px;
-  z-index: 100;
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: var(--sidebar-border-width) 0 0 var(--sidebar-border-width);
-  border-color: transparent transparent transparent var(--sidebar-border-color);
+  border-right: 1px solid var(--sidebar-border-color);
 }
 
 #experience{
@@ -73,65 +36,41 @@ background: radial-gradient(circle, rgb(101, 124, 133) 0%, rgb(213, 141, 40) 50%
 }
 @media print {
   .experience-card:hover{
-    transform:none!important;
+    transform: none !important;
   }
   #experience{
-    clip-path: none;
-    border-top: transparent ;
-
+    border-top: transparent;
   }
   #sidebar{
-    border-top: transparent; 
-  clip-path:none;
-  }
-  #sidebar-after-polygon{
-    display:none;
+    border-top: transparent;
+    border-right: 1px solid #e5e7eb;
   }
   #resume-container{
-    padding:0.25in;
+    padding: 0.25in;
   }
   #corner-button-container{
-    display:none;
+    display: none;
   }
   .shadow{
-    box-shadow: none; 
-  }
-  Card::after{
-    display:none;
-  }
-  Card::before{
-    display:none;
+    box-shadow: none;
   }
   .hover\:shadow-lsgraf:hover{
     box-shadow: none;
   }
   #taskbar{
-    display:none;
+    display: none;
   }
-  #app-container::after{
-    display:none;
+  #app-container{
+    box-shadow: none;
   }
   :root{
-    --experience-bg-color: #ffffff00;
-  }
-  #sidebar-wrap::after {
-    --sidebar-border-width: 0px;
-    border-style: solid;
-    border-width: var(--sidebar-border-width) 0 0 var(--sidebar-border-width);
-    border-color: transparent;
+    --experience-bg-color: #ffffff;
   }
 }
 
 
 #experience-container-gradient{
-  height: inherit;
-  opacity: 0.05;
-  width: 96px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: var(--gradient-bg-color);
-  background: linear-gradient(270deg, var(--experience-bg-color) 0%, #0000008a 100%);
+  display: none;
 }
 
 @keyframes logo-spin {
@@ -153,51 +92,14 @@ background: radial-gradient(circle, rgb(101, 124, 133) 0%, rgb(213, 141, 40) 50%
 
 #app-container {
   margin: 0 auto;
-  width:fit-content;
-  max-width: 8.5in;
-  --s: 30px; /* control the size*/
-  --color: hsl(120, 24%, 35%); /* control the color */
-  --_g: radial-gradient(#0000 70%,#1a2030 71%);
+  width: 100%;
+  max-width: 11in;
   background: var(--bg-app-container);
-
-  /* pattern */ 
-  position:relative;
-  clip-path: polygon(20px 0, 100% 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.07);
 }
 
 
-/* #app-container::before{
-  --borderWidth : 3rem;
-  content: "";
-  position: absolute;
-  z-index: 100;
-  background-color: var(--bg-root);
-  left: 0;
-  top:0;
-  width:109px; 
-  height:3rem;
-
-} */
-
-#corner-button{
-  /* make a triangle */
-  --corner-button-color: #c7a577aa;
-  --corner-button-len: 60px;
-
-  
-  border-style: solid;
-  border-width: 0 var(--corner-button-len) var(--corner-button-len) 0;
-  border-color: transparent var(--corner-button-color) transparent transparent;
-}
-
-
-#corner-button-container:hover{
-
-  --hover-button-color: #c39f70aa;
-#corner-button{ 
-  border-color: transparent var(--hover-button-color) transparent transparent;
- }
-}
 
 h1{ 
   font-size: large;
@@ -214,29 +116,8 @@ h1{
 @media screen and (max-width: 500px) {
   #root{
     margin: 0 auto;
-    padding:0;
-    width:fit-content;
-    overflow:clip;
-
-  }
-  #experience{
-    clip-path: none;
-  }
-
-}
-@media screen and (max-width: 640px) {
-  #sidebar{
-    clip-path: polygon(var(--sb-clip) 0, calc(100% - 23px) 0, 100% 23px, 100% 100%, 0 100%, 0 var(--sb-clip));
-  }
-  #experience-container-gradient{
-    display:none;
-  }
-
-  #app-container{ 
-    clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%, 0 20px);
-  }
-  #experience{
-    clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0% 100%, 0 20px);
+    padding: 0;
+    overflow: clip;
   }
 }
 

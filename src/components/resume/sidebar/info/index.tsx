@@ -56,7 +56,7 @@ const Info = ({ data }: Props) => {
           </Avatar>
         </div>
         <h1
-          className="whitespace-nowrap overflow-hidden text-xl font-bold"
+          className="whitespace-nowrap overflow-hidden text-xl font-bold pl-4"
           style={{
             fontSize: "1.5rem",
             lineHeight: "1.75rem",

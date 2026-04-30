@@ -2,14 +2,11 @@ import {
   Menubar,
   MenubarCheckboxItem,
   MenubarContent,
-  MenubarItem,
   MenubarMenu,
   MenubarTrigger,
 } from "components/ui/menubar";
 import { Icon } from "@iconify/react";
-import IconWithText from "components/ui/icon-with-text";
-import { toast } from "components/ui/use-toast";
-import { clipboardCopy, getEditModeFromStorage } from "src/lib/utils";
+import { getEditModeFromStorage } from "src/lib/utils";
 import { useState } from "react";
 import { isProd } from "lib/utils";
 import { cn } from "lib/utils";
@@ -17,23 +14,14 @@ import { cn } from "lib/utils";
 type Props = {
   handleDownload: () => void;
   editToggle: () => void;
-  hostedDomain: string;
 };
 
-const Taskbar = ({ handleDownload, editToggle, hostedDomain }: Props) => {
+const Taskbar = ({ handleDownload, editToggle }: Props) => {
   const [isCheckedEdit, setCheckedEdit] = useState(getEditModeFromStorage);
 
   const handleEditToggle = () => {
     editToggle();
     setCheckedEdit(!isCheckedEdit);
-  };
-  const handleCopyLink = () => {
-    toast({
-      title: "Link copied to clipboard",
-      description:
-        "Share it with your favorite recruiter... If that's you, you're my favorite recruiter!",
-    });
-    clipboardCopy(hostedDomain);
   };
 
   const triggerClasses =
@@ -47,16 +35,6 @@ const Taskbar = ({ handleDownload, editToggle, hostedDomain }: Props) => {
           clear: "both",
         }}
       >
-        <MenubarMenu>
-          <MenubarTrigger className={triggerClasses}>Share</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem onClick={handleCopyLink}>
-              <IconWithText icon="material-symbols:link" className="gap-2">
-                Copy Link
-              </IconWithText>
-            </MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger
             className={cn(triggerClasses, " ")}

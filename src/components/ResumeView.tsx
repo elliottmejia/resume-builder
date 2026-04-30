@@ -12,7 +12,6 @@ import {
   Info,
   Skills,
 } from "components/resume";
-import Screentone from "components/styling/screentone";
 import { CornerButton } from "components/ui";
 import BottomContainer from "components/resume/bottom";
 
@@ -69,7 +68,6 @@ const ResumeView = () => {
         <Taskbar
           handleDownload={handleDownload}
           editToggle={handleEditToggle}
-          hostedDomain={config.hostedDomain}
         />
         <ResumeContainer className="relative" ref={printRef}>
           <Sidebar>
@@ -83,7 +81,6 @@ const ResumeView = () => {
             />
           </Sidebar>
           <ExperienceContainer experienceData={config.experience}>
-            <Screentone />
             <Skills
               className="sm:hidden grid grid-cols-3 gap-2"
               instance="bottom"
