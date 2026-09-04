@@ -21,7 +21,8 @@ const ResumeView = () => {
 
   const agentIphone = isIphone();
   const printRef = useRef<HTMLDivElement | null>(null);
-  const sidebarRef = useRef<HTMLDivElement | null>(null);
+  const appContainerRef = useRef<HTMLDivElement | null>(null);
+  const experienceRef = useRef<HTMLDivElement | null>(null);
   const [taskbarOffset, setTaskbarOffset] = useState<number | undefined>(
     undefined
   );
@@ -31,8 +32,9 @@ const ResumeView = () => {
   );
 
   useLayoutEffect(() => {
-    const sidebarEl = sidebarRef.current;
-    if (!sidebarEl) return;
+    const appContainerEl = appContainerRef.current;
+    const experienceEl = experienceRef.current;
+    if (!appContainerEl || !experienceEl) return;
 
     const desktopQuery = window.matchMedia("(min-width: 640px)");
 
@@ -41,12 +43,20 @@ const ResumeView = () => {
         setTaskbarOffset(undefined);
         return;
       }
-      setTaskbarOffset(sidebarEl.getBoundingClientRect().width);
+      const paddingLeft = parseFloat(
+        getComputedStyle(experienceEl).paddingLeft || "0"
+      );
+      const offset =
+        experienceEl.getBoundingClientRect().left -
+        appContainerEl.getBoundingClientRect().left +
+        paddingLeft;
+      setTaskbarOffset(offset);
     };
 
     update();
     const resizeObserver = new ResizeObserver(update);
-    resizeObserver.observe(sidebarEl);
+    resizeObserver.observe(appContainerEl);
+    resizeObserver.observe(experienceEl);
     desktopQuery.addEventListener("change", update);
 
     return () => {
@@ -86,6 +96,7 @@ const ResumeView = () => {
     <>
       <div
         id="app-container"
+        ref={appContainerRef}
         className={
           agentIphone
             ? "no-clip  relative font-geist animate duration-200 fade-in"
@@ -100,7 +111,7 @@ const ResumeView = () => {
           alignLeft={taskbarOffset}
         />
         <ResumeContainer className="relative" ref={printRef}>
-          <Sidebar ref={sidebarRef}>
+          <Sidebar>
             <Info data={config.info} />
             <Skills
               className="hidden sm:block"
@@ -110,7 +121,10 @@ const ResumeView = () => {
               currentProjects={config.currentProjects}
             />
           </Sidebar>
-          <ExperienceContainer experienceData={config.experience}>
+          <ExperienceContainer
+            ref={experienceRef}
+            experienceData={config.experience}
+          >
             <Skills
               className="sm:hidden grid grid-cols-3 gap-2"
               instance="bottom"
