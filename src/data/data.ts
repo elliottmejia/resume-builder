@@ -489,7 +489,7 @@ const cantikiManagementExp: Exp = {
 
 const restaurantFohExp: Exp[] = [cantikiFohExp, pizzaHutExp, hexCladExp];
 const restaurantBarExp: Exp[] = [cantikiBarExp, pizzaHutExp, hexCladExp];
-const restaurantBohExp: Exp[] = [cantikiBohExp];
+const restaurantBohExp: Exp[] = [cantikiBohExp, pizzaHutExp, hexCladExp];
 const restaurantManagementExp: Exp[] = [
   cantikiManagementExp,
   pizzaHutExp,
