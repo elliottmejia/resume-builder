@@ -23,12 +23,7 @@ const Skills = (props: Props) => {
             <h3 className="font-bold">{category.title}</h3>
             <ul className="pl-1 text-xs space-y-0.5">
               {category.skills.map((skill, idx) => (
-                <li
-                  key={idx}
-                  className="hover:translate-x-1 animate duration-300 ease-out"
-                >
-                  {skill}
-                </li>
+                <li key={idx}>{skill}</li>
               ))}
             </ul>
           </div>
@@ -42,10 +37,7 @@ const Skills = (props: Props) => {
             <h3 className="font-bold text-[14px]">{data.issuer}</h3>
             {data.certs.map((cert, idx) => (
               <div key={idx} className="pl-1 text-xs">
-                <p
-                  key={idx}
-                  className="hover:translate-x-1 animate duration-300 ease-out"
-                >
+                <p key={idx}>
                   {cert.title} - {cert.issueDate}
                 </p>
               </div>

@@ -13,7 +13,7 @@ const Sidebar = ({ children, className }: Props): React.ReactElement => {
           <div
             id="sidebar"
             className={cn(
-              "p-1 h-fit sm:h-full w-full sm:w-fit bg-white border-left-2 border-black z-10 pb-4",
+              "p-4 h-fit sm:h-full w-full sm:w-fit z-10 pb-4",
               className
             )}
           >
@@ -21,7 +21,6 @@ const Sidebar = ({ children, className }: Props): React.ReactElement => {
           </div>
         </div>
       </div>
-      <div id="sidebar-after-polygon" className="hidden sm:block"></div>
     </div>
   );
 };
