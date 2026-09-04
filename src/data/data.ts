@@ -414,16 +414,16 @@ const boldBeyondSkills: Skills[] = [
 ];
 
 const pizzaHutExp: Exp = {
-  title: "Cashier / Counter Associate",
+  title: "Delivery Driver",
   company: "Pizza Hut",
   location: "Seattle, WA",
   startDate: "2015",
   endDate: "2016",
   entries: [
-    "Managed front counter operations, including order-taking, cash handling, and POS transactions during high-traffic lunch and dinner rushes",
-    "Coordinated phone and delivery orders, communicating with kitchen staff to ensure accurate, timely order fulfillment",
-    "Provided frontline customer service, resolving order issues and complaints to maintain guest satisfaction",
-    "Maintained front-of-house cleanliness and stocked supplies to meet store standards",
+    "Delivered orders across assigned routes, planning efficient routes to meet tight delivery-time targets during high-traffic lunch and dinner rushes",
+    "Handled cash and card payments at the door, balancing a cash bank and reconciling deliveries at the end of each shift",
+    "Provided frontline customer service at every delivery, resolving order issues on the spot to maintain guest satisfaction",
+    "Coordinated with kitchen and counter staff to confirm order accuracy before heading out, minimizing failed or incorrect deliveries",
   ],
 };
 
