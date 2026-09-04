@@ -310,6 +310,334 @@ const shopifySkills: Skills[] = [
   },
 ];
 
+const boldBeyondExp: Exp[] = [
+  {
+    title: "Freelance Shopify & Web Developer | Technical Consultant",
+    company: "Parahumana",
+    location: "Los Angeles, CA",
+    startDate: "June 2023",
+    endDate: "Present",
+    entries: [
+      "Delivered custom Shopify theme builds and modifications for clients across fashion, beauty, and CPG verticals, translating business requirements into responsive, maintainable frontend implementations",
+      "Built and modified Shopify and WordPress integrations, scoping new functionality with clients and serving as technical point of contact across the full project lifecycle",
+      "Developed real-time monitoring dashboards querying Shopify Admin and Storefront APIs via serverless functions, enabling clients to track KPIs and diagnose integration failures",
+      "Integrated SaaS platforms (Shopify, Notion, Google Sheets) via REST APIs; architected backend middleware and documented solutions for ongoing client support",
+    ],
+  },
+  {
+    title: "Front End Developer (contract)",
+    company: "Dolls Kill",
+    location: "Los Angeles, CA",
+    startDate: "March 2023",
+    endDate: "June 2023",
+    entries: [
+      "Led migration of Magento-based storefront to Shopify Plus Online Store 2.0, building a modular, maintainable Liquid component architecture from the ground up",
+      "Diagnosed and resolved a critical bug causing 20+ second product collection loads, delivering immediate LCP and Core Web Vitals improvements",
+      "Refactored PHP systems and converted complex JavaScript logic to native Liquid rendering, reducing page weight and improving performance across collection and product pages",
+      "Built a custom in-theme wishlist app using React in Shopify, pixel-perfect to design specs, without external app dependencies",
+      "Modularized Mustache templates and implemented reusable Shopify components to streamline frontend development across the team",
+    ],
+  },
+  {
+    title: "Ecommerce Technical Coordinator",
+    company: "Lauren Moshi",
+    location: "Commerce, CA",
+    startDate: "November 2021",
+    endDate: "March 2023",
+    entries: [
+      "Designed and deployed three distinct Shopify storefronts — Lestien, Michael Lauren, and Lauren Moshi — with custom themes, unique brand identities, and modular Liquid component systems",
+      "Developed a custom private Shopify app with dynamic webhook integrations for Listrak (CDP/ESP), enabling automated customer segmentation and email/SMS flows",
+      "Architected API integrations between Shopify and third-party logistics providers using serverless functions, ensuring order and fulfillment data consistency across systems",
+      "Managed product data pipelines across four internal departments; led metadata audit across three storefronts, identifying and resolving data inconsistencies",
+    ],
+  },
+];
+
+const boldBeyondSkills: Skills[] = [
+  {
+    title: "Shopify & WordPress",
+    skills: [
+      "Shopify Plus / Online Store 2.0",
+      "Liquid Templating",
+      "Custom & Modified Themes",
+      "Shopify Scripts / Functions",
+      "WordPress / PHP",
+      "WP REST API",
+    ],
+  },
+  {
+    title: "Frontend",
+    skills: [
+      "JavaScript (ES2015+) / TypeScript",
+      "React / Next.js",
+      "jQuery / AJAX",
+      "HTML5 / CSS3",
+      "SASS / Tailwind",
+      "Responsive Design",
+    ],
+  },
+  {
+    title: "APIs & Integrations",
+    skills: [
+      "GraphQL (Admin & Storefront APIs)",
+      "REST APIs",
+      "Webhooks & Serverless Functions",
+      "Node.js",
+      "Third-Party Platform Integration",
+    ],
+  },
+  {
+    title: "Tools & DevOps",
+    skills: [
+      "Git / GitHub",
+      "Figma",
+      "Postman",
+      "Vercel",
+      "Docker",
+      "Jira / Asana",
+    ],
+  },
+  {
+    title: "Analytics & CRO",
+    skills: [
+      "Google Analytics",
+      "Hotjar",
+      "A/B Testing",
+      "Core Web Vitals / LCP",
+      "SEO/SEM",
+    ],
+  },
+  {
+    title: "Database",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "ElasticSearch"],
+  },
+];
+
+const pizzaHutExp: Exp = {
+  title: "Cashier / Counter Associate",
+  company: "Pizza Hut",
+  location: "Seattle, WA",
+  startDate: "2015",
+  endDate: "2016",
+  entries: [
+    "Managed front counter operations, including order-taking, cash handling, and POS transactions during high-traffic lunch and dinner rushes",
+    "Coordinated phone and delivery orders, communicating with kitchen staff to ensure accurate, timely order fulfillment",
+    "Provided frontline customer service, resolving order issues and complaints to maintain guest satisfaction",
+    "Maintained front-of-house cleanliness and stocked supplies to meet store standards",
+  ],
+};
+
+const cantikiFohExp: Exp = {
+  title: "Barback — Front of House Support",
+  company: "Cantiki LA",
+  location: "North Hollywood, CA",
+  startDate: "October 2024",
+  endDate: "May 2026",
+  entries: [
+    "Supported front-of-house and bar operations at a high-volume, cocktail-forward tiki bar and restaurant, delivering fast, accurate service during full-capacity weekend rushes",
+    "Ran drinks, bussed and reset tables, and communicated proactively with servers and bartenders to keep guest wait times low during peak service",
+    "Cross-trained across bar support and kitchen stations, gaining a full view of the guest experience from order to table",
+    "Trained and onboarded new front-of-house staff on service standards, station setup, and rush-hour workflow",
+    "Maintained bar and dining area stock levels, restocking glassware, garnish, and supplies to keep service uninterrupted",
+  ],
+};
+
+const cantikiBarExp: Exp = {
+  title: "Barback — Bar Program",
+  company: "Cantiki LA",
+  location: "North Hollywood, CA",
+  startDate: "October 2024",
+  endDate: "May 2026",
+  entries: [
+    "Supported a cocktail-forward tiki bar program, prepping garnish, batching mixers, and maintaining bar stock to keep bartenders moving during high-volume rushes",
+    "Learned cocktail recipes, build order, and ingredient specs across the full menu while restocking and resetting bar stations between rounds",
+    "Managed ice, glassware, and liquor inventory, anticipating rush-hour needs to reduce bartender downtime",
+    "Cross-trained on kitchen stations alongside bar support, developing a broad understanding of full-service restaurant operations",
+    "Trained incoming barbacks on bar setup, breakdown, and service-flow standards",
+  ],
+};
+
+const cantikiBohExp: Exp = {
+  title: "Line Cook",
+  company: "Cantiki LA",
+  location: "North Hollywood, CA",
+  startDate: "October 2024",
+  endDate: "May 2026",
+  entries: [
+    "Worked line and prep stations at a high-volume tiki restaurant kitchen, executing recipes and plating to spec during full-capacity service",
+    "Managed prep lists and mise en place across multiple stations, maintaining consistency and pace through dinner and weekend rushes",
+    "Cross-trained across bar support and kitchen stations, building flexibility to cover call-outs and rush-hour gaps",
+    "Tracked kitchen inventory and communicated par levels to leadership, supporting accurate ordering and receiving",
+    "Trained new kitchen staff on station setup, prep standards, and service pacing",
+  ],
+};
+
+const cantikiManagementExp: Exp = {
+  title: "Barback & Line Cook — Staff Trainer",
+  company: "Cantiki LA",
+  location: "North Hollywood, CA",
+  startDate: "October 2024",
+  endDate: "May 2026",
+  entries: [
+    "Cross-trained and worked across bar and kitchen stations at a high-volume tiki bar and restaurant, gaining full operational visibility into FOH and BOH workflows",
+    "Trained and onboarded new hires across both bar and kitchen roles, building repeatable standards for station setup, prep, and service pacing",
+    "Coordinated inventory and ordering across bar and kitchen, tracking par levels and communicating needs to leadership to prevent service disruptions",
+    "Served as a go-to cross-trained team member during high-volume weekend rushes, flexing between stations to cover gaps and maintain service speed",
+    "Supported shift-level coordination between front and back of house, relaying priorities to keep service synchronized during peak hours",
+  ],
+};
+
+const restaurantFohExp: Exp[] = [cantikiFohExp, pizzaHutExp, hexCladExp];
+const restaurantBarExp: Exp[] = [cantikiBarExp, pizzaHutExp, hexCladExp];
+const restaurantBohExp: Exp[] = [cantikiBohExp];
+const restaurantManagementExp: Exp[] = [
+  cantikiManagementExp,
+  pizzaHutExp,
+  hexCladExp,
+];
+
+const restaurantFohSkills: Skills[] = [
+  {
+    title: "Service & Hospitality",
+    skills: [
+      "Guest Service & Hospitality",
+      "High-Volume Service",
+      "Table Service & Bussing",
+      "Upselling & Menu Knowledge",
+      "Conflict Resolution",
+    ],
+  },
+  {
+    title: "Bar & Kitchen Support",
+    skills: [
+      "Barback Operations",
+      "Kitchen/Expo Support",
+      "Stock & Inventory Management",
+      "Cross-Station Flexibility",
+    ],
+  },
+  {
+    title: "Operations",
+    skills: [
+      "POS Systems",
+      "Cash Handling",
+      "Team Communication",
+      "Multitasking Under Pressure",
+      "Staff Training & Onboarding",
+    ],
+  },
+];
+
+const restaurantBarSkills: Skills[] = [
+  {
+    title: "Bar Program",
+    skills: [
+      "Cocktail Prep & Garnish",
+      "Bar Stocking & Inventory",
+      "Speed Rail Setup",
+      "Recipe & Build Knowledge",
+      "Batching",
+    ],
+  },
+  {
+    title: "Service",
+    skills: [
+      "Guest Service",
+      "High-Volume Bar Service",
+      "POS Systems",
+      "Cash Handling",
+    ],
+  },
+  {
+    title: "Team",
+    skills: [
+      "Training & Onboarding",
+      "Cross-Station Flexibility",
+      "Multitasking Under Pressure",
+    ],
+  },
+];
+
+const restaurantBohSkills: Skills[] = [
+  {
+    title: "Kitchen",
+    skills: [
+      "Line Cooking",
+      "Prep & Mise en Place",
+      "Knife Skills",
+      "Recipe Execution & Plating",
+      "Station Management",
+    ],
+  },
+  {
+    title: "Operations",
+    skills: [
+      "Food Safety & Sanitation",
+      "Inventory & Par Levels",
+      "Ordering & Receiving",
+    ],
+  },
+  {
+    title: "Team",
+    skills: [
+      "Training & Onboarding",
+      "Cross-Station Flexibility",
+      "Pace Under Pressure",
+    ],
+  },
+];
+
+const restaurantManagementSkills: Skills[] = [
+  {
+    title: "Leadership",
+    skills: [
+      "Staff Training & Onboarding",
+      "Shift Coordination",
+      "Cross-Department Communication",
+      "Team Leadership",
+    ],
+  },
+  {
+    title: "Operations",
+    skills: [
+      "Inventory & Par Management",
+      "Ordering & Receiving",
+      "Food Safety & Compliance",
+      "POS Systems",
+    ],
+  },
+  {
+    title: "Service",
+    skills: [
+      "Guest Service",
+      "High-Volume Service Management",
+      "Conflict Resolution",
+    ],
+  },
+];
+
+const restaurantCertData: Cert[] = [
+  {
+    issuer: "Los Angeles County",
+    certs: [{ title: "Food Handler Card", issueDate: "2024" }],
+  },
+  {
+    issuer: "ServSafe",
+    certs: [
+      { title: "ServSafe Food Handler / Manager Certification", issueDate: "2024" },
+    ],
+  },
+  {
+    issuer: "California ABC",
+    certs: [
+      {
+        title: "Responsible Beverage Service (RBS) Certification",
+        issueDate: "2024",
+      },
+    ],
+  },
+];
+
 export const resumeConfig: Record<string, ResumeVariant> = {
   default: {
     hostedDomain: HOSTED_DOMAIN,
@@ -336,6 +664,51 @@ export const resumeConfig: Record<string, ResumeVariant> = {
     skills: shopifySkills,
     education: eduData,
     certifications: certData,
+    currentProjects: currentProjects,
+  },
+  "bold-beyond": {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: boldBeyondExp,
+    skills: boldBeyondSkills,
+    education: eduData,
+    certifications: certData,
+    currentProjects: currentProjects,
+  },
+  "restaurant-foh": {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: restaurantFohExp,
+    skills: restaurantFohSkills,
+    education: eduData,
+    certifications: restaurantCertData,
+    currentProjects: currentProjects,
+  },
+  "restaurant-bar": {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: restaurantBarExp,
+    skills: restaurantBarSkills,
+    education: eduData,
+    certifications: restaurantCertData,
+    currentProjects: currentProjects,
+  },
+  "restaurant-boh": {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: restaurantBohExp,
+    skills: restaurantBohSkills,
+    education: eduData,
+    certifications: restaurantCertData,
+    currentProjects: currentProjects,
+  },
+  "restaurant-management": {
+    hostedDomain: HOSTED_DOMAIN,
+    info: infoData,
+    experience: restaurantManagementExp,
+    skills: restaurantManagementSkills,
+    education: eduData,
+    certifications: restaurantCertData,
     currentProjects: currentProjects,
   },
 };
