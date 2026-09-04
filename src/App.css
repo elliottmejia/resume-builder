@@ -26,7 +26,27 @@
 }
 #sidebar{
   background: var(--sidebar-bg-color);
-  border-right: 1px solid var(--sidebar-border-color);
+  position: relative;
+}
+#sidebar::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--sidebar-border-color) 12%,
+    var(--sidebar-border-color) 88%,
+    transparent 100%
+  );
+}
+@media print {
+  #sidebar::after{
+    display: none;
+  }
 }
 
 #experience{

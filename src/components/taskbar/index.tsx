@@ -18,9 +18,15 @@ type Props = {
   handleDownload: () => void;
   editToggle: () => void;
   hostedDomain: string;
+  alignLeft?: number;
 };
 
-const Taskbar = ({ handleDownload, editToggle, hostedDomain }: Props) => {
+const Taskbar = ({
+  handleDownload,
+  editToggle,
+  hostedDomain,
+  alignLeft,
+}: Props) => {
   const [isCheckedEdit, setCheckedEdit] = useState(getEditModeFromStorage);
 
   const handleEditToggle = () => {
@@ -42,9 +48,10 @@ const Taskbar = ({ handleDownload, editToggle, hostedDomain }: Props) => {
     <>
       <Menubar
         id="taskbar"
-        className="rounded-none relative top-2 sm:-right-4 p-0 w-fit mx-auto z-50"
+        className="rounded-none relative top-2 p-0 w-fit mx-auto z-50"
         style={{
           clear: "both",
+          ...(alignLeft !== undefined ? { marginLeft: alignLeft } : {}),
         }}
       >
         <MenubarMenu>

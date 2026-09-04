@@ -1,5 +1,5 @@
 import { useParams, Navigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import { clearButtons, getEditModeFromStorage, isIphone } from "lib/utils";
 import { resumeConfig, DEFAULT_VARIANT } from "data/data";
 import { pdf } from "@react-pdf/renderer";
@@ -19,12 +19,45 @@ const ResumeView = () => {
   const { variant } = useParams<{ variant: string }>();
   const config = variant ? resumeConfig[variant] : undefined;
 
+  const agentIphone = isIphone();
+  const printRef = useRef<HTMLDivElement | null>(null);
+  const sidebarRef = useRef<HTMLDivElement | null>(null);
+  const [taskbarOffset, setTaskbarOffset] = useState<number | undefined>(
+    undefined
+  );
+  const [isEditing, setIsEditing] = useState(false);
+  const [editModeEnabled, setEditModeEnabled] = useState(
+    getEditModeFromStorage
+  );
+
+  useLayoutEffect(() => {
+    const sidebarEl = sidebarRef.current;
+    if (!sidebarEl) return;
+
+    const desktopQuery = window.matchMedia("(min-width: 640px)");
+
+    const update = () => {
+      if (!desktopQuery.matches) {
+        setTaskbarOffset(undefined);
+        return;
+      }
+      setTaskbarOffset(sidebarEl.getBoundingClientRect().width);
+    };
+
+    update();
+    const resizeObserver = new ResizeObserver(update);
+    resizeObserver.observe(sidebarEl);
+    desktopQuery.addEventListener("change", update);
+
+    return () => {
+      resizeObserver.disconnect();
+      desktopQuery.removeEventListener("change", update);
+    };
+  }, [config]);
+
   if (!config) {
     return <Navigate to={`/${DEFAULT_VARIANT}`} replace />;
   }
-
-  const agentIphone = isIphone();
-  const printRef = useRef<HTMLDivElement | null>(null);
 
   const handleDownload = async () => {
     const filename = `${config.info.name.replace(/\s+/g, "_")}_Resume_${variant}.pdf`;
@@ -37,11 +70,6 @@ const ResumeView = () => {
     link.click();
     URL.revokeObjectURL(url);
   };
-
-  const [isEditing, setIsEditing] = useState(false);
-  const [editModeEnabled, setEditModeEnabled] = useState(
-    getEditModeFromStorage
-  );
 
   const handlePageEdit = () => {
     clearButtons();
@@ -69,9 +97,10 @@ const ResumeView = () => {
           handleDownload={handleDownload}
           editToggle={handleEditToggle}
           hostedDomain={config.hostedDomain}
+          alignLeft={taskbarOffset}
         />
         <ResumeContainer className="relative" ref={printRef}>
-          <Sidebar>
+          <Sidebar ref={sidebarRef}>
             <Info data={config.info} />
             <Skills
               className="hidden sm:block"
