@@ -1,10 +1,7 @@
 import type { Info as InfoType } from "data/types";
-import { Avatar, AvatarFallback } from "components/ui/avatar";
 import IconWithText from "ui/icon-with-text";
-import { Icon } from "@iconify/react";
 import Mail from "components/modals/mail";
 import MailForm from "components/forms/mail-form";
-import { cn } from "lib/utils";
 
 type Props = {
   data: InfoType;
@@ -31,30 +28,6 @@ const Info = ({ data }: Props) => {
         id="identity"
         className="h-fit pb-2 place-items-center text-center sm:place-items-left sm:pl-2"
       >
-        {/* Avatar */}
-        <div id="circle-parent" className="relative -top-2 scale-95 sm:-left-7">
-          <Avatar
-            id="logo"
-            onClick={() => {
-              window?.open(portfolio);
-            }}
-            className="logo
-             flex  overflow-hidden rounded-full
-            w-16 h-16
-            animate ease-in-out duration-500
-             hover:rotate-6
-            cursor-pointer
-            my-2
-            z-20
-            relative
-             top-[.5rem] -right-[27.5px]
-            "
-          >
-            <AvatarFallback className={cn("w-full h-full text-black")}>
-              <Icon icon="file-icons:devcontainer" className="w-full h-full" />
-            </AvatarFallback>
-          </Avatar>
-        </div>
         <h1
           className="whitespace-nowrap overflow-hidden text-xl font-bold"
           style={{
