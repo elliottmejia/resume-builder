@@ -19,9 +19,9 @@ const Skills = (props: Props) => {
     >
       {instance === "sidebar" &&
         skillsData.map((category: SkillsType, idx) => (
-          <div key={idx} className="text-left">
+          <div key={idx} className="text-left mb-3">
             <h3 className="font-bold">{category.title}</h3>
-            <ul className="pl-1 text-xs">
+            <ul className="pl-1 text-xs space-y-0.5">
               {category.skills.map((skill, idx) => (
                 <li
                   key={idx}
@@ -34,14 +34,11 @@ const Skills = (props: Props) => {
           </div>
         ))}
       {instance === "sidebar" && (
-        <>
-          <br />
-          <h3 className="text-left font-bold">Certifications</h3>
-        </>
+        <h3 className="text-left font-bold mt-1 mb-1">Certifications</h3>
       )}
       {instance === "sidebar" &&
         certData.map((data: Cert, idx: number) => (
-          <div key={idx} className="text-left">
+          <div key={idx} className="text-left mb-2">
             <h3 className="font-bold text-[14px]">{data.issuer}</h3>
             {data.certs.map((cert, idx) => (
               <div key={idx} className="pl-1 text-xs">
@@ -57,9 +54,8 @@ const Skills = (props: Props) => {
         ))}
       {instance === "sidebar" && currentProjects && currentProjects.length > 0 && (
         <>
-          <br />
-          <h3 className="text-left font-bold">Current Projects</h3>
-          <ul className="pl-1 text-xs text-left">
+          <h3 className="text-left font-bold mt-2 mb-1">Current Projects</h3>
+          <ul className="pl-1 text-xs text-left space-y-0.5">
             {currentProjects.map((project, idx) => (
               <li
                 key={idx}

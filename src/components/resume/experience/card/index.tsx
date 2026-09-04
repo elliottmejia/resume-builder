@@ -61,11 +61,11 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
           <div
             key={idx}
             id={`description-${idx + 1}`}
-            className="py-[0.5] text-sm"
+            className="py-1 text-sm flex items-start gap-1.5"
           >
             <Icon
               icon="material-symbols:commit"
-              style={{ display: "inline" }}
+              className="shrink-0 mt-0.5"
             />
             <span className="text-black">{entry}</span>
           </div>
