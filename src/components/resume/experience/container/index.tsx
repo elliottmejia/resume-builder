@@ -13,7 +13,7 @@ const agentIos = isIos();
 const ExperienceContainer = forwardRef<HTMLDivElement, Props>(
   ({ children, className, experienceData }: Props, ref) => {
     let ExperienceContainerClasses =
-      "p-4 md:p-8 h-full w-full min-w-8 text-left flex flex-col relative sm:top-[0.5rem] ";
+      "px-4 md:px-8 pt-4 pb-4 md:pb-8 h-full w-full min-w-8 text-left flex flex-col relative ";
 
     if (agentIos) {
       ExperienceContainerClasses += " no-clip";
