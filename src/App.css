@@ -5,7 +5,7 @@
   --bg-app-container: #ffffff;
   --sidebar-border-color: #d8dadd;
   --sidebar-bg-color: #ffffff;
-  --experience-bg-color: #f7f8f9;
+  --experience-bg-color: #ffffff;
   --box-shadow-bg-color: rgba(0, 0, 0, 0.08);
 }
 
@@ -92,8 +92,6 @@
   max-width: 8.5in;
   background: var(--bg-app-container);
   border: 1px solid var(--sidebar-border-color);
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 16px -4px;
   position:relative;
   overflow: hidden;
 }

@@ -1,12 +1,4 @@
 import { Icon } from "@iconify/react";
-
-import {
-  Card,
-  CardContent,
-  // CardDescription,
-  CardHeader,
-  CardTitle,
-} from "components/ui/card";
 import type { Exp } from "data/types.ts";
 
 type Props = {
@@ -20,43 +12,21 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
 
   delimiter = " " + (delimiter || "-").trim() + " ";
 
-  // type mouseEvent = React.MouseEvent<HTMLDivElement>;
-  // const cardRef = useRef<HTMLDivElement>(null);
-
-  // const handleModalOpen = (ref: HTMLDivElement | null) => {
-  //   ref;
-  //   return null;
-  // };
-
-  // const handleEditClick = (e: mouseEvent) => {
-  //   const clickRef = cardRef.current ? cardRef.current : null;
-  //   handleModalOpen(clickRef);
-  //   console.log(e);
-  //   return null;
-
-  // };
-
   return (
-    <Card
-      // ref={cardRef}
-      className="experience-card z-10 relative"
-    >
-      <CardHeader className="pb-2 pt-4">
-        <CardTitle className="text-md pt-0">
-          {title}
-          {delimiter}
-          {company}
-
-        </CardTitle>
-        <CardTitle className="text-sm italic opacity-75">
-          ({startDate}
-          &nbsp;to&nbsp;
-          {endDate})
-          {delimiter}
-          {location}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="pb-4">
+    <div className="experience-card relative pb-5 mb-5 border-b border-gray-200 last:border-b-0 last:mb-0 last:pb-0">
+      <h3 className="text-md font-semibold leading-none tracking-tight">
+        {title}
+        {delimiter}
+        {company}
+      </h3>
+      <p className="text-sm italic opacity-75 mt-1.5">
+        ({startDate}
+        &nbsp;to&nbsp;
+        {endDate})
+        {delimiter}
+        {location}
+      </p>
+      <div className="mt-3">
         {entries.map((entry: string, idx: number) => (
           <div
             key={idx}
@@ -70,8 +40,8 @@ const ExperienceCard = ({ data, delimiter }: Props) => {
             <span className="text-black">{entry}</span>
           </div>
         ))}
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 export default ExperienceCard;

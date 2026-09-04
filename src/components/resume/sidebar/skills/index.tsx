@@ -1,5 +1,4 @@
 import { cn } from "lib/utils";
-import { Card } from "components/ui/card";
 import { Skills as SkillsType, Cert } from "data/types";
 
 type Props = {
@@ -49,26 +48,21 @@ const Skills = (props: Props) => {
           <h3 className="text-left font-bold mt-2 mb-1">Current Projects</h3>
           <ul className="pl-1 text-xs text-left space-y-0.5">
             {currentProjects.map((project, idx) => (
-              <li
-                key={idx}
-                className="hover:translate-x-1 animate duration-300 ease-out"
-              >
-                {project}
-              </li>
+              <li key={idx}>{project}</li>
             ))}
           </ul>
         </>
       )}
       {instance === "bottom" &&
         skillsData.map((category: SkillsType, idx) => (
-          <Card key={idx} className="text-left p-2 bg-white z-10">
+          <div key={idx} className="text-left p-2 border border-gray-200">
             <h3 className="font-bold">{category.title}</h3>
             <ul className="pl-1 text-xs">
               {category.skills.map((skill, idx) => (
                 <li key={idx}>{skill}</li>
               ))}
             </ul>
-          </Card>
+          </div>
         ))}
     </div>
   );

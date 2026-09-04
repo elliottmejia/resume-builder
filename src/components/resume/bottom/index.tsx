@@ -1,5 +1,4 @@
 import { cn } from "lib/utils";
-import { Card, CardTitle, CardContent } from "components/ui";
 import { Icon } from "@iconify/react";
 import type { Edu, Cert } from "data/types";
 
@@ -12,17 +11,17 @@ type Props = {
 
 const BottomContainer = (props: Props) => {
   const { className, children, eduData, certData } = props;
-  const cardClasses = "w-full h-fit bg-white z-10 p-2 sm:pl-6 sm:pt-4";
+  const sectionClasses = "w-full h-fit pt-5 mt-5 border-t border-gray-200";
   return (
-    <div className={cn("flex flex-col gap-2", className)}>
-      <Card id="education" className={cn("p-8", cardClasses)}>
-        <CardTitle className="flex flex-inline gap-1">
+    <div className={cn("flex flex-col", className)}>
+      <div id="education" className={sectionClasses}>
+        <h3 className="flex flex-inline gap-1 font-semibold leading-none tracking-tight">
           <span>
             <Icon icon="mdi:education-outline" />
           </span>
           Education
-        </CardTitle>
-        <CardContent className="p-0 mt-2 h-fit">
+        </h3>
+        <div className="mt-2 h-fit">
           {eduData.map((data: Edu, index: number) => {
             const { institution, degree, location, startDate, endDate } = data;
 
@@ -39,21 +38,21 @@ const BottomContainer = (props: Props) => {
               </div>
             );
           })}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
       {/*
 
 CERTIFICATIONS
 
      */}
-      <Card id="certifications" className={cn("sm:hidden", cardClasses)}>
-        <CardTitle className="flex flex-inline gap-1">
+      <div id="certifications" className={cn("sm:hidden", sectionClasses)}>
+        <h3 className="flex flex-inline gap-1 font-semibold leading-none tracking-tight">
           <span>
             <Icon icon="mdi:certificate" />
           </span>
           Certifications
-        </CardTitle>
-        <CardContent className="p-0 mt-2 mb-1 h-fit flex flex-col gap-2">
+        </h3>
+        <div className="mt-2 mb-1 h-fit flex flex-col gap-2">
           {certData.map((data: Cert, index: number) => {
             const { certs, issuer } = data;
             return (
@@ -73,8 +72,8 @@ CERTIFICATIONS
               </div>
             );
           })}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
       {children}
     </div>
   );
