@@ -8,8 +8,8 @@ export const HOSTED_DOMAIN = isProd()
 export const infoData: Info = {
   name: "Elliott Mejia",
   tel: "(206) 792-6241",
-  email: "info@elliottmejia.com",
-  emailShort: "info@elliottmejia",
+  email: "mejia.elliott@gmail.com",
+  emailShort: "mejia.elliott@gmail.com",
   portfolio: "https://www.elliottmejia.com",
   portfolioShort: "elliottmejia.com",
   linkedin: "https://www.linkedin.com/in/elliott-mejia/",
