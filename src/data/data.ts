@@ -428,7 +428,7 @@ const pizzaHutExp: Exp = {
 };
 
 const cantikiFohExp: Exp = {
-  title: "Barback — Front of House Support",
+  title: "Barback / Cook",
   company: "Cantiki LA",
   location: "North Hollywood, CA",
   startDate: "October 2024",
@@ -443,7 +443,7 @@ const cantikiFohExp: Exp = {
 };
 
 const cantikiBarExp: Exp = {
-  title: "Barback — Bar Program",
+  title: "Barback / Cook",
   company: "Cantiki LA",
   location: "North Hollywood, CA",
   startDate: "October 2024",
@@ -458,7 +458,7 @@ const cantikiBarExp: Exp = {
 };
 
 const cantikiBohExp: Exp = {
-  title: "Line Cook",
+  title: "Barback / Cook",
   company: "Cantiki LA",
   location: "North Hollywood, CA",
   startDate: "October 2024",
@@ -473,7 +473,7 @@ const cantikiBohExp: Exp = {
 };
 
 const cantikiManagementExp: Exp = {
-  title: "Barback & Line Cook — Staff Trainer",
+  title: "Barback / Cook",
   company: "Cantiki LA",
   location: "North Hollywood, CA",
   startDate: "October 2024",
