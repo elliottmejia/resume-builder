@@ -19,6 +19,7 @@
   padding: 1rem;
   padding-bottom: 4rem;
   text-align: center;
+  min-height: 100vh;
   /* background-image: radial-gradient(#212121 20%, transparent 20%), 
   radial-gradient(#656565 20%, transparent 20%);*/
   background-color: #6f6f6f;
