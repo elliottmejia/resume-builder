@@ -8,7 +8,7 @@ const Sidebar = ({ children, className }: Props): React.ReactElement => {
   //TODO: Skills down to the bottom, or add button to see more?
   return (
     <div className="relative">
-      <div className="relative w-full sm:w-fit h-fit sm:h-inherit">
+      <div className="relative w-full sm:w-fit h-fit sm:h-full">
         <div id="sidebar-wrap" className="h-full">
           <div
             id="sidebar"
