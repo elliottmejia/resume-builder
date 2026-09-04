@@ -616,6 +616,8 @@ const restaurantManagementSkills: Skills[] = [
   },
 ];
 
+const restaurantCurrentProjects: string[] = [];
+
 const restaurantCertData: Cert[] = [
   {
     issuer: "Los Angeles County",
@@ -682,7 +684,7 @@ export const resumeConfig: Record<string, ResumeVariant> = {
     skills: restaurantFohSkills,
     education: eduData,
     certifications: restaurantCertData,
-    currentProjects: currentProjects,
+    currentProjects: restaurantCurrentProjects,
   },
   "restaurant-bar": {
     hostedDomain: HOSTED_DOMAIN,
@@ -691,7 +693,7 @@ export const resumeConfig: Record<string, ResumeVariant> = {
     skills: restaurantBarSkills,
     education: eduData,
     certifications: restaurantCertData,
-    currentProjects: currentProjects,
+    currentProjects: restaurantCurrentProjects,
   },
   "restaurant-boh": {
     hostedDomain: HOSTED_DOMAIN,
@@ -700,7 +702,7 @@ export const resumeConfig: Record<string, ResumeVariant> = {
     skills: restaurantBohSkills,
     education: eduData,
     certifications: restaurantCertData,
-    currentProjects: currentProjects,
+    currentProjects: restaurantCurrentProjects,
   },
   "restaurant-management": {
     hostedDomain: HOSTED_DOMAIN,
@@ -709,7 +711,7 @@ export const resumeConfig: Record<string, ResumeVariant> = {
     skills: restaurantManagementSkills,
     education: eduData,
     certifications: restaurantCertData,
-    currentProjects: currentProjects,
+    currentProjects: restaurantCurrentProjects,
   },
 };
 
