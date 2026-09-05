@@ -43,12 +43,12 @@ const Taskbar = ({
   };
 
   const triggerClasses =
-    "px-4 py-2 hover:shadow-pressed rounded-none animate ease-in-out duration-100 relative hover:top-[1px]";
+    "px-4 py-2 hover:shadow-pressed rounded-none transition-all ease-in-out duration-100 relative hover:top-[1px]";
   return (
     <>
       <Menubar
         id="taskbar"
-        className="rounded-none relative top-2 p-0 w-fit mx-auto z-50"
+        className="rounded-none relative top-2 p-0 w-fit mx-auto z-50 opacity-40 hover:opacity-100 transition-opacity duration-300 ease-in-out"
         style={{
           clear: "both",
           ...(alignLeft !== undefined ? { marginLeft: alignLeft } : {}),
