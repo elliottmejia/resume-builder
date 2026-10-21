@@ -5,7 +5,8 @@
       "Bash(npx tsc:*)",
       "Bash(timeout:*)",
       "Bash(curl:*)",
-      "Bash(npm run build)"
+      "Bash(npm run build)",
+      "mcp__claude_ai_Indeed__search_jobs"
     ]
   }
 }

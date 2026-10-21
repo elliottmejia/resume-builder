@@ -18,17 +18,17 @@ export const infoData: Info = {
 
 export const experienceData: Exp[] = [
   {
-    title: "Freelance API Integration Specialist | Technical Consultant",
+    title: "Freelance Software Engineer & Technical Consultant",
     company: "Parahumana",
     location: "Los Angeles, CA",
     startDate: "June 2023",
     endDate: "Present",
     entries: [
-      "Provided technical consultation and API integration support for clients across multiple verticals, troubleshooting complex integration issues and documenting solutions",
-      "Integrated SaaS platforms (Notion, Google Sheets, Etsy, Shopify) via REST APIs, providing ongoing technical support for client implementations and resolving integration issues",
-      "Built real-time monitoring dashboards querying Shopify and WordPress APIs via serverless functions, enabling clients to track KPIs and diagnose issues",
-      "Designed internal sales workflow tools and lead tracking systems, gaining deep understanding of sales processes and CRM integrations",
-      "Designed bespoke internal software for sales workflows and lead tracking.",
+      "Build custom web applications, API integrations, and internal business tools for clients across e-commerce and other industries.",
+      "Architect middleware and serverless services integrating Shopify, Notion, Google Sheets, WordPress, and other SaaS platforms through REST and GraphQL APIs.",
+      "Develop real-time monitoring dashboards that aggregate Shopify and WordPress API data, giving clients visibility into KPIs and integration failures.",
+      "Build CRM-connected sales and lead-management systems that automate data movement between business platforms and internal workflows.",
+      "Diagnose integration failures across third-party systems, document root causes, and implement maintainable solutions for client environments.",
     ],
   },
   {
@@ -38,13 +38,12 @@ export const experienceData: Exp[] = [
     startDate: "March 2023",
     endDate: "June 2023",
     entries: [
-      "Fixed a critical bug that was causing 20+ second product collection loads due to improper load balancing on the fly.",
-      "Refactored PHP and PostgreSQL systems to enhance performance and scalability of e-commerce logic.",
-      "Led migration of Magento-based theme to Shopify 2.0, boosting site performance and maintainability.",
-      "Wrote Shopify scripts to allowlist discounts for employee emails, destroying a path to discount fraud.",
-      "Converted complex JavaScript logic to native Liquid rendering, improving page load times.",
-      "Modularized migration-band-aid Mustache templates and implemented reusable Shopify components to streamline frontend development.",
-      "Built a custom in-theme wishlist app using React CDN in Shopify, pixel perfect to design specs.",
+      "Led development work for the migration of a Magento-based storefront to Shopify Online Store 2.0, building reusable Liquid components and improving theme maintainability.",
+      "Diagnosed and resolved a critical application issue causing product collection pages to take more than 20 seconds to load.",
+      "Refactored PHP and PostgreSQL-backed e-commerce functionality and moved client-side JavaScript logic to native Liquid rendering to reduce frontend processing and page weight.",
+      "Built a custom React-based wishlist directly within the Shopify theme, matching design specifications without relying on an external wishlist application.",
+      "Developed employee discount allowlisting logic to eliminate an exploitable path for unauthorized discount use.",
+      "Refactored legacy Mustache templates into modular, reusable Shopify components to simplify continued storefront development.",
     ],
   },
   {
@@ -54,11 +53,11 @@ export const experienceData: Exp[] = [
     startDate: "November 2021",
     endDate: "March 2023",
     entries: [
-      "Developed custom Shopify app with dynamic webhook integrations for Listrak, providing a cost-effective alternative to Shopify Plus.",
-      "Built and maintained API integrations between Shopify and third-party logistics providers using serverless functions, troubleshooting sync issues across systems",
-      "Managed product management and upload pipelines between four departments.",
-      "Led a comprehensive, detailed audit of product metadata across three storefronts, identifying and resolving data inconsistencies",
-      "Designed and deployed three Shopify storefronts—Lestien, Michael Lauren, and Lauren Moshi—with distinct brand identities.",
+      "Developed a custom Shopify application using dynamic webhooks to integrate Listrak customer data and marketing workflows without requiring Shopify Plus.",
+      "Built and maintained serverless API integrations connecting Shopify with third-party logistics and fulfillment systems.",
+      "Designed and deployed Shopify storefronts for Lauren Moshi, Michael Lauren, and Lestien, implementing distinct themes and reusable Liquid components for each brand.",
+      "Managed product-data workflows spanning four departments and audited metadata across three storefronts to identify and resolve inconsistencies.",
+      "Diagnosed synchronization failures across storefront, marketing, fulfillment, and other third-party systems.",
     ],
   },
 ];
@@ -68,75 +67,36 @@ export const skillsData: Skills[] = [
   {
     title: "Languages",
     skills: [
-      "JavaScript (+ Typescript)",
+      "JavaScript",
+      "TypeScript",
       "Python",
       "Ruby",
-      "Go",
+      "PHP",
       "C++",
-      "CSS (SASS, Tailwind)",
       "Liquid",
+      "HTML",
+      "CSS/SASS",
     ],
   },
   {
-    // RENAME: Consider "APIs & Frameworks" to emphasize API work
-    title: "Libraries & Frameworks",
-    skills: [
-      "Node.js",
-      "Next.js",
-      "Django",
-      "Rest APIs",
-      "GraphQL",
-      "PyTorch",
-      "TensorFlow (js, py)",
-      "Astro",
-    ],
+    title: "Frontend",
+    skills: ["React", "Next.js", "Astro", "Tailwind CSS", "Shopify Online Store 2.0", "Responsive UI Development"],
   },
   {
-    // RENAME: Consider "Support & Collaboration Tools"
-    title: "Tools",
-    skills: [
-      "Jira",
-      "Postman",
-      "Zendesk",
-      "Slack",
-      "Shopify",
-      "Asana",
-      "Webflow",
-      "Figma",
-      "Photoshop",
-      "Illustrator",
-    ],
+    title: "Backend & APIs",
+    skills: ["Node.js", "REST APIs", "GraphQL", "Webhooks", "Serverless/Edge", "Event-Driven Integrations"],
   },
   {
-    title: "Database",
-    skills: ["SQL | PostgreSQL | MySQL", "ElasticSearch", "MongoDB", "GraphQL"],
+    title: "Data",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "ElasticSearch"],
   },
   {
-    // RENAME: Consider "Cloud & Infrastructure"
-    title: "Cloud & Infrastructure",
-    skills: [
-      "AWS",
-      "Docker",
-      "Kubernetes",
-      "Vercel",
-      "Heroku",
-      "VPS (Digital Ocean, Linode)",
-      "Shopify",
-    ],
+    title: "Infrastructure & Tools",
+    skills: ["Git/GitHub", "Docker", "AWS", "Vercel", "DigitalOcean", "Postman", "Jira", "Figma"],
   },
   {
-    // RENAME: Consider "Monitoring & Analytics" - more relevant to support
-    title: "Growth & Analytics",
-    skills: [
-      "Analytics",
-      "Data Dog",
-      "Google Analytics",
-      "Tableau",
-      "Hotjar",
-      "SEO/SEM",
-      "Email/SMS Marketing",
-      "Lead Generation",
-    ],
+    title: "E-Commerce",
+    skills: ["Shopify", "Shopify Admin & Storefront APIs", "Shopify Scripts",],
   },
 ];
 
@@ -145,16 +105,13 @@ export const eduData: Edu[] = [
   {
     institution: "North Seattle College",
     location: "Seattle, WA",
-    degree: "Coursework in Computer Science",
+    degree: "AS, Computer Science",
     startDate: "2018",
     endDate: "2019",
   },
 ];
 
-export const currentProjects: string[] = [
-  "Restaurant-style ticket printer task-management integration with ClickUp and an old Raspberry Pi",
-  "A spectrogram plugin that detects RMS values across draggable frequency bands using JUCE framework in C++",
-];
+export const currentProjects: string[] = [];
 
 export const certData: Cert[] = [
   {
